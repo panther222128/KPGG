@@ -25,10 +25,11 @@ class MainCell: UICollectionViewCell {
         groupImage = UIImageView()
         contentView.addSubview(groupImage)
         groupImage.translatesAutoresizingMaskIntoConstraints = false
+        groupImage.backgroundColor = .white
         groupImage.contentMode = .scaleAspectFill
         groupImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
         groupImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
-        groupImage.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
         groupImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
+        groupImage.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
 }
