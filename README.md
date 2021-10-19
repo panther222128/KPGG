@@ -152,3 +152,9 @@ UIStackView
 새벽에 뷰 전체를 'DiffableDataSource' 컬렉션 뷰로 변경했습니다. 그런데 가져온 이미지 주소가 변경될 수 있다는 사실을 파악해 이에 대한 대응을 어떻게 할 것인지 고민하는 시간을 가졌습니다. 나머지 시간 동안 컬렉션 뷰의 모양을 갖추려 했습니다. 커스텀 셀의 레이아웃에 시간이 조금 걸렸습니다. 현재 모습입니다.
 
 <img src="https://user-images.githubusercontent.com/61342175/137890361-62901eef-13cb-48b9-b760-08c4bed276fb.gif" width = 250 align = center>
+
+네트워크, 엔드포인트, 유스케이스를 추가했습니다. 네트워크가 정상적으로 응답하는지 확인한 후 스크린에 나타나도록 했습니다. 이미지는 링크가 바뀐 것 같아 그룹 이름만 먼저 보이도록 했습니다. RxSwift, Alamofire를 사용했습니다. 현재 모습입니다.
+
+<img src="https://user-images.githubusercontent.com/61342175/137938245-66a6170b-0dc2-4c88-aaf1-a30c871fdf05.gif" width = 250 align = center>
+
+
