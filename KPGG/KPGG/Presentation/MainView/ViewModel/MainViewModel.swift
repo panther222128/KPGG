@@ -6,18 +6,53 @@
 //
 
 import Foundation
+import RxCocoa
+import RxSwift
 
-protocol ViewModelType {
-    func initiated()
+protocol MainViewModelType {
+    func fetch(path: String) -> Observable<[String:[Group]]>
+    func configureGroups(_ groups: [String:[Group]])
+    func groupsCount() -> Int?
+    func group(sectionName: String) -> [Group]?
+    func groupsSubject() -> BehaviorSubject<[String:[Group]]>
 }
 
-class ViewModel: ViewModelType {
+class MainViewModel: MainViewModelType {
+    
+    private let useCase: MainUseCaseType
+    private var groups: BehaviorSubject<[String:[Group]]>
     
     init() {
-        initiated()
+        self.useCase = MainUseCase()
+        self.groups = BehaviorSubject<[String:[Group]]>(value: [:])
     }
     
-    func initiated() {
+    func fetch(path: String) -> Observable<[String:[Group]]> {
+        return useCase.fetchGroupList(path)
+    }
+    
+    func configureGroups(_ groups: [String:[Group]]) {
+        self.groups.onNext(groups)
+    }
+    
+    func groupsCount() -> Int? {
+        do {
+            return try self.groups.value().count
+        } catch {
+            return nil
+        }
+    }
+    
+    func group(sectionName: String) -> [Group]? {
+        do {
+            return try groups.value()[sectionName]
+        } catch {
+            return nil
+        }
+    }
+    
+    func groupsSubject() -> BehaviorSubject<[String:[Group]]> {
+        return self.groups
     }
     
 }
