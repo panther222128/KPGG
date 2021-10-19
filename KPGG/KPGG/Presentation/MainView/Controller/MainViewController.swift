@@ -122,17 +122,43 @@ class MainViewController: UIViewController {
     }
     
     private func setupDiffableDataSource() {
-         
-        let cellRegistration = UICollectionView.CellRegistration<GroupCollectionViewCell, Group> { cell, indexPath, item in
-            cell.groupName.text = item.groupname
-            cell.groupName.textColor = .white
+        let mainCellRegistrationMain = UICollectionView.CellRegistration<MainCell, Group> { cell, indexPath, item in
             var background = UIBackgroundConfiguration.listPlainCell()
-            background.cornerRadius = 8
-            background.backgroundColor = .black
+            background.cornerRadius = 0
+            background.backgroundColor = .systemPink
             cell.backgroundConfiguration = background
         }
-        source = UICollectionViewDiffableDataSource(collectionView: section) { section, indexPath, item in
-            return section.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+        
+        let cellRegistration = UICollectionView.CellRegistration<GroupCollectionViewCell, Group> { cell, indexPath, item in
+            cell.groupName.text = item.groupname
+            cell.groupName.textColor = .black
+            var background = UIBackgroundConfiguration.listPlainCell()
+            background.cornerRadius = 8
+            background.backgroundColor = .white
+            cell.backgroundConfiguration = background
+        }
+        
+        source = UICollectionViewDiffableDataSource<Section, Group>(collectionView: section) {
+            (collectionView, indexPath, item) -> UICollectionViewCell? in
+            guard let section = Section(rawValue: indexPath.section) else { fatalError("Unknown section") }
+            switch section {
+            case .zero:
+                return collectionView.dequeueConfiguredReusableCell(using: mainCellRegistrationMain, for: indexPath, item: item)
+            case .first:
+                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+            case .second:
+                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+            case .third:
+                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+            case .fourth:
+                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+            case .fifth:
+                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+            case .sixth:
+                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+            case .seventh:
+                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+            }
         }
     }
 
