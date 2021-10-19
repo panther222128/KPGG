@@ -146,3 +146,9 @@ UIStackView
 <img src="https://user-images.githubusercontent.com/61342175/137706647-ce375952-4323-48cb-b746-37a23420f44f.gif" width = 250 align = center>
 
 레이아웃 설정에 어려움을 겪었습니다. 약 10시간 중 대부분의 시간을 레이아웃 설정에 할애했습니다. 어려웠던 부분은 스크롤 뷰 내부에 스택 뷰를 넣고, 스택 뷰 안에서 'DiffableDataSource' 컬렉션 뷰의 높이 설정과 관련이 있습니다. 높이를 설정하지 않으면 스크롤 뷰가 Y 위치를 갖지 못하거나 높이를 갖지 않는다고 합니다. 'DiffableDataSource'에서 섹션 추가에 따라 동적으로 높이를 설정하고 싶은데, 그렇게 하기가 어려웠습니다. 여러 가지 시도를 해봤지만 구현에 어려움을 겪었고, 결국 전체 스크린을 'DiffableDataSource'로 채울 계획입니다.
+
+## 2021.10.19
+
+새벽에 뷰 전체를 'DiffableDataSource' 컬렉션 뷰로 변경했습니다. 그런데 가져온 이미지 주소가 변경될 수 있다는 사실을 파악해 이에 대한 대응을 어떻게 할 것인지 고민하는 시간을 가졌습니다. 나머지 시간 동안 컬렉션 뷰의 모양을 갖추려 했습니다. 커스텀 셀의 레이아웃에 시간이 조금 걸렸습니다. 현재 모습입니다.
+
+<img src="https://user-images.githubusercontent.com/61342175/137890361-62901eef-13cb-48b9-b760-08c4bed276fb.gif" width = 250 align = center>
