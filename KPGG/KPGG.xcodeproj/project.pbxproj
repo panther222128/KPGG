@@ -24,6 +24,9 @@
 		A0AF8A99271EB204009CEF82 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AF8A98271EB204009CEF82 /* Endpoint.swift */; };
 		A0AF8A9B271EB20C009CEF82 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AF8A9A271EB20C009CEF82 /* NetworkService.swift */; };
 		A0AF8A9E271EB225009CEF82 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A0AF8A9D271EB225009CEF82 /* Alamofire */; };
+		A0AF8AA2271EE08D009CEF82 /* MainUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AF8AA1271EE08D009CEF82 /* MainUseCase.swift */; };
+		A0AF8AA5271EE0AA009CEF82 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A0AF8AA4271EE0AA009CEF82 /* RxCocoa */; };
+		A0AF8AA7271EE0AA009CEF82 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A0AF8AA6271EE0AA009CEF82 /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,7 @@
 		A0AF8A94271E8AB6009CEF82 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		A0AF8A98271EB204009CEF82 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		A0AF8A9A271EB20C009CEF82 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		A0AF8AA1271EE08D009CEF82 /* MainUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0AF8AA7271EE0AA009CEF82 /* RxSwift in Frameworks */,
+				A0AF8AA5271EE0AA009CEF82 /* RxCocoa in Frameworks */,
 				A0AF8A9E271EB225009CEF82 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +223,7 @@
 		A0AF8A9F271EB3E4009CEF82 /* MainViewUseCase */ = {
 			isa = PBXGroup;
 			children = (
+				A0AF8AA1271EE08D009CEF82 /* MainUseCase.swift */,
 			);
 			path = MainViewUseCase;
 			sourceTree = "<group>";
@@ -246,6 +253,8 @@
 			name = KPGG;
 			packageProductDependencies = (
 				A0AF8A9D271EB225009CEF82 /* Alamofire */,
+				A0AF8AA4271EE0AA009CEF82 /* RxCocoa */,
+				A0AF8AA6271EE0AA009CEF82 /* RxSwift */,
 			);
 			productName = GG;
 			productReference = A008ADCF271B3F8D00972B3F /* KPGG.app */;
@@ -277,6 +286,7 @@
 			mainGroup = A008ADC6271B3F8D00972B3F;
 			packageReferences = (
 				A0AF8A9C271EB225009CEF82 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				A0AF8AA3271EE0AA009CEF82 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = A008ADD0271B3F8D00972B3F /* Products */;
 			projectDirPath = "";
@@ -313,6 +323,7 @@
 				A008ADD3271B3F8D00972B3F /* AppDelegate.swift in Sources */,
 				A004CEC6271D539300AAF13F /* SectionEnum.swift in Sources */,
 				A008ADF2271B440A00972B3F /* SectionDetailViewModel.swift in Sources */,
+				A0AF8AA2271EE08D009CEF82 /* MainUseCase.swift in Sources */,
 				A008ADEB271B402A00972B3F /* MainViewModel.swift in Sources */,
 				A008ADD5271B3F8D00972B3F /* SceneDelegate.swift in Sources */,
 				A0AF8A99271EB204009CEF82 /* Endpoint.swift in Sources */,
@@ -547,6 +558,14 @@
 				kind = branch;
 			};
 		};
+		A0AF8AA3271EE0AA009CEF82 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -554,6 +573,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A0AF8A9C271EB225009CEF82 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		A0AF8AA4271EE0AA009CEF82 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0AF8AA3271EE0AA009CEF82 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		A0AF8AA6271EE0AA009CEF82 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0AF8AA3271EE0AA009CEF82 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
