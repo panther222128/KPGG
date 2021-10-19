@@ -6,20 +6,45 @@
 //
 
 import UIKit
+import RxSwift
 
 class MainViewController: UIViewController {
     
     @IBOutlet weak var section: UICollectionView!
     
-    private var viewModel: ViewModelType?
+    private var mainViewModel: MainViewModelType?
     private var source: UICollectionViewDiffableDataSource<Section, Group>!
+    private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.showMainViewController(with: ViewModel())
+        self.showMainViewController(with: MainViewModel())
+        subscribe()
+        fetchGroups(path: "")
         configureHierarchy()
         setupDiffableDataSource()
-        applyInitialSnapshots()
+    }
+    
+    private func subscribe()  {
+        self.mainViewModel?.groupsSubject().subscribe(onNext:{ [weak self] _ in
+            self?.applySectionSnaphots()
+            self?.section.reloadData()
+        }).disposed(by: disposeBag)
+    }
+    
+    private func fetchGroups(path: String) {
+        self.mainViewModel?.fetch(path: path).subscribe { [weak self] members in
+            self?.mainViewModel?.configureGroups(members)
+        } onError: { [weak self] error in
+            let error = error.localizedDescription
+            self?.makeErrorAlert(error: error)
+        }.disposed(by: disposeBag)
+    }
+    
+    private func makeErrorAlert(error: String) {
+        let alert = UIAlertController(title: "네트워크 에러", message: "\(error)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true)
     }
     
     private func configureHierarchy() {
@@ -28,7 +53,6 @@ class MainViewController: UIViewController {
         section.backgroundColor = .black
         self.view.backgroundColor = .black
     }
-    
     
     private func createLayout() -> UICollectionViewLayout {
         let sectionProvider = { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
@@ -47,7 +71,7 @@ class MainViewController: UIViewController {
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.3))
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
                 section.interGroupSpacing = 10
@@ -57,7 +81,7 @@ class MainViewController: UIViewController {
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.3))
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
                 section.interGroupSpacing = 10
@@ -67,7 +91,7 @@ class MainViewController: UIViewController {
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.3))
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
                 section.interGroupSpacing = 10
@@ -77,7 +101,7 @@ class MainViewController: UIViewController {
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.3))
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
                 section.interGroupSpacing = 10
@@ -87,7 +111,7 @@ class MainViewController: UIViewController {
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.3))
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
                 section.interGroupSpacing = 10
@@ -97,7 +121,7 @@ class MainViewController: UIViewController {
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.3))
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
                 section.interGroupSpacing = 10
@@ -107,7 +131,7 @@ class MainViewController: UIViewController {
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.3))
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
                 section.interGroupSpacing = 10
@@ -122,19 +146,22 @@ class MainViewController: UIViewController {
     }
     
     private func setupDiffableDataSource() {
-        let mainCellRegistrationMain = UICollectionView.CellRegistration<MainCell, Group> { cell, indexPath, item in
+        let mainCellRegistration = UICollectionView.CellRegistration<MainCell, Group> { cell, indexPath, item in
+            
+            cell.groupName.text = item.groupname
+            cell.groupImage.image = UIImage(named: "hyojung")
             var background = UIBackgroundConfiguration.listPlainCell()
             background.cornerRadius = 0
-            background.backgroundColor = .systemPink
+            background.backgroundColor = .black
             cell.backgroundConfiguration = background
         }
         
         let cellRegistration = UICollectionView.CellRegistration<GroupCollectionViewCell, Group> { cell, indexPath, item in
             cell.groupName.text = item.groupname
-            cell.groupName.textColor = .black
+            cell.groupName.textColor = .white
             var background = UIBackgroundConfiguration.listPlainCell()
             background.cornerRadius = 8
-            background.backgroundColor = .white
+            background.backgroundColor = .black
             cell.backgroundConfiguration = background
         }
         
@@ -143,7 +170,7 @@ class MainViewController: UIViewController {
             guard let section = Section(rawValue: indexPath.section) else { fatalError("Unknown section") }
             switch section {
             case .zero:
-                return collectionView.dequeueConfiguredReusableCell(using: mainCellRegistrationMain, for: indexPath, item: item)
+                return collectionView.dequeueConfiguredReusableCell(using: mainCellRegistration, for: indexPath, item: item)
             case .first:
                 return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
             case .second:
@@ -161,79 +188,52 @@ class MainViewController: UIViewController {
             }
         }
     }
-
-    private func applyInitialSnapshots() {
-        let sections = Section.allCases
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Group>()
-        snapshot.appendSections(sections)
-        source.apply(snapshot, animatingDifferences: false)
-        
-        let zeroGroups = [Group(groupname: "12c3123", grouplogo: "4", groupimage: "7", hitsong: "11", haspreviousmember: true)]
-        var zeroSnapshot = NSDiffableDataSourceSectionSnapshot<Group>()
-        zeroSnapshot.append(zeroGroups)
-        source.apply(zeroSnapshot, to: .zero, animatingDifferences: false)
-        
-        let firstGroups = [Group(groupname: "1", grouplogo: "4", groupimage: "7", hitsong: "11", haspreviousmember: true)]
-        var firstSnapshot = NSDiffableDataSourceSectionSnapshot<Group>()
-        firstSnapshot.append(firstGroups)
-        source.apply(firstSnapshot, to: .first, animatingDifferences: false)
-        
-        let secondGroups = [Group(groupname: "8", grouplogo: "1bh23", groupimage: "n1", hitsong: "3f1231", haspreviousmember: true),
-                            Group(groupname: "9", grouplogo: "6ggg", groupimage: "9", hitsong: "13", haspreviousmember: true)]
-        var secondSnapshot = NSDiffableDataSourceSectionSnapshot<Group>()
-        secondSnapshot.append(secondGroups)
-        source.apply(secondSnapshot, to: .second, animatingDifferences: false)
-        
-        let thirdGroups = [Group(groupname: "15", grouplogo: "1bh23", groupimage: "n1", hitsong: "3f1231", haspreviousmember: true),
-                            Group(groupname: "16", grouplogo: "6ggg", groupimage: "9", hitsong: "13", haspreviousmember: true),
-                           Group(groupname: "12bh31j2n", grouplogo: "6ggg", groupimage: "9", hitsong: "13", haspreviousmember: true)]
-        var thirdSnapshot = NSDiffableDataSourceSectionSnapshot<Group>()
-        thirdSnapshot.append(thirdGroups)
-        source.apply(thirdSnapshot, to: .third, animatingDifferences: false)
-        
-        let fourthGroups = [Group(groupname: "17", grouplogo: "1bh23", groupimage: "n1", hitsong: "3f1231", haspreviousmember: true),
-                            Group(groupname: "18", grouplogo: "6ggg", groupimage: "9", hitsong: "13", haspreviousmember: true),
-                            Group(groupname: "19", grouplogo: "6ggg", groupimage: "9", hitsong: "13", haspreviousmember: true),
-                            Group(groupname: "20", grouplogo: "6ggg", groupimage: "9", hitsong: "13", haspreviousmember: true)]
-        var fourthSnapshot = NSDiffableDataSourceSectionSnapshot<Group>()
-        fourthSnapshot.append(fourthGroups)
-        source.apply(fourthSnapshot, to: .fourth, animatingDifferences: false)
-        
-        let fifthGroups = [Group(groupname: "21", grouplogo: "1bh23", groupimage: "n1", hitsong: "3f1231", haspreviousmember: true),
-                            Group(groupname: "22", grouplogo: "6ggg", groupimage: "9", hitsong: "13", haspreviousmember: true),
-                           Group(groupname: "23", grouplogo: "6ggg", groupimage: "9", hitsong: "13", haspreviousmember: true),
-                           Group(groupname: "24", grouplogo: "6ggg", groupimage: "9", hitsong: "13", haspreviousmember: true),
-                           Group(groupname: "25", grouplogo: "6ggg", groupimage: "9", hitsong: "13", haspreviousmember: true)]
-        var fifthSnapshot = NSDiffableDataSourceSectionSnapshot<Group>()
-        fifthSnapshot.append(fifthGroups)
-        source.apply(fifthSnapshot, to: .fifth, animatingDifferences: false)
-        
-        let sixthGroups = [Group(groupname: "26", grouplogo: "1bh23", groupimage: "n1", hitsong: "3f1231", haspreviousmember: true),
-                            Group(groupname: "27", grouplogo: "6ggg", groupimage: "9", hitsong: "13", haspreviousmember: true),
-                           Group(groupname: "28", grouplogo: "6ggg", groupimage: "9", hitsong: "13", haspreviousmember: true),
-                           Group(groupname: "29", grouplogo: "6ggg", groupimage: "9", hitsong: "13", haspreviousmember: true),
-                           Group(groupname: "30", grouplogo: "6ggg", groupimage: "9", hitsong: "13", haspreviousmember: true),
-                           Group(groupname: "31", grouplogo: "6ggg", groupimage: "9", hitsong: "13", haspreviousmember: true)]
-        var sixthSnapshot = NSDiffableDataSourceSectionSnapshot<Group>()
-        sixthSnapshot.append(sixthGroups)
-        source.apply(sixthSnapshot, to: .sixth, animatingDifferences: false)
-        
-        let seventhGroups = [Group(groupname: "32", grouplogo: "1bh23", groupimage: "n1", hitsong: "3f1231", haspreviousmember: true),
-                            Group(groupname: "33", grouplogo: "6ggg", groupimage: "9", hitsong: "13", haspreviousmember: true),
-                             Group(groupname: "34", grouplogo: "6ggg", groupimage: "9", hitsong: "13", haspreviousmember: true),
-                             Group(groupname: "35", grouplogo: "6ggg", groupimage: "9", hitsong: "13", haspreviousmember: true),
-                             Group(groupname: "37", grouplogo: "6ggg", groupimage: "9", hitsong: "13", haspreviousmember: true),
-                             Group(groupname: "38", grouplogo: "6ggg", groupimage: "9", hitsong: "13", haspreviousmember: true),
-                             Group(groupname: "39", grouplogo: "6ggg", groupimage: "9", hitsong: "13", haspreviousmember: true)]
-        var seventhSnapshot = NSDiffableDataSourceSectionSnapshot<Group>()
-        seventhSnapshot.append(seventhGroups)
-        source.apply(seventhSnapshot, to: .seventh, animatingDifferences: false)
-        
+    
+    private func applySectionSnaphots() {
+        if let selectedGroupList = self.mainViewModel?.group(sectionName: "zero")?.first {
+            var zeroSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
+            zeroSnapShot.append([selectedGroupList])
+            source.apply(zeroSnapShot, to: .zero, animatingDifferences: false)
+        }
+        if let selectedGroupList = self.mainViewModel?.group(sectionName: "first") {
+            var firstSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
+            firstSnapShot.append(selectedGroupList)
+            source.apply(firstSnapShot, to: .first, animatingDifferences: false)
+        }
+        if let selectedGroupList = self.mainViewModel?.group(sectionName: "second") {
+            var secondSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
+            secondSnapShot.append(selectedGroupList)
+            source.apply(secondSnapShot, to: .second, animatingDifferences: false)
+        }
+        if let selectedGroupList = self.mainViewModel?.group(sectionName: "third") {
+            var thirdSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
+            thirdSnapShot.append(selectedGroupList)
+            source.apply(thirdSnapShot, to: .third, animatingDifferences: false)
+        }
+        if let selectedGroupList = self.mainViewModel?.group(sectionName: "fourth") {
+            var fourthSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
+            fourthSnapShot.append(selectedGroupList)
+            source.apply(fourthSnapShot, to: .fourth, animatingDifferences: false)
+        }
+        if let selectedGroupList = self.mainViewModel?.group(sectionName: "fifth") {
+            var fifthSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
+            fifthSnapShot.append(selectedGroupList)
+            source.apply(fifthSnapShot, to: .fifth, animatingDifferences: false)
+        }
+        if let selectedGroupList = self.mainViewModel?.group(sectionName: "sixth") {
+            var sixthSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
+            sixthSnapShot.append(selectedGroupList)
+            source.apply(sixthSnapShot, to: .sixth, animatingDifferences: false)
+        }
+        if let selectedGroupList = self.mainViewModel?.group(sectionName: "seventh") {
+            var seventhSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
+            seventhSnapShot.append(selectedGroupList)
+            source.apply(seventhSnapShot, to: .seventh, animatingDifferences: false)
+        }
     }
     
-    
-    func showMainViewController(with viewModel: ViewModelType) {
-        self.viewModel = viewModel
+    func showMainViewController(with viewModel: MainViewModelType) {
+        self.mainViewModel = viewModel
     }
     
 }
