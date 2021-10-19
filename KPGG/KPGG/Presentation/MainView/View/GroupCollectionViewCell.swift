@@ -29,7 +29,7 @@ class GroupCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(groupImage)
         
         groupName.translatesAutoresizingMaskIntoConstraints = false
-        groupName.textAlignment = .center
+        groupName.textAlignment = .left
         groupName.topAnchor.constraint(equalTo: groupImage.bottomAnchor, constant: 5).isActive = true
         groupName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5).isActive = true
         groupName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5).isActive = true
