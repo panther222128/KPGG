@@ -16,7 +16,7 @@ enum Host: String {
 }
 
 enum Path: String {
-    case basePath = "/omgtest/main/memberinfo"
+    case basePath = "/omgtest/main/group"
 }
 
 struct Endpoint {
