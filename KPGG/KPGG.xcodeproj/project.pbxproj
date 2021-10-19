@@ -20,6 +20,7 @@
 		A08363C3271C29650061CB67 /* GroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08363C2271C29650061CB67 /* GroupCollectionViewCell.swift */; };
 		A08363C5271C64010061CB67 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08363C4271C64010061CB67 /* Group.swift */; };
 		A0ADB54D271DF31B00996110 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0ADB54C271DF31B00996110 /* MainCell.swift */; };
+		A0AF8A95271E8AB6009CEF82 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AF8A94271E8AB6009CEF82 /* Member.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		A08363C2271C29650061CB67 /* GroupCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCollectionViewCell.swift; sourceTree = "<group>"; };
 		A08363C4271C64010061CB67 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		A0ADB54C271DF31B00996110 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		A0AF8A94271E8AB6009CEF82 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				A08363C4271C64010061CB67 /* Group.swift */,
+				A0AF8A94271E8AB6009CEF82 /* Member.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				A008ADF2271B440A00972B3F /* NextViewModel.swift in Sources */,
 				A008ADEB271B402A00972B3F /* ViewModel.swift in Sources */,
 				A008ADD5271B3F8D00972B3F /* SceneDelegate.swift in Sources */,
+				A0AF8A95271E8AB6009CEF82 /* Member.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
