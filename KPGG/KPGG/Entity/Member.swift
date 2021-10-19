@@ -11,7 +11,7 @@ struct MemberResponse: Codable {
     let groupname: [String:[Member]]
 }
 
-struct Member: Codable {
+struct Member: Codable, Hashable {
     let activityname: String
     let name: String
     let birth: String

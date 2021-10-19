@@ -11,7 +11,7 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="GG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="KPGG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="1849.2753623188407" y="83.705357142857139"/>
         </scene>
-        <!--Next View Controller-->
+        <!--Section Detail View Controller-->
         <scene sceneID="CNh-Dl-8cS">
             <objects>
-                <viewController storyboardIdentifier="NextViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="W2Q-pc-vS0" customClass="NextViewController" customModule="GG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SectionDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="W2Q-pc-vS0" customClass="SectionDetailViewController" customModule="KPGG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OZn-cG-PJg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

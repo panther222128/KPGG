@@ -13,7 +13,6 @@ class MainViewController: UIViewController {
     
     private var viewModel: ViewModelType?
     private var source: UICollectionViewDiffableDataSource<Section, Group>!
-    private var secondSource: UICollectionViewDiffableDataSource<Section, Group>!
     
     override func viewDidLoad() {
         super.viewDidLoad()

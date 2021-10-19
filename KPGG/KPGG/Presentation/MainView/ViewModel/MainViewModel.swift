@@ -1,5 +1,5 @@
 //
-//  NextViewModel.swift
+//  ViewModel.swift
 //  GG
 //
 //  Created by Jun Ho JANG on 2021/10/17.
@@ -7,18 +7,17 @@
 
 import Foundation
 
-protocol NextViewModelType {
+protocol ViewModelType {
     func initiated()
 }
 
-class NextViewModel: NextViewModelType {
+class ViewModel: ViewModelType {
     
     init() {
         initiated()
     }
     
     func initiated() {
-        print("next view model initiated")
     }
     
 }
