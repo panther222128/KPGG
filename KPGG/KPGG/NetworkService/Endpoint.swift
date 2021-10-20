@@ -16,7 +16,7 @@ enum Host: String {
 }
 
 enum Path: String {
-    case basePath = "/omgtest/main/group"
+    case basePath = "/omgtest/main/group/"
 }
 
 struct Endpoint {
@@ -25,7 +25,7 @@ struct Endpoint {
         var component = URLComponents()
         component.scheme = Scheme.https.rawValue
         component.host = Host.base.rawValue
-        component.path = Path.basePath.rawValue
+        component.path = Path.basePath.rawValue + path
         return component.url
     }
     
