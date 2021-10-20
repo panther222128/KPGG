@@ -157,4 +157,14 @@ UIStackView
 
 <img src="https://user-images.githubusercontent.com/61342175/137938245-66a6170b-0dc2-4c88-aaf1-a30c871fdf05.gif" width = 250 align = center>
 
+## 2021.10.20
+
+새벽에 그룹별 이미지 적용 및 그룹 이름 정렬을 적용했습니다. 컨텐트 모드에 따라 아래처럼 나타나며, 이미지 크기에 영향을 받습니다.
+
+<img src="https://user-images.githubusercontent.com/61342175/138034313-e8f9c011-9af2-42a3-af6d-c50ded47a50c.png" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/138034336-5b3f55d4-41be-4437-9e87-4f8d3efff2d0.png" width = 250 align = center>
+
+
+
 
