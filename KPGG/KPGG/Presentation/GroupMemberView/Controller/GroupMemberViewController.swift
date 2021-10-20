@@ -24,6 +24,7 @@ class GroupMemberViewController: UIViewController {
         subscribe()
         fetchMembers()
         groupMember.dataSource = self
+        groupMember.delegate = self
     }
     
     private func subscribe()  {
@@ -84,6 +85,18 @@ extension GroupMemberViewController: UITableViewDataSource {
         let memberActivityName = groupMemberViewModel?.member()?[indexPath.row].activityname ?? ""
         cell.configureCell(memberActivityName: memberActivityName, imageData: data)
         return cell
+    }
+    
+}
+
+extension GroupMemberViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let memberDetailViewContrller = self.storyboard?.instantiateViewController(withIdentifier: "MemberDetail") as? MemberDetailViewController else { return }
+        guard let member = self.groupMemberViewModel?.member()?[indexPath.row] else { return }
+        print(member)
+        memberDetailViewContrller.showMemberDetailViewController(with: MemberDetailViewModel(member: member))
+        self.navigationController?.pushViewController(memberDetailViewContrller, animated: true)
     }
     
 }
