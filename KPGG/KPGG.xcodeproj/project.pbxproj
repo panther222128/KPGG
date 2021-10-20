@@ -31,6 +31,8 @@
 		A0B991E7271FECAD005ECDD1 /* GroupMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B991E6271FECAD005ECDD1 /* GroupMemberViewController.swift */; };
 		A0B991EA271FED8B005ECDD1 /* GroupMemberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B991E9271FED8B005ECDD1 /* GroupMemberUseCase.swift */; };
 		A0B991EC271FF4AF005ECDD1 /* GroupMemberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B991EB271FF4AF005ECDD1 /* GroupMemberViewModel.swift */; };
+		A0B991F227203FCD005ECDD1 /* MemberDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B991F127203FCD005ECDD1 /* MemberDetailViewController.swift */; };
+		A0B991F4272042C0005ECDD1 /* MemberDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B991F3272042C0005ECDD1 /* MemberDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		A0B991E6271FECAD005ECDD1 /* GroupMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberViewController.swift; sourceTree = "<group>"; };
 		A0B991E9271FED8B005ECDD1 /* GroupMemberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberUseCase.swift; sourceTree = "<group>"; };
 		A0B991EB271FF4AF005ECDD1 /* GroupMemberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberViewModel.swift; sourceTree = "<group>"; };
+		A0B991F127203FCD005ECDD1 /* MemberDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailViewController.swift; sourceTree = "<group>"; };
+		A0B991F3272042C0005ECDD1 /* MemberDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 			children = (
 				A08363B9271C14C00061CB67 /* MainView */,
 				A0B991E0271FEB39005ECDD1 /* GroupMemberView */,
+				A0B991ED27203D3D005ECDD1 /* MemberDetailView */,
 				A08363BA271C14DA0061CB67 /* SectionDetailView */,
 			);
 			path = Presentation;
@@ -287,6 +292,39 @@
 			path = GroupMemberUseCase;
 			sourceTree = "<group>";
 		};
+		A0B991ED27203D3D005ECDD1 /* MemberDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				A0B991F027203D55005ECDD1 /* View */,
+				A0B991EF27203D53005ECDD1 /* ViewModel */,
+				A0B991EE27203D52005ECDD1 /* Controller */,
+			);
+			path = MemberDetailView;
+			sourceTree = "<group>";
+		};
+		A0B991EE27203D52005ECDD1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A0B991F127203FCD005ECDD1 /* MemberDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A0B991EF27203D53005ECDD1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A0B991F3272042C0005ECDD1 /* MemberDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A0B991F027203D55005ECDD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -368,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A008ADF0271B416700972B3F /* SectionDetailViewController.swift in Sources */,
+				A0B991F227203FCD005ECDD1 /* MemberDetailViewController.swift in Sources */,
 				A0B991EA271FED8B005ECDD1 /* GroupMemberUseCase.swift in Sources */,
 				A08363C3271C29650061CB67 /* GroupCell.swift in Sources */,
 				A008ADD7271B3F8D00972B3F /* MainViewController.swift in Sources */,
@@ -383,6 +422,7 @@
 				A0AF8A99271EB204009CEF82 /* Endpoint.swift in Sources */,
 				A0AF8A9B271EB20C009CEF82 /* NetworkService.swift in Sources */,
 				A0AF8A95271E8AB6009CEF82 /* Member.swift in Sources */,
+				A0B991F4272042C0005ECDD1 /* MemberDetailViewModel.swift in Sources */,
 				A0B991E7271FECAD005ECDD1 /* GroupMemberViewController.swift in Sources */,
 				A0B991E5271FEB85005ECDD1 /* GroupMemberViewCell.swift in Sources */,
 			);
