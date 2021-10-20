@@ -8,16 +8,24 @@
 import UIKit
 
 class GroupMemberViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var memberImage: UIImageView!
+    @IBOutlet weak var memberName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    func configureCell(memberActivityName: String, imageData: Data) {
+        self.backgroundColor = .clear
+        self.memberImage.image = UIImage(data: imageData)
+        self.memberName.text = memberActivityName
+        self.memberName.textAlignment = .center
+        self.memberName.textColor = .white
     }
 
 }
