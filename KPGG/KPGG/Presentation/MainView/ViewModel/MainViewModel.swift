@@ -12,7 +12,6 @@ import RxSwift
 protocol MainViewModelType {
     func fetch(path: String) -> Observable<[String:[Group]]>
     func configureGroups(_ groups: [String:[Group]])
-    func groupsCount() -> Int?
     func group(sectionName: String) -> [Group]?
     func groupsSubject() -> BehaviorSubject<[String:[Group]]>
 }
@@ -33,14 +32,6 @@ class MainViewModel: MainViewModelType {
     
     func configureGroups(_ groups: [String:[Group]]) {
         self.groups.onNext(groups)
-    }
-    
-    func groupsCount() -> Int? {
-        do {
-            return try self.groups.value().count
-        } catch {
-            return nil
-        }
     }
     
     func group(sectionName: String) -> [Group]? {
