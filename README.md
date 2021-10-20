@@ -165,6 +165,21 @@ UIStackView
 
 <img src="https://user-images.githubusercontent.com/61342175/138034336-5b3f55d4-41be-4437-9e87-4f8d3efff2d0.png" width = 250 align = center>
 
+대부분의 시간을 이미지 API 생성에 시간을 할애했습니다. 250명의 이미지를 이미지 무료 호스트 사이트에서 URL로 가져와 포스트맨 API에 입력했습니다.
+
+멤버 프로필을 볼 수 있는 화면을 생성했습니다. 아래는 현재까지 모습입니다.
+
+<img src="https://user-images.githubusercontent.com/61342175/138115501-294b0126-0d46-4552-a44e-8a28b85ecec2.png" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/138115528-055174df-5a64-48fd-b69c-e01ef50eeba2.png" width = 250 align = left>
+<img src="https://user-images.githubusercontent.com/61342175/138115539-a2c204fb-dd02-44f9-90e1-1d97a7cb138b.png" width = 250 align = left>
+<img src="https://user-images.githubusercontent.com/61342175/138115551-af8203ac-6bae-41a9-9af4-e13ebc269f28.png" width = 250 align = left>
+<img src="https://user-images.githubusercontent.com/61342175/138115562-9b3ab766-cfaf-4189-ad72-3f20dd0402dc.png" width = 250 align = center>
+
+
+
+
+
 
 
 
