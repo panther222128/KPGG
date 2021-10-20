@@ -19,10 +19,10 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.showMainViewController(with: MainViewModel())
-        subscribe()
         fetchGroups(path: "")
         configureHierarchy()
         setupDiffableDataSource()
+        subscribe()
     }
     
     private func subscribe()  {
@@ -70,7 +70,7 @@ class MainViewController: UIViewController {
             } else if sectionKind == .first {
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
@@ -80,7 +80,7 @@ class MainViewController: UIViewController {
             } else if sectionKind == .second {
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
@@ -90,7 +90,7 @@ class MainViewController: UIViewController {
             } else if sectionKind == .third {
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
@@ -100,7 +100,7 @@ class MainViewController: UIViewController {
             } else if sectionKind == .fourth {
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
@@ -110,7 +110,7 @@ class MainViewController: UIViewController {
             } else if sectionKind == .fifth {
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
@@ -120,7 +120,7 @@ class MainViewController: UIViewController {
             } else if sectionKind == .sixth {
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
@@ -130,7 +130,7 @@ class MainViewController: UIViewController {
             } else if sectionKind == .seventh {
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
@@ -146,9 +146,7 @@ class MainViewController: UIViewController {
     }
     
     private func setupDiffableDataSource() {
-        let mainCellRegistration = UICollectionView.CellRegistration<MainCell, Group> { cell, indexPath, item in
-            
-            cell.groupName.text = item.groupname
+        let mainCellRegistration = UICollectionView.CellRegistration<MainCell, Group> { cell, indexPath, group in
             cell.groupImage.image = UIImage(named: "hyojung")
             var background = UIBackgroundConfiguration.listPlainCell()
             background.cornerRadius = 0
@@ -156,8 +154,16 @@ class MainViewController: UIViewController {
             cell.backgroundConfiguration = background
         }
         
-        let cellRegistration = UICollectionView.CellRegistration<GroupCollectionViewCell, Group> { cell, indexPath, item in
-            cell.groupName.text = item.groupname
+        let cellRegistration = UICollectionView.CellRegistration<GroupCollectionViewCell, Group> { cell, indexPath, group in
+            let imageUrl = URL(string: group.groupimage)
+            var data = Data()
+            do {
+                data = try Data(contentsOf: imageUrl!)
+                cell.groupImage.image = UIImage(data: data)
+            } catch {
+                
+            }
+            cell.groupName.text = group.groupname
             cell.groupName.textColor = .white
             var background = UIBackgroundConfiguration.listPlainCell()
             background.cornerRadius = 8
@@ -166,66 +172,66 @@ class MainViewController: UIViewController {
         }
         
         source = UICollectionViewDiffableDataSource<Section, Group>(collectionView: section) {
-            (collectionView, indexPath, item) -> UICollectionViewCell? in
+            (collectionView, indexPath, group) -> UICollectionViewCell? in
             guard let section = Section(rawValue: indexPath.section) else { fatalError("Unknown section") }
             switch section {
             case .zero:
-                return collectionView.dequeueConfiguredReusableCell(using: mainCellRegistration, for: indexPath, item: item)
+                return collectionView.dequeueConfiguredReusableCell(using: mainCellRegistration, for: indexPath, item: group)
             case .first:
-                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: group)
             case .second:
-                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: group)
             case .third:
-                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: group)
             case .fourth:
-                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: group)
             case .fifth:
-                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: group)
             case .sixth:
-                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: group)
             case .seventh:
-                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: group)
             }
         }
     }
     
     private func applySectionSnaphots() {
-        if let selectedGroupList = self.mainViewModel?.group(sectionName: "zero")?.first {
+        if let selectedGroupList = self.mainViewModel?.group(sectionName: Section.zero.description)?.first {
             var zeroSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
             zeroSnapShot.append([selectedGroupList])
             source.apply(zeroSnapShot, to: .zero, animatingDifferences: false)
         }
-        if let selectedGroupList = self.mainViewModel?.group(sectionName: "first") {
+        if let selectedGroupList = self.mainViewModel?.group(sectionName: Section.first.description) {
             var firstSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
             firstSnapShot.append(selectedGroupList)
             source.apply(firstSnapShot, to: .first, animatingDifferences: false)
         }
-        if let selectedGroupList = self.mainViewModel?.group(sectionName: "second") {
+        if let selectedGroupList = self.mainViewModel?.group(sectionName: Section.second.description) {
             var secondSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
             secondSnapShot.append(selectedGroupList)
             source.apply(secondSnapShot, to: .second, animatingDifferences: false)
         }
-        if let selectedGroupList = self.mainViewModel?.group(sectionName: "third") {
+        if let selectedGroupList = self.mainViewModel?.group(sectionName: Section.third.description) {
             var thirdSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
             thirdSnapShot.append(selectedGroupList)
             source.apply(thirdSnapShot, to: .third, animatingDifferences: false)
         }
-        if let selectedGroupList = self.mainViewModel?.group(sectionName: "fourth") {
+        if let selectedGroupList = self.mainViewModel?.group(sectionName: Section.fourth.description) {
             var fourthSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
             fourthSnapShot.append(selectedGroupList)
             source.apply(fourthSnapShot, to: .fourth, animatingDifferences: false)
         }
-        if let selectedGroupList = self.mainViewModel?.group(sectionName: "fifth") {
+        if let selectedGroupList = self.mainViewModel?.group(sectionName: Section.fifth.description) {
             var fifthSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
             fifthSnapShot.append(selectedGroupList)
             source.apply(fifthSnapShot, to: .fifth, animatingDifferences: false)
         }
-        if let selectedGroupList = self.mainViewModel?.group(sectionName: "sixth") {
+        if let selectedGroupList = self.mainViewModel?.group(sectionName: Section.sixth.description) {
             var sixthSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
             sixthSnapShot.append(selectedGroupList)
             source.apply(sixthSnapShot, to: .sixth, animatingDifferences: false)
         }
-        if let selectedGroupList = self.mainViewModel?.group(sectionName: "seventh") {
+        if let selectedGroupList = self.mainViewModel?.group(sectionName: Section.seventh.description) {
             var seventhSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
             seventhSnapShot.append(selectedGroupList)
             source.apply(seventhSnapShot, to: .seventh, animatingDifferences: false)
