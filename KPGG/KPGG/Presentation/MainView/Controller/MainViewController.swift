@@ -22,6 +22,7 @@ class MainViewController: UIViewController {
         fetchGroups(path: "")
         configureHierarchy()
         setupDiffableDataSource()
+        section.delegate = self
         subscribe()
     }
     
@@ -74,7 +75,7 @@ class MainViewController: UIViewController {
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
-                section.interGroupSpacing = 10
+                section.interGroupSpacing = 2
                 section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
                 section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 10)
             } else if sectionKind == .second {
@@ -84,7 +85,7 @@ class MainViewController: UIViewController {
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
-                section.interGroupSpacing = 10
+                section.interGroupSpacing = 2
                 section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
                 section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 10)
             } else if sectionKind == .third {
@@ -94,7 +95,7 @@ class MainViewController: UIViewController {
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
-                section.interGroupSpacing = 10
+                section.interGroupSpacing = 2
                 section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
                 section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 10)
             } else if sectionKind == .fourth {
@@ -104,7 +105,7 @@ class MainViewController: UIViewController {
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
-                section.interGroupSpacing = 10
+                section.interGroupSpacing = 2
                 section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
                 section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 10)
             } else if sectionKind == .fifth {
@@ -114,7 +115,7 @@ class MainViewController: UIViewController {
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
-                section.interGroupSpacing = 10
+                section.interGroupSpacing = 2
                 section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
                 section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 10)
             } else if sectionKind == .sixth {
@@ -124,17 +125,18 @@ class MainViewController: UIViewController {
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
-                section.interGroupSpacing = 10
+                section.interGroupSpacing = 2
                 section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
                 section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 10)
             } else if sectionKind == .seventh {
+                
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 section = NSCollectionLayoutSection(group: group)
-                section.interGroupSpacing = 10
+                section.interGroupSpacing = 2
                 section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
                 section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 10)
             } else {
@@ -154,7 +156,7 @@ class MainViewController: UIViewController {
             cell.backgroundConfiguration = background
         }
         
-        let cellRegistration = UICollectionView.CellRegistration<GroupCollectionViewCell, Group> { cell, indexPath, group in
+        let cellRegistration = UICollectionView.CellRegistration<GroupCell, Group> { cell, indexPath, group in
             let imageUrl = URL(string: group.groupimage)
             var data = Data()
             do {
@@ -243,3 +245,17 @@ class MainViewController: UIViewController {
     }
     
 }
+
+extension MainViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let groupName = self.source.itemIdentifier(for: indexPath)?.groupname else {
+            section.deselectItem(at: indexPath, animated: true)
+            return
+        }
+        guard let groupMemberViewController = self.storyboard?.instantiateViewController(withIdentifier: "GroupMember") as? GroupMemberViewController else { return }
+        groupMemberViewController.showGroupMemberViewController(with: GroupMemberViewModel(groupName: groupName))
+        self.navigationController?.pushViewController(groupMemberViewController, animated: true)
+        print("GROUPNAME \(groupName)")
+    }
+}
+
