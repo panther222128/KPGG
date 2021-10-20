@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GroupCollectionViewCell: UICollectionViewCell {
+class GroupCell: UICollectionViewCell {
     
     var groupImage: UIImageView!
     var groupName: UILabel!
