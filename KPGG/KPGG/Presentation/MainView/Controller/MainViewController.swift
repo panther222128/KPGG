@@ -255,7 +255,6 @@ extension MainViewController: UICollectionViewDelegate {
         guard let groupMemberViewController = self.storyboard?.instantiateViewController(withIdentifier: "GroupMember") as? GroupMemberViewController else { return }
         groupMemberViewController.showGroupMemberViewController(with: GroupMemberViewModel(groupName: groupName))
         self.navigationController?.pushViewController(groupMemberViewController, animated: true)
-        print("GROUPNAME \(groupName)")
     }
 }
 
