@@ -17,7 +17,7 @@
 		A008ADEB271B402A00972B3F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A008ADEA271B402A00972B3F /* MainViewModel.swift */; };
 		A008ADF0271B416700972B3F /* SectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A008ADEF271B416700972B3F /* SectionDetailViewController.swift */; };
 		A008ADF2271B440A00972B3F /* SectionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A008ADF1271B440A00972B3F /* SectionDetailViewModel.swift */; };
-		A08363C3271C29650061CB67 /* GroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08363C2271C29650061CB67 /* GroupCollectionViewCell.swift */; };
+		A08363C3271C29650061CB67 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08363C2271C29650061CB67 /* GroupCell.swift */; };
 		A08363C5271C64010061CB67 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08363C4271C64010061CB67 /* Group.swift */; };
 		A0ADB54D271DF31B00996110 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0ADB54C271DF31B00996110 /* MainCell.swift */; };
 		A0AF8A95271E8AB6009CEF82 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AF8A94271E8AB6009CEF82 /* Member.swift */; };
@@ -27,6 +27,10 @@
 		A0AF8AA2271EE08D009CEF82 /* MainUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AF8AA1271EE08D009CEF82 /* MainUseCase.swift */; };
 		A0AF8AA5271EE0AA009CEF82 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A0AF8AA4271EE0AA009CEF82 /* RxCocoa */; };
 		A0AF8AA7271EE0AA009CEF82 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A0AF8AA6271EE0AA009CEF82 /* RxSwift */; };
+		A0B991E5271FEB85005ECDD1 /* GroupMemberViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B991E4271FEB85005ECDD1 /* GroupMemberViewCell.swift */; };
+		A0B991E7271FECAD005ECDD1 /* GroupMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B991E6271FECAD005ECDD1 /* GroupMemberViewController.swift */; };
+		A0B991EA271FED8B005ECDD1 /* GroupMemberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B991E9271FED8B005ECDD1 /* GroupMemberUseCase.swift */; };
+		A0B991EC271FF4AF005ECDD1 /* GroupMemberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B991EB271FF4AF005ECDD1 /* GroupMemberViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,13 +46,17 @@
 		A008ADEA271B402A00972B3F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		A008ADEF271B416700972B3F /* SectionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetailViewController.swift; sourceTree = "<group>"; };
 		A008ADF1271B440A00972B3F /* SectionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetailViewModel.swift; sourceTree = "<group>"; };
-		A08363C2271C29650061CB67 /* GroupCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCollectionViewCell.swift; sourceTree = "<group>"; };
+		A08363C2271C29650061CB67 /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		A08363C4271C64010061CB67 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		A0ADB54C271DF31B00996110 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		A0AF8A94271E8AB6009CEF82 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		A0AF8A98271EB204009CEF82 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		A0AF8A9A271EB20C009CEF82 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A0AF8AA1271EE08D009CEF82 /* MainUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUseCase.swift; sourceTree = "<group>"; };
+		A0B991E4271FEB85005ECDD1 /* GroupMemberViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberViewCell.swift; sourceTree = "<group>"; };
+		A0B991E6271FECAD005ECDD1 /* GroupMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberViewController.swift; sourceTree = "<group>"; };
+		A0B991E9271FED8B005ECDD1 /* GroupMemberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberUseCase.swift; sourceTree = "<group>"; };
+		A0B991EB271FF4AF005ECDD1 /* GroupMemberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				A08363B9271C14C00061CB67 /* MainView */,
+				A0B991E0271FEB39005ECDD1 /* GroupMemberView */,
 				A08363BA271C14DA0061CB67 /* SectionDetailView */,
 			);
 			path = Presentation;
@@ -111,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				A0AF8A9F271EB3E4009CEF82 /* MainViewUseCase */,
+				A0B991E8271FED68005ECDD1 /* GroupMemberUseCase */,
 				A0AF8AA0271EB3EE009CEF82 /* SectionDetailViewUseCase */,
 			);
 			path = UseCase;
@@ -154,7 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				A0ADB54C271DF31B00996110 /* MainCell.swift */,
-				A08363C2271C29650061CB67 /* GroupCollectionViewCell.swift */,
+				A08363C2271C29650061CB67 /* GroupCell.swift */,
 				A004CEC5271D539300AAF13F /* SectionEnum.swift */,
 			);
 			path = View;
@@ -233,6 +243,48 @@
 			children = (
 			);
 			path = SectionDetailViewUseCase;
+			sourceTree = "<group>";
+		};
+		A0B991E0271FEB39005ECDD1 /* GroupMemberView */ = {
+			isa = PBXGroup;
+			children = (
+				A0B991E3271FEB5C005ECDD1 /* View */,
+				A0B991E2271FEB5A005ECDD1 /* ViewModel */,
+				A0B991E1271FEB57005ECDD1 /* Controller */,
+			);
+			path = GroupMemberView;
+			sourceTree = "<group>";
+		};
+		A0B991E1271FEB57005ECDD1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A0B991E6271FECAD005ECDD1 /* GroupMemberViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A0B991E2271FEB5A005ECDD1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A0B991EB271FF4AF005ECDD1 /* GroupMemberViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A0B991E3271FEB5C005ECDD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A0B991E4271FEB85005ECDD1 /* GroupMemberViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A0B991E8271FED68005ECDD1 /* GroupMemberUseCase */ = {
+			isa = PBXGroup;
+			children = (
+				A0B991E9271FED8B005ECDD1 /* GroupMemberUseCase.swift */,
+			);
+			path = GroupMemberUseCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,10 +368,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A008ADF0271B416700972B3F /* SectionDetailViewController.swift in Sources */,
-				A08363C3271C29650061CB67 /* GroupCollectionViewCell.swift in Sources */,
+				A0B991EA271FED8B005ECDD1 /* GroupMemberUseCase.swift in Sources */,
+				A08363C3271C29650061CB67 /* GroupCell.swift in Sources */,
 				A008ADD7271B3F8D00972B3F /* MainViewController.swift in Sources */,
 				A08363C5271C64010061CB67 /* Group.swift in Sources */,
 				A0ADB54D271DF31B00996110 /* MainCell.swift in Sources */,
+				A0B991EC271FF4AF005ECDD1 /* GroupMemberViewModel.swift in Sources */,
 				A008ADD3271B3F8D00972B3F /* AppDelegate.swift in Sources */,
 				A004CEC6271D539300AAF13F /* SectionEnum.swift in Sources */,
 				A008ADF2271B440A00972B3F /* SectionDetailViewModel.swift in Sources */,
@@ -329,6 +383,8 @@
 				A0AF8A99271EB204009CEF82 /* Endpoint.swift in Sources */,
 				A0AF8A9B271EB20C009CEF82 /* NetworkService.swift in Sources */,
 				A0AF8A95271E8AB6009CEF82 /* Member.swift in Sources */,
+				A0B991E7271FECAD005ECDD1 /* GroupMemberViewController.swift in Sources */,
+				A0B991E5271FEB85005ECDD1 /* GroupMemberViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
