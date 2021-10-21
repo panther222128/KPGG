@@ -176,10 +176,10 @@ UIStackView
 <img src="https://user-images.githubusercontent.com/61342175/138115551-af8203ac-6bae-41a9-9af4-e13ebc269f28.png" width = 250 align = left>
 <img src="https://user-images.githubusercontent.com/61342175/138115562-9b3ab766-cfaf-4189-ad72-3f20dd0402dc.png" width = 250 align = center>
 
+## 2021.10.21
 
+새벽에 스크린의 디테일을 수정하려고 했으나 포스트맨 요청 수 제한 문제로 새로운 API가 필요했고, 파이썬 웹 프레임워크 플라스크를 시도해서 어느 정도 구축할 수 있었습니다. 그러나 https로 만들어야 하는 등 더 알아보려면 시간이 많이 걸릴 것 같아 더 간단하게 사용할 수 있는 Open API 서비스를 찾기 시작했습니다. Stoplight.io를 사용해서 다시 API를 구축했는데, 여기서 대부분의 시간을 소모했습니다.
 
+첫 스크린 섹션에 헤더를 붙이려고 시도했는데, 여러 가지 방법이 있는 것 같습니다. 'DiffableDataSource'를 사용하고 있기 때문에 여기서 찾을 수 있는 것으로 사용하려고 했으나 이미 구현한 것이 리스트 형태이며, 헤더를 셀로 구현해야 하는 것으로 파악했습니다. 참고할 수 있는 링크를 아래에 남기겠습니다.
 
-
-
-
-
+<https://github.com/LeeKahSeng/SwiftSenpai-UICollectionView-List>
