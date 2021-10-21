@@ -29,7 +29,6 @@ class NetworkService {
                     return completion(nil, list)
                 }
             }
-      print(url!)
     }
     
 }

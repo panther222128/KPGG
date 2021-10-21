@@ -12,8 +12,6 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var section: UICollectionView!
     
-    static let sectionHeaderIdentifier = "headerReuseIdentifier"
-    
     private var mainViewModel: MainViewModelType?
     private var source: UICollectionViewDiffableDataSource<Section, Group>!
     private var disposeBag = DisposeBag()
@@ -150,15 +148,6 @@ class MainViewController: UIViewController {
     }
     
     private func setupDiffableDataSource() {
-        let headerRegistration = UICollectionView.SupplementaryRegistration
-        <SectionHeader>(elementKind: MainViewController.sectionHeaderIdentifier) {
-            (supplementaryView, string, indexPath) in
-            supplementaryView.label.text = "\(string) for section \(indexPath.section)"
-            supplementaryView.backgroundColor = .lightGray
-            supplementaryView.layer.borderColor = UIColor.black.cgColor
-            supplementaryView.layer.borderWidth = 1.0
-        }
-        
         let mainCellRegistration = UICollectionView.CellRegistration<MainCell, Group> { cell, indexPath, group in
             cell.groupImage.image = UIImage(named: "hyojung")
             var background = UIBackgroundConfiguration.listPlainCell()
@@ -205,10 +194,6 @@ class MainViewController: UIViewController {
             case .seventh:
                 return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: group)
             }
-        }
-        
-        source.supplementaryViewProvider = { (view, kind, index) in
-            return self.section.dequeueConfiguredReusableSupplementary(using: headerRegistration, for: index)
         }
     }
     
