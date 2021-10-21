@@ -169,11 +169,11 @@ UIStackView
 
 멤버 프로필을 볼 수 있는 화면을 생성했습니다. 아래는 현재까지 모습입니다.
 
-<img src="https://user-images.githubusercontent.com/61342175/138115501-294b0126-0d46-4552-a44e-8a28b85ecec2.png" width = 250 align = left>
+<img src="https://user-images.githubusercontent.com/61342175/138115501-294b0126-0d46-4552-a44e-8a28b85ecec2.png" width = 250 align = center>
 
-<img src="https://user-images.githubusercontent.com/61342175/138115528-055174df-5a64-48fd-b69c-e01ef50eeba2.png" width = 250 align = left>
-<img src="https://user-images.githubusercontent.com/61342175/138115539-a2c204fb-dd02-44f9-90e1-1d97a7cb138b.png" width = 250 align = left>
-<img src="https://user-images.githubusercontent.com/61342175/138115551-af8203ac-6bae-41a9-9af4-e13ebc269f28.png" width = 250 align = left>
+<img src="https://user-images.githubusercontent.com/61342175/138115528-055174df-5a64-48fd-b69c-e01ef50eeba2.png" width = 250 align = center>
+<img src="https://user-images.githubusercontent.com/61342175/138115539-a2c204fb-dd02-44f9-90e1-1d97a7cb138b.png" width = 250 align = center>
+<img src="https://user-images.githubusercontent.com/61342175/138115551-af8203ac-6bae-41a9-9af4-e13ebc269f28.png" width = 250 align = center>
 <img src="https://user-images.githubusercontent.com/61342175/138115562-9b3ab766-cfaf-4189-ad72-3f20dd0402dc.png" width = 250 align = center>
 
 ## 2021.10.21
