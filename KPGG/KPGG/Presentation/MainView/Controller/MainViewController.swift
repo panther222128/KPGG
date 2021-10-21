@@ -16,6 +16,8 @@ class MainViewController: UIViewController {
     private var source: UICollectionViewDiffableDataSource<Section, Group>!
     private var disposeBag = DisposeBag()
     
+    static let sectionHeaderElementKind = "SectionHeader"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.showMainViewController(with: MainViewModel())
@@ -60,7 +62,8 @@ class MainViewController: UIViewController {
         let sectionProvider = { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             guard let sectionKind = Section(rawValue: sectionIndex) else { return nil }
             let section: NSCollectionLayoutSection
-            if sectionKind == .zero {
+            switch sectionKind {
+            case .zero:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
@@ -69,78 +72,20 @@ class MainViewController: UIViewController {
                 section = NSCollectionLayoutSection(group: group)
                 section.interGroupSpacing = 0
                 section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-            } else if sectionKind == .first {
+            default:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+                let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(35)),elementKind: MainViewController.sectionHeaderElementKind, alignment: .top)
+                sectionHeader.pinToVisibleBounds = true
+                sectionHeader.zIndex = 2
                 section = NSCollectionLayoutSection(group: group)
+                section.boundarySupplementaryItems = [sectionHeader]
                 section.interGroupSpacing = 2
                 section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
                 section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 10)
-            } else if sectionKind == .second {
-                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-                let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-                section = NSCollectionLayoutSection(group: group)
-                section.interGroupSpacing = 2
-                section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-                section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 10)
-            } else if sectionKind == .third {
-                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-                let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-                section = NSCollectionLayoutSection(group: group)
-                section.interGroupSpacing = 2
-                section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-                section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 10)
-            } else if sectionKind == .fourth {
-                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-                let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-                section = NSCollectionLayoutSection(group: group)
-                section.interGroupSpacing = 2
-                section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-                section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 10)
-            } else if sectionKind == .fifth {
-                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-                let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-                section = NSCollectionLayoutSection(group: group)
-                section.interGroupSpacing = 2
-                section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-                section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 10)
-            } else if sectionKind == .sixth {
-                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-                let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-                section = NSCollectionLayoutSection(group: group)
-                section.interGroupSpacing = 2
-                section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-                section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 10)
-            } else if sectionKind == .seventh {
-                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-                let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.35))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-                section = NSCollectionLayoutSection(group: group)
-                section.interGroupSpacing = 2
-                section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-                section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 10)
-            } else {
-                fatalError("Unknown section!")
             }
             return section
         }
@@ -148,6 +93,24 @@ class MainViewController: UIViewController {
     }
     
     private func setupDiffableDataSource() {
+        let headerRegistration = UICollectionView.SupplementaryRegistration <SectionHeader>(elementKind: MainViewController.sectionHeaderElementKind) { supplementaryView, string, indexPath in
+            if indexPath == [1, 0] {
+                supplementaryView.sectionTitle.text = "2020년 데뷔"
+            } else if indexPath == [2, 0] {
+                supplementaryView.sectionTitle.text = "2016~2019년 데뷔"
+            } else if indexPath == [3, 0] {
+                supplementaryView.sectionTitle.text = "2014~2015년 데뷔"
+            } else if indexPath == [4, 0] {
+                supplementaryView.sectionTitle.text = "2012~2013년 데뷔"
+            } else if indexPath == [5, 0] {
+                supplementaryView.sectionTitle.text = "2010~2011년 데뷔"
+            } else if indexPath == [6, 0] {
+                supplementaryView.sectionTitle.text = "2009년 데뷔"
+            } else if indexPath == [7, 0] {
+                supplementaryView.sectionTitle.text = "2006~2008년 데뷔"
+            }
+        }
+        
         let mainCellRegistration = UICollectionView.CellRegistration<MainCell, Group> { cell, indexPath, group in
             cell.groupImage.image = UIImage(named: "hyojung")
             var background = UIBackgroundConfiguration.listPlainCell()
@@ -166,7 +129,6 @@ class MainViewController: UIViewController {
                 
             }
             cell.groupName.text = group.groupname
-            cell.groupName.textColor = .white
             var background = UIBackgroundConfiguration.listPlainCell()
             background.cornerRadius = 8
             background.backgroundColor = .black
@@ -179,22 +141,15 @@ class MainViewController: UIViewController {
             switch section {
             case .zero:
                 return collectionView.dequeueConfiguredReusableCell(using: mainCellRegistration, for: indexPath, item: group)
-            case .first:
-                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: group)
-            case .second:
-                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: group)
-            case .third:
-                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: group)
-            case .fourth:
-                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: group)
-            case .fifth:
-                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: group)
-            case .sixth:
-                return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: group)
-            case .seventh:
+            default:
                 return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: group)
             }
         }
+        
+        source.supplementaryViewProvider = { (view, kind, index) in
+            return self.section.dequeueConfiguredReusableSupplementary(using: headerRegistration, for: index)
+        }
+        
     }
     
     private func applySectionSnaphots() {
@@ -262,4 +217,3 @@ extension MainViewController: UICollectionViewDelegate {
         self.navigationController?.pushViewController(groupMemberViewController, animated: true)
     }
 }
-
