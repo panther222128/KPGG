@@ -37,12 +37,11 @@ class GroupCell: UICollectionViewCell {
         
         groupName.translatesAutoresizingMaskIntoConstraints = false
         groupName.textAlignment = .center
+        groupName.textColor = .systemGray
         groupName.topAnchor.constraint(equalTo: groupImage.bottomAnchor, constant: 0).isActive = true
         groupName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0).isActive = true
         groupName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0).isActive = true
         groupName.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
-        
-        
     }
     
 }
