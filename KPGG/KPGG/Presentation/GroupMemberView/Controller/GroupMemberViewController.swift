@@ -19,6 +19,7 @@ class GroupMemberViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewConfiguration()
+        configureNavigation()
         configureGroupMember()
         configureRepresentativeSongButton()
         subscribe()
@@ -58,6 +59,13 @@ class GroupMemberViewController: UIViewController {
     
     private func configureRepresentativeSongButton() {
         representativeSongButton.titleLabel?.text = "대표곡 듣기"
+    }
+    
+    private func configureNavigation() {
+        guard let groupMemberViewModel = groupMemberViewModel else { return }
+        self.navigationItem.title = groupMemberViewModel.groupNameReturn()
+        self.navigationItem.backButtonTitle = " "
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
     
     func showGroupMemberViewController(with viewModel: GroupMemberViewModelType) {
