@@ -20,3 +20,5 @@ struct Member: Codable, Hashable {
     let mainimage: String
     let ispreviousmember: Bool
 }
+
+
