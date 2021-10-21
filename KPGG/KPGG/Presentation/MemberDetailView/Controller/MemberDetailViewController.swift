@@ -32,6 +32,7 @@ class MemberDetailViewController: UIViewController {
         configureElementTitle()
         configureElement()
         configureImage()
+        configureNavigation()
         viewConfiguration()
     }
     
@@ -51,18 +52,26 @@ class MemberDetailViewController: UIViewController {
     }
     
     private func configureElement() {
-        self.activityName.text = memberDetailViewModel?.activityName()
-        self.name.text = memberDetailViewModel?.name()
-        self.birth.text = memberDetailViewModel?.birth()
-        self.mbti.text = memberDetailViewModel?.mbti()
-        self.bloodType.text = memberDetailViewModel?.bloodType()
-        self.isPreviousMember.text = memberDetailViewModel?.isPreviousMember()
-        self.activityName.textColor = .white
-        self.name.textColor = .white
-        self.birth.textColor = .white
-        self.mbti.textColor = .white
-        self.bloodType.textColor = .white
-        self.isPreviousMember.textColor = .white
+        guard let memberDetailViewModel = memberDetailViewModel else { return }
+        self.activityName.text = "\t\(memberDetailViewModel.activityName())"
+        self.name.text = "\t\(memberDetailViewModel.name())"
+        self.birth.text = "\t\(memberDetailViewModel.birth())"
+        self.mbti.text = "\t\(memberDetailViewModel.mbti())"
+        self.bloodType.text = "\t\(memberDetailViewModel.bloodType())"
+        self.isPreviousMember.text = "\t\(memberDetailViewModel.isPreviousMember())"
+        self.activityName.textColor = .systemGray
+        self.name.textColor = .systemGray
+        self.birth.textColor = .systemGray
+        self.mbti.textColor = .systemGray
+        self.bloodType.textColor = .systemGray
+        self.isPreviousMember.textColor = .systemGray
+    }
+    
+    private func configureNavigation() {
+        guard let memberDetailViewModel = memberDetailViewModel else { return }
+        self.navigationItem.title = memberDetailViewModel.activityName()
+        self.navigationItem.backButtonTitle = " "
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
     
     private func configureImage() {

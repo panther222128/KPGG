@@ -12,6 +12,8 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var section: UICollectionView!
     
+    static let sectionHeaderIdentifier = "headerReuseIdentifier"
+    
     private var mainViewModel: MainViewModelType?
     private var source: UICollectionViewDiffableDataSource<Section, Group>!
     private var disposeBag = DisposeBag()
@@ -24,6 +26,7 @@ class MainViewController: UIViewController {
         setupDiffableDataSource()
         section.delegate = self
         subscribe()
+        configureNavigation()
     }
     
     private func subscribe()  {
@@ -129,7 +132,6 @@ class MainViewController: UIViewController {
                 section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
                 section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 10)
             } else if sectionKind == .seventh {
-                
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
@@ -148,6 +150,15 @@ class MainViewController: UIViewController {
     }
     
     private func setupDiffableDataSource() {
+        let headerRegistration = UICollectionView.SupplementaryRegistration
+        <SectionHeader>(elementKind: MainViewController.sectionHeaderIdentifier) {
+            (supplementaryView, string, indexPath) in
+            supplementaryView.label.text = "\(string) for section \(indexPath.section)"
+            supplementaryView.backgroundColor = .lightGray
+            supplementaryView.layer.borderColor = UIColor.black.cgColor
+            supplementaryView.layer.borderWidth = 1.0
+        }
+        
         let mainCellRegistration = UICollectionView.CellRegistration<MainCell, Group> { cell, indexPath, group in
             cell.groupImage.image = UIImage(named: "hyojung")
             var background = UIBackgroundConfiguration.listPlainCell()
@@ -195,6 +206,10 @@ class MainViewController: UIViewController {
                 return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: group)
             }
         }
+        
+        source.supplementaryViewProvider = { (view, kind, index) in
+            return self.section.dequeueConfiguredReusableSupplementary(using: headerRegistration, for: index)
+        }
     }
     
     private func applySectionSnaphots() {
@@ -238,6 +253,11 @@ class MainViewController: UIViewController {
             seventhSnapShot.append(selectedGroupList)
             source.apply(seventhSnapShot, to: .seventh, animatingDifferences: false)
         }
+    }
+    
+    private func configureNavigation() {
+        self.navigationItem.backButtonTitle = " "
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
     
     func showMainViewController(with viewModel: MainViewModelType) {
