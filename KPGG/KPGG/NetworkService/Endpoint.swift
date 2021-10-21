@@ -12,11 +12,11 @@ enum Scheme: String {
 }
 
 enum Host: String {
-    case base = "544a9ef9-2c3c-441a-824b-97788c0761e8.mock.pstmn.io"
+    case base = "stoplight.io"
 }
 
 enum Path: String {
-    case basePath = "/omgtest/main/group/"
+    case basePath = "/mocks/panther222128/kpgg/25039489/group/"
 }
 
 struct Endpoint {
@@ -30,3 +30,6 @@ struct Endpoint {
     }
     
 }
+
+
+
