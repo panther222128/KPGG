@@ -180,6 +180,13 @@ UIStackView
 
 새벽에 스크린의 디테일을 수정하려고 했으나 포스트맨 요청 수 제한 문제로 새로운 API가 필요했고, 파이썬 웹 프레임워크 플라스크를 시도해서 어느 정도 구축할 수 있었습니다. 그러나 https로 만들어야 하는 등 더 알아보려면 시간이 많이 걸릴 것 같아 더 간단하게 사용할 수 있는 Open API 서비스를 찾기 시작했습니다. Stoplight.io를 사용해서 다시 API를 구축했는데, 여기서 대부분의 시간을 소모했습니다.
 
+연도별 전체
+<https://stoplight.io/mocks/panther222128/kpgg/25039489/group/>
+
+연도별 각 걸그룹(/group/(영문 그룹 이름, ohmygirl 등))
+예시1: <https://stoplight.io/mocks/panther222128/kpgg/25039489/group/STAYC>
+예시2: <https://stoplight.io/mocks/panther222128/kpgg/25039489/group/OHMYGIRL>
+
 첫 스크린 섹션에 헤더를 붙이려고 시도했는데, 여러 가지 방법이 있는 것 같습니다. 'DiffableDataSource'를 사용하고 있기 때문에 여기서 찾을 수 있는 것으로 사용하려고 했으나 이미 구현한 것이 리스트 형태이며, 헤더를 셀로 구현해야 하는 것으로 파악했습니다. 참고할 수 있는 링크를 아래에 남기겠습니다.
 
 <https://github.com/LeeKahSeng/SwiftSenpai-UICollectionView-List>
