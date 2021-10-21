@@ -183,3 +183,16 @@ UIStackView
 첫 스크린 섹션에 헤더를 붙이려고 시도했는데, 여러 가지 방법이 있는 것 같습니다. 'DiffableDataSource'를 사용하고 있기 때문에 여기서 찾을 수 있는 것으로 사용하려고 했으나 이미 구현한 것이 리스트 형태이며, 헤더를 셀로 구현해야 하는 것으로 파악했습니다. 참고할 수 있는 링크를 아래에 남기겠습니다.
 
 <https://github.com/LeeKahSeng/SwiftSenpai-UICollectionView-List>
+
+## 2021.10.22
+
+새벽에 디테일 수정 및 리팩토링이 있었습니다. 현재 화면은 아래와 같습니다.
+
+<img src="https://user-images.githubusercontent.com/61342175/138335474-470be8a0-5448-4009-b1be-b413d45f3d3f.png" width = 250 align = center>
+
+<img src="https://user-images.githubusercontent.com/61342175/138335507-b364e1de-52df-4dd3-be39-43268848ec0a.png" width = 250 align = center>
+
+<img src="https://user-images.githubusercontent.com/61342175/138335516-fd520bfa-056f-4048-817a-95206566fca8.png" width = 250 align = center>
+
+<img src="https://user-images.githubusercontent.com/61342175/138335528-6f5977bc-2200-4035-bf81-32fcfa131208.png" width = 250 align = center>
+
