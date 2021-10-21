@@ -32,6 +32,7 @@ class MainUseCase: MainUseCaseType {
                 }
                 observer.onCompleted()
             }
+            
             return Disposables.create()
         }
     }
