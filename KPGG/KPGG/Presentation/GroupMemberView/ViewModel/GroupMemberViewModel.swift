@@ -15,6 +15,7 @@ protocol GroupMemberViewModelType {
     func member() -> [Member]?
     func membersCount() -> Int?
     func membersSubject() -> BehaviorSubject<[String:[Member]]>
+    func groupNameReturn() -> String
 }
 
 class GroupMemberViewModel: GroupMemberViewModelType {
@@ -55,6 +56,10 @@ class GroupMemberViewModel: GroupMemberViewModelType {
     
     func membersSubject() -> BehaviorSubject<[String:[Member]]> {
         return self.members
+    }
+    
+    func groupNameReturn() -> String {
+        return self.groupName
     }
     
 }
