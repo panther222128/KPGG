@@ -6,9 +6,9 @@
 
 첫 스크린이며 가장 상위에 있는 가장 큰 셀 선택 시 해당 그룹의 멤버 리스트를 보여줍니다. 멤버 리스트를 스크롤하다가 특정 멤버의 프로필을 확인할 수 있으며, 해당 멤버의 프로필은 스크롤로 아래의 내용까지 확인할 수 있습니다.
 
-<img src="https://user-images.githubusercontent.com/61342175/138507008-11f28509-5440-464b-998a-b84179bcf686.png" width = 250 align = left>
+<img src="https://user-images.githubusercontent.com/61342175/138507008-11f28509-5440-464b-998a-b84179bcf686.png" width = 250 align = center>
 
-<img src="https://user-images.githubusercontent.com/61342175/138509707-4b75fc22-6e05-423f-a704-ffb049450f1b.png)" width = 250 align = left>
+<img src="https://user-images.githubusercontent.com/61342175/138509707-4b75fc22-6e05-423f-a704-ffb049450f1b.png)" width = 250 align = center>
 
 <img src="https://user-images.githubusercontent.com/61342175/138507065-04cb171b-0bf0-40a4-9db0-b6f26b7692c8.png" width = 250 align = center>
 
