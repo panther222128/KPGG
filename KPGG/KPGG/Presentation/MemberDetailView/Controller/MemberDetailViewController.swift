@@ -70,8 +70,9 @@ class MemberDetailViewController: UIViewController {
     private func configureNavigation() {
         guard let memberDetailViewModel = memberDetailViewModel else { return }
         self.navigationItem.title = memberDetailViewModel.activityName()
-        self.navigationItem.backButtonTitle = " "
+        self.navigationItem.backButtonTitle = "   "
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = .systemBlue
     }
     
     private func configureImage() {
