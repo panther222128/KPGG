@@ -16,6 +16,7 @@ protocol GroupMemberViewModelType {
     func membersCount() -> Int?
     func membersSubject() -> BehaviorSubject<[String:[Member]]>
     func groupNameReturn() -> String
+    func groupHitSongReturn() -> String
 }
 
 class GroupMemberViewModel: GroupMemberViewModelType {
@@ -23,11 +24,13 @@ class GroupMemberViewModel: GroupMemberViewModelType {
     private let useCase: GroupMemberUseCaseType
     private var members: BehaviorSubject<[String:[Member]]>
     private var groupName: String
+    private var groupHitSong: String
     
-    init(groupName: String) {
+    init(groupName: String, groupHitSong: String) {
         self.useCase = GroupMemberUseCase()
         self.members = BehaviorSubject<[String:[Member]]>(value: [:])
         self.groupName = groupName
+        self.groupHitSong = groupHitSong
     }
     
     func fetch() -> Observable<[String:[Member]]> {
@@ -60,6 +63,10 @@ class GroupMemberViewModel: GroupMemberViewModelType {
     
     func groupNameReturn() -> String {
         return self.groupName
+    }
+    
+    func groupHitSongReturn() -> String {
+        return self.groupHitSong
     }
     
 }
