@@ -16,7 +16,7 @@
 
 <img src="https://user-images.githubusercontent.com/61342175/138486755-6619a2db-86e8-4ce4-be10-ce5b4d3c7e4d.png" width = 250 align = left>
 
-<img src="https://user-images.githubusercontent.com/61342175/138486769-e4665b9a-a6b2-45b7-8855-1866e8733975.png" width = 250 align = left>
+<img src="https://user-images.githubusercontent.com/61342175/138486769-e4665b9a-a6b2-45b7-8855-1866e8733975.png" width = 250 align = center>
 
 ## 대표곡 뮤직비디오 재생 스크린
 
