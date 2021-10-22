@@ -16,7 +16,9 @@
 
 메인 셀에 해당하는 그룹을 보여주며, 해당 그룹의 멤버를 선택하면 멤버의 간단한 프로필을 볼 수 있습니다.
 
-<img src="https://ibb.co/kJRDGVF)" width = 250 align = left>
+<img src="https://user-images.githubusercontent.com/61342175/138512146-77883e23-9409-4bf9-a398-80d90a578244.png" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/138512162-16989b5d-96fb-4587-85d4-91bdcf50d82f.png" width = 250 align = left>
 
 <img src="https://user-images.githubusercontent.com/61342175/138507065-04cb171b-0bf0-40a4-9db0-b6f26b7692c8.png" width = 250 align = center>
 
