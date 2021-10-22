@@ -14,7 +14,7 @@
 
 ## 메인 셀 선택 시
 
-<img src="https://user-images.githubusercontent.com/61342175/138511266-4040ac10-5977-4235-bd0d-78aaea5648fe.png)" width = 250 align = left>
+<img src="https://ibb.co/kJRDGVF)" width = 250 align = left>
 
 ### 메인 셀 선택 및 특정 멤버 선택시 
 
