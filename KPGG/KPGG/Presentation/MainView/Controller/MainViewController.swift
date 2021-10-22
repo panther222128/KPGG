@@ -112,7 +112,14 @@ class MainViewController: UIViewController {
         }
         
         let mainCellRegistration = UICollectionView.CellRegistration<MainCell, Group> { cell, indexPath, group in
-            cell.groupImage.image = UIImage(named: "hyojung")
+            let imageUrl = URL(string: group.groupimage)
+            var data = Data()
+            do {
+                data = try Data(contentsOf: imageUrl!)
+            } catch {
+                
+            }
+            cell.groupImage.image = UIImage(data: data)
             var background = UIBackgroundConfiguration.listPlainCell()
             background.cornerRadius = 0
             background.backgroundColor = .black
@@ -153,9 +160,10 @@ class MainViewController: UIViewController {
     }
     
     private func applySectionSnaphots() {
-        if let selectedGroupList = self.mainViewModel?.group(sectionName: Section.zero.description)?.first {
+        if let selectedGroupList = self.mainViewModel?.group(sectionName: Section.zero.description) {
+            guard let selectedGroup = selectedGroupList.shuffled().first else { return }
             var zeroSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
-            zeroSnapShot.append([selectedGroupList])
+            zeroSnapShot.append([selectedGroup])
             source.apply(zeroSnapShot, to: .zero, animatingDifferences: false)
         }
         if let selectedGroupList = self.mainViewModel?.group(sectionName: Section.first.description) {
