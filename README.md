@@ -14,6 +14,8 @@
 
 ## 메인 셀 선택 및 멤버 선택 시
 
+메인 셀에 해당하는 그룹을 보여주며, 해당 그룹의 멤버를 선택하면 멤버의 간단한 프로필을 볼 수 있습니다.
+
 <img src="https://ibb.co/kJRDGVF)" width = 250 align = left>
 
 <img src="https://user-images.githubusercontent.com/61342175/138507065-04cb171b-0bf0-40a4-9db0-b6f26b7692c8.png" width = 250 align = center>
