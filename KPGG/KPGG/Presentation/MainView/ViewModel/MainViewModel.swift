@@ -8,6 +8,7 @@
 import Foundation
 import RxCocoa
 import RxSwift
+import Alamofire
 
 protocol MainViewModelType {
     func fetch(path: String) -> Observable<[String:[Group]]>
@@ -41,7 +42,7 @@ class MainViewModel: MainViewModelType {
             return nil
         }
     }
-    
+
     func groupsSubject() -> BehaviorSubject<[String:[Group]]> {
         return self.groups
     }
