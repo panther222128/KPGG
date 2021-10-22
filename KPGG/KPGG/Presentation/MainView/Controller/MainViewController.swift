@@ -196,8 +196,20 @@ class MainViewController: UIViewController {
     }
     
     private func configureNavigation() {
-        self.navigationItem.backButtonTitle = " "
+        self.navigationItem.backButtonTitle = "   "
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController?.setStatusBar(backgroundColor: .clear)
+
+        if #available(iOS 11.0, *) {
+            self.section.contentInsetAdjustmentBehavior = .never
+        } else {
+            automaticallyAdjustsScrollViewInsets = false
+        }
+        self.navigationController?.navigationBar.tintColor = .clear
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationItem.backBarButtonItem?.tintColor = .blue
     }
     
     func showMainViewController(with viewModel: MainViewModelType) {
@@ -212,8 +224,13 @@ extension MainViewController: UICollectionViewDelegate {
             section.deselectItem(at: indexPath, animated: true)
             return
         }
+        guard let groupHitSong = self.source.itemIdentifier(for: indexPath)?.hitsong else {
+            section.deselectItem(at: indexPath, animated: true)
+            return
+        }
         guard let groupMemberViewController = self.storyboard?.instantiateViewController(withIdentifier: "GroupMember") as? GroupMemberViewController else { return }
-        groupMemberViewController.showGroupMemberViewController(with: GroupMemberViewModel(groupName: groupName))
+        groupMemberViewController.showGroupMemberViewController(with: GroupMemberViewModel(groupName: groupName, groupHitSong: groupHitSong))
         self.navigationController?.pushViewController(groupMemberViewController, animated: true)
     }
+    
 }
