@@ -1,5 +1,29 @@
 # KPGG
 
+---
+
+<img src="https://user-images.githubusercontent.com/61342175/138486720-b7b1bc57-0f8c-42f6-9747-db2e1d57d74d.png" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/138486734-6c4737f9-def1-4cc5-9a6a-6126381c808c.png" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/138486744-3f06b412-61ca-4d34-a987-c9e30b1ee05f.png" width = 250 align = left>
+
+---
+
+<img src="https://user-images.githubusercontent.com/61342175/138486755-6619a2db-86e8-4ce4-be10-ce5b4d3c7e4d.png" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/138486769-e4665b9a-a6b2-45b7-8855-1866e8733975.png" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/138486804-125f72c1-0210-42e6-91e7-56211ef8eee8.png" width = 250 align = left>
+
+---
+
+<img src="https://user-images.githubusercontent.com/61342175/138486782-42cc397f-aa7c-4c43-a152-d987a021c209.png" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/138486792-0f188cf0-646f-416a-aaa1-72ee65e43051.png" width = 250 align = left>
+
+---
+
 ## 배경
 
 아래 링크에 해당하는 간단한 프로젝트를 만들었습니다.
@@ -203,3 +227,10 @@ UIStackView
 
 <img src="https://user-images.githubusercontent.com/61342175/138335528-6f5977bc-2200-4035-bf81-32fcfa131208.png" width = 250 align = center>
 
+AVFoundation을 활용해서 영상 재생을 하려고 했으나 유튜브 링크 재생에 어려움을 겪어 YoutubePlayer_in_WKWebView를 사용했습니다. 참고한 링크를 아래에 남기겠습니다.
+
+<https://swieeft.github.io/2020/04/09/YouTubePlayer.html>
+
+네비게이션 바, 상태 바 색상 등의 변경이있었습니다.
+
+메인 화면 중 가장 상단의 셀 수정 및 Kingfisher를 사용해볼 예정입니다.

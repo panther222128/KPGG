@@ -7,13 +7,9 @@
 
 import UIKit
 import RxSwift
-import AVFoundation
-
 class GroupMemberViewController: UIViewController {
     
     @IBOutlet weak var groupMember: UITableView!
-    
-    
     @IBOutlet weak var songButton: UIButton!
     
     @IBAction func buttonAction(_ sender: Any) {
