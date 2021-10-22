@@ -4,7 +4,7 @@
 
 ## 메인 스크린 및 메인 셀
 
-첫 스크린이며 가장 상위에 있는 가장 큰 셀 선택 시 해당 그룹의 멤버 리스트를 보여줍니다. 멤버 리스트를 스크롤하다가 특정 멤버의 프로필을 확인할 수 있으며, 해당 멤버의 프로필은 스크롤로 아래의 내용까지 확인할 수 있습니다.
+첫 스크린이며 가장 상위에 있는 큰 셀 선택 시 해당 그룹의 멤버 리스트를 보여줍니다. 멤버 리스트를 스크롤하다가 특정 멤버의 프로필을 확인할 수 있으며, 해당 멤버의 프로필은 스크롤로 아래의 내용까지 확인할 수 있습니다.
 
 ### 첫 스크린
 
@@ -17,8 +17,6 @@
 메인 셀에 해당하는 그룹을 보여주며, 해당 그룹의 멤버를 선택하면 멤버의 간단한 프로필을 볼 수 있습니다.
 
 <img src="https://user-images.githubusercontent.com/61342175/138512146-77883e23-9409-4bf9-a398-80d90a578244.png" width = 250 align = left>
-
-<img src="https://user-images.githubusercontent.com/61342175/138512162-16989b5d-96fb-4587-85d4-91bdcf50d82f.png" width = 250 align = left>
 
 <img src="https://user-images.githubusercontent.com/61342175/138507065-04cb171b-0bf0-40a4-9db0-b6f26b7692c8.png" width = 250 align = center>
 
