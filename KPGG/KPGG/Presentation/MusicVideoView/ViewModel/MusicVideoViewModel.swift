@@ -6,3 +6,21 @@
 //
 
 import Foundation
+
+protocol MusicVideoViewModelType {
+    func youtubeIdReturn() -> String
+}
+
+class MusicVideoViewModel: MusicVideoViewModelType {
+    
+    var youtubeId: String
+    
+    init(youtubeId: String) {
+        self.youtubeId = youtubeId
+    }
+    
+    func youtubeIdReturn() -> String {
+        return youtubeId
+    }
+    
+}
