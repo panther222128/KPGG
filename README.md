@@ -2,33 +2,53 @@
 
 ---
 
-## 메인 스크린 및 스크롤
+## 메인 스크린 및 메인 셀
 
-<img src="https://user-images.githubusercontent.com/61342175/138486720-b7b1bc57-0f8c-42f6-9747-db2e1d57d74d.png" width = 250 align = left>
+첫 스크린이며 가장 상위에 있는 가장 큰 셀 선택 시 해당 그룹의 멤버 리스트를 보여줍니다. 멤버 리스트를 스크롤하다가 특정 멤버의 프로필을 확인할 수 있으며, 해당 멤버의 프로필은 스크롤로 아래의 내용까지 확인할 수 있습니다.
 
-<img src="https://user-images.githubusercontent.com/61342175/138486734-6c4737f9-def1-4cc5-9a6a-6126381c808c.png" width = 250 align = left>
+<img src="https://user-images.githubusercontent.com/61342175/138507008-11f28509-5440-464b-998a-b84179bcf686.png" width = 250 align = left>
 
-<img src="https://user-images.githubusercontent.com/61342175/138486744-3f06b412-61ca-4d34-a987-c9e30b1ee05f.png" width = 250 align = center>
+<img src="https://user-images.githubusercontent.com/61342175/138507059-a4722284-1205-40a8-9fc6-c52ba3e3f6ab.png)" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/138507065-04cb171b-0bf0-40a4-9db0-b6f26b7692c8.png" width = 250 align = center>
 
 ---
 
-## 그룹 멤버 스크린
+## 메인 스크린의 스크롤
 
-<img src="https://user-images.githubusercontent.com/61342175/138486755-6619a2db-86e8-4ce4-be10-ce5b4d3c7e4d.png" width = 250 align = left>
+메인 스크린은 위아래 스크롤이 가능하며, 스크롤 시 아래의 섹션을 확인할 수 있습니다. 각 섹션은 좌우로 스크롤이 가능합니다. 스크롤 시 오른쪽에 있는 그룹의 이미지 및 그룹명을 확인할 수 있습니다.
 
-<img src="https://user-images.githubusercontent.com/61342175/138486769-e4665b9a-a6b2-45b7-8855-1866e8733975.png" width = 250 align = center>
+<img src="https://user-images.githubusercontent.com/61342175/138507390-b27e10d0-96a9-47ae-83ec-b9064b458006.png" width = 250 align = left>
 
-## 대표곡 뮤직비디오 재생 스크린
+<img src="https://user-images.githubusercontent.com/61342175/138507398-c46c2ac1-dc47-4254-8b52-84636bcb4a9d.png" width = 250 align = center>
 
-<img src="https://user-images.githubusercontent.com/61342175/138486804-125f72c1-0210-42e6-91e7-56211ef8eee8.png" height = 250 align = center>
+---
+
+## 그룹 셀 선택 시 스크린
+
+그룹 셀 선택 시 그룹의 멤버를 리스트로 보여줍니다. 멤버를 선택하면 멤버의 간단한 프로필을 확인할 수 있으며, 아래에 있는 '대표곡 듣기' 버튼을 탭하면 해당 그룹의 대표곡 뮤직비디오를 재생합니다.
+
+<img src="https://user-images.githubusercontent.com/61342175/138507619-38fc4a23-05fa-4550-bd94-51913420e4d9.png" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/138507623-89296db3-a942-4b5b-85a3-4f4a3d1ae9d6.png" width = 250 align = center>
 
 ---
 
 ## 멤버 프로필 스크린
 
-<img src="https://user-images.githubusercontent.com/61342175/138486782-42cc397f-aa7c-4c43-a152-d987a021c209.png" width = 250 align = left>
+멤버의 프로필을 볼 수 있는 스크린이며, 스크롤을 통해 아래 내용을 확인할 수 있습니다.
 
-<img src="https://user-images.githubusercontent.com/61342175/138486792-0f188cf0-646f-416a-aaa1-72ee65e43051.png" width = 250 align = center>
+<img src="https://user-images.githubusercontent.com/61342175/138507974-71105d62-8735-4b1b-a326-7c8434ce92d1.png" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/138507979-181b4aba-aca9-49dc-8f82-04bc283b825c.png" width = 250 align = center>
+
+---
+
+## 대표곡 재생 스크린
+
+그룹 셀 선택에서 대표곡 듣기 버튼을 탭하면 재생하는 뮤직비디오 스크린입니다.
+
+<img src="https://user-images.githubusercontent.com/61342175/138508216-70f53b7f-659e-40da-bca8-a1f452fe0d2e.png" width = 250 align = center>
 
 ---
 
