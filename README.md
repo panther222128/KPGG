@@ -48,7 +48,7 @@
 
 그룹 셀 선택에서 대표곡 듣기 버튼을 탭하면 재생하는 뮤직비디오 스크린입니다.
 
-<img src="https://user-images.githubusercontent.com/61342175/138508216-70f53b7f-659e-40da-bca8-a1f452fe0d2e.png" width = 250 align = center>
+<img src="https://user-images.githubusercontent.com/61342175/138508216-70f53b7f-659e-40da-bca8-a1f452fe0d2e.png" height = 250 align = center>
 
 ---
 
