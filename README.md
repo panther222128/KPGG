@@ -12,13 +12,11 @@
 
 ---
 
-## 메인 셀 선택 시
+## 메인 셀 선택 및 멤버 선택 시
 
 <img src="https://ibb.co/kJRDGVF)" width = 250 align = left>
 
-### 메인 셀 선택 및 특정 멤버 선택시 
-
-<img src="https://user-images.githubusercontent.com/61342175/138507065-04cb171b-0bf0-40a4-9db0-b6f26b7692c8.png" width = 250 align = center>
+<img src="https://user-images.githubusercontent.com/61342175/138507065-04cb171b-0bf0-40a4-9db0-b6f26b7692c8.png" width = 250 align = right>
 
 ---
 
