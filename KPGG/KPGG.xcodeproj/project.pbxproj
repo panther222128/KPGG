@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01997AC171C26DDECDFBD7FA /* Pods_KPGG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A23A94F23E957D5C6B633012 /* Pods_KPGG.framework */; };
 		A004CEC6271D539300AAF13F /* SectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A004CEC5271D539300AAF13F /* SectionEnum.swift */; };
 		A008ADD3271B3F8D00972B3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A008ADD2271B3F8D00972B3F /* AppDelegate.swift */; };
 		A008ADD5271B3F8D00972B3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A008ADD4271B3F8D00972B3F /* SceneDelegate.swift */; };
@@ -15,11 +16,13 @@
 		A008ADDC271B3F8E00972B3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A008ADDB271B3F8E00972B3F /* Assets.xcassets */; };
 		A008ADDF271B3F8E00972B3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A008ADDD271B3F8E00972B3F /* LaunchScreen.storyboard */; };
 		A008ADEB271B402A00972B3F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A008ADEA271B402A00972B3F /* MainViewModel.swift */; };
-		A008ADF0271B416700972B3F /* SectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A008ADEF271B416700972B3F /* SectionDetailViewController.swift */; };
-		A008ADF2271B440A00972B3F /* SectionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A008ADF1271B440A00972B3F /* SectionDetailViewModel.swift */; };
 		A08363C3271C29650061CB67 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08363C2271C29650061CB67 /* GroupCell.swift */; };
 		A08363C5271C64010061CB67 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08363C4271C64010061CB67 /* Group.swift */; };
 		A0925E9B2721C90B0010C9D0 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0925E9A2721C90B0010C9D0 /* SectionHeader.swift */; };
+		A099030D2722A08600574A3B /* MusicVideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099030C2722A08600574A3B /* MusicVideoViewModel.swift */; };
+		A0AC1AF22722BD6400EA5F27 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AC1AF12722BD6400EA5F27 /* VideoViewController.swift */; };
+		A0AC1AF42722C1DA00EA5F27 /* VideoView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0AC1AF32722C1DA00EA5F27 /* VideoView.storyboard */; };
+		A0AC1AF82722D22100EA5F27 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AC1AF72722D22100EA5F27 /* Extension.swift */; };
 		A0ADB54D271DF31B00996110 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0ADB54C271DF31B00996110 /* MainCell.swift */; };
 		A0AF8A95271E8AB6009CEF82 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AF8A94271E8AB6009CEF82 /* Member.swift */; };
 		A0AF8A99271EB204009CEF82 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AF8A98271EB204009CEF82 /* Endpoint.swift */; };
@@ -37,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		59AF9606086FEDFF3C1FED35 /* Pods-KPGG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KPGG.debug.xcconfig"; path = "Target Support Files/Pods-KPGG/Pods-KPGG.debug.xcconfig"; sourceTree = "<group>"; };
 		A004CEC5271D539300AAF13F /* SectionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionEnum.swift; sourceTree = "<group>"; };
 		A008ADCF271B3F8D00972B3F /* KPGG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KPGG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A008ADD2271B3F8D00972B3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,11 +51,13 @@
 		A008ADDE271B3F8E00972B3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A008ADE0271B3F8E00972B3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A008ADEA271B402A00972B3F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		A008ADEF271B416700972B3F /* SectionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetailViewController.swift; sourceTree = "<group>"; };
-		A008ADF1271B440A00972B3F /* SectionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetailViewModel.swift; sourceTree = "<group>"; };
 		A08363C2271C29650061CB67 /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		A08363C4271C64010061CB67 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		A0925E9A2721C90B0010C9D0 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		A099030C2722A08600574A3B /* MusicVideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicVideoViewModel.swift; sourceTree = "<group>"; };
+		A0AC1AF12722BD6400EA5F27 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		A0AC1AF32722C1DA00EA5F27 /* VideoView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VideoView.storyboard; sourceTree = "<group>"; };
+		A0AC1AF72722D22100EA5F27 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		A0ADB54C271DF31B00996110 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		A0AF8A94271E8AB6009CEF82 /* Member.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		A0AF8A98271EB204009CEF82 /* Endpoint.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -63,6 +69,8 @@
 		A0B991EB271FF4AF005ECDD1 /* GroupMemberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberViewModel.swift; sourceTree = "<group>"; };
 		A0B991F127203FCD005ECDD1 /* MemberDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailViewController.swift; sourceTree = "<group>"; };
 		A0B991F3272042C0005ECDD1 /* MemberDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailViewModel.swift; sourceTree = "<group>"; };
+		A23A94F23E957D5C6B633012 /* Pods_KPGG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KPGG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2C8C6BB9A2066D8B38B973A /* Pods-KPGG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KPGG.release.xcconfig"; path = "Target Support Files/Pods-KPGG/Pods-KPGG.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,17 +81,28 @@
 				A0AF8AA7271EE0AA009CEF82 /* RxSwift in Frameworks */,
 				A0AF8AA5271EE0AA009CEF82 /* RxCocoa in Frameworks */,
 				A0AF8A9E271EB225009CEF82 /* Alamofire in Frameworks */,
+				01997AC171C26DDECDFBD7FA /* Pods_KPGG.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E9070339037CBF90C765AB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A23A94F23E957D5C6B633012 /* Pods_KPGG.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A008ADC6271B3F8D00972B3F = {
 			isa = PBXGroup;
 			children = (
 				A008ADD1271B3F8D00972B3F /* GG */,
 				A008ADD0271B3F8D00972B3F /* Products */,
+				C48AFF025A9A802769F3FF01 /* Pods */,
+				2E9070339037CBF90C765AB9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,12 +117,14 @@
 		A008ADD1271B3F8D00972B3F /* GG */ = {
 			isa = PBXGroup;
 			children = (
+				A0AC1AF62722D20D00EA5F27 /* Extension */,
 				A0AF8A97271EB1D9009CEF82 /* NetworkService */,
 				A0AF8A96271EB1D0009CEF82 /* Domain */,
 				A008ADEC271B40F400972B3F /* Application */,
 				A008ADE7271B400200972B3F /* UseCase */,
 				A008ADE6271B3FFB00972B3F /* Presentation */,
 				A008ADD8271B3F8D00972B3F /* Main.storyboard */,
+				A0AC1AF32722C1DA00EA5F27 /* VideoView.storyboard */,
 				A008ADDB271B3F8E00972B3F /* Assets.xcassets */,
 				A008ADDD271B3F8E00972B3F /* LaunchScreen.storyboard */,
 				A008ADE0271B3F8E00972B3F /* Info.plist */,
@@ -118,7 +139,7 @@
 				A08363B9271C14C00061CB67 /* MainView */,
 				A0B991E0271FEB39005ECDD1 /* GroupMemberView */,
 				A0B991ED27203D3D005ECDD1 /* MemberDetailView */,
-				A08363BA271C14DA0061CB67 /* SectionDetailView */,
+				A09903042722808100574A3B /* MusicVideoView */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -188,37 +209,45 @@
 			path = MainView;
 			sourceTree = "<group>";
 		};
-		A08363BA271C14DA0061CB67 /* SectionDetailView */ = {
+		A09903042722808100574A3B /* MusicVideoView */ = {
 			isa = PBXGroup;
 			children = (
-				A08363BD271C14F70061CB67 /* View */,
-				A08363BC271C14EE0061CB67 /* ViewModel */,
-				A08363BB271C14E60061CB67 /* Controller */,
+				A0990307272280B700574A3B /* View */,
+				A0990306272280AD00574A3B /* ViewModel */,
+				A0990305272280A300574A3B /* Controller */,
 			);
-			path = SectionDetailView;
+			path = MusicVideoView;
 			sourceTree = "<group>";
 		};
-		A08363BB271C14E60061CB67 /* Controller */ = {
+		A0990305272280A300574A3B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A008ADEF271B416700972B3F /* SectionDetailViewController.swift */,
+				A0AC1AF12722BD6400EA5F27 /* VideoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		A08363BC271C14EE0061CB67 /* ViewModel */ = {
+		A0990306272280AD00574A3B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				A008ADF1271B440A00972B3F /* SectionDetailViewModel.swift */,
+				A099030C2722A08600574A3B /* MusicVideoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		A08363BD271C14F70061CB67 /* View */ = {
+		A0990307272280B700574A3B /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A0AC1AF62722D20D00EA5F27 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A0AC1AF72722D22100EA5F27 /* Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		A0AF8A96271EB1D0009CEF82 /* Domain */ = {
@@ -328,6 +357,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		C48AFF025A9A802769F3FF01 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				59AF9606086FEDFF3C1FED35 /* Pods-KPGG.debug.xcconfig */,
+				E2C8C6BB9A2066D8B38B973A /* Pods-KPGG.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -335,9 +373,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A008ADE3271B3F8E00972B3F /* Build configuration list for PBXNativeTarget "KPGG" */;
 			buildPhases = (
+				A536AF2E23750536A63AAF4D /* [CP] Check Pods Manifest.lock */,
 				A008ADCB271B3F8D00972B3F /* Sources */,
 				A008ADCC271B3F8D00972B3F /* Frameworks */,
 				A008ADCD271B3F8D00972B3F /* Resources */,
+				8F7B24CD1F852E0334B42E7A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -396,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A008ADDF271B3F8E00972B3F /* LaunchScreen.storyboard in Resources */,
+				A0AC1AF42722C1DA00EA5F27 /* VideoView.storyboard in Resources */,
 				A008ADDC271B3F8E00972B3F /* Assets.xcassets in Resources */,
 				A008ADDA271B3F8D00972B3F /* Main.storyboard in Resources */,
 			);
@@ -403,12 +444,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8F7B24CD1F852E0334B42E7A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KPGG/Pods-KPGG-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KPGG/Pods-KPGG-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KPGG/Pods-KPGG-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A536AF2E23750536A63AAF4D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KPGG-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A008ADCB271B3F8D00972B3F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A008ADF0271B416700972B3F /* SectionDetailViewController.swift in Sources */,
 				A0B991F227203FCD005ECDD1 /* MemberDetailViewController.swift in Sources */,
 				A0B991EA271FED8B005ECDD1 /* GroupMemberUseCase.swift in Sources */,
 				A08363C3271C29650061CB67 /* GroupCell.swift in Sources */,
@@ -417,12 +499,14 @@
 				A0ADB54D271DF31B00996110 /* MainCell.swift in Sources */,
 				A0B991EC271FF4AF005ECDD1 /* GroupMemberViewModel.swift in Sources */,
 				A008ADD3271B3F8D00972B3F /* AppDelegate.swift in Sources */,
+				A0AC1AF22722BD6400EA5F27 /* VideoViewController.swift in Sources */,
 				A004CEC6271D539300AAF13F /* SectionEnum.swift in Sources */,
-				A008ADF2271B440A00972B3F /* SectionDetailViewModel.swift in Sources */,
 				A0AF8AA2271EE08D009CEF82 /* MainUseCase.swift in Sources */,
 				A008ADEB271B402A00972B3F /* MainViewModel.swift in Sources */,
 				A008ADD5271B3F8D00972B3F /* SceneDelegate.swift in Sources */,
 				A0AF8A99271EB204009CEF82 /* Endpoint.swift in Sources */,
+				A099030D2722A08600574A3B /* MusicVideoViewModel.swift in Sources */,
+				A0AC1AF82722D22100EA5F27 /* Extension.swift in Sources */,
 				A0AF8A9B271EB20C009CEF82 /* NetworkService.swift in Sources */,
 				A0AF8A95271E8AB6009CEF82 /* Member.swift in Sources */,
 				A0925E9B2721C90B0010C9D0 /* SectionHeader.swift in Sources */,
@@ -572,6 +656,7 @@
 		};
 		A008ADE4271B3F8E00972B3F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59AF9606086FEDFF3C1FED35 /* Pods-KPGG.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -600,6 +685,7 @@
 		};
 		A008ADE5271B3F8E00972B3F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2C8C6BB9A2066D8B38B973A /* Pods-KPGG.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
