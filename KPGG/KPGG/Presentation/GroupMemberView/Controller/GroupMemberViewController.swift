@@ -7,12 +7,24 @@
 
 import UIKit
 import RxSwift
+import AVFoundation
 
 class GroupMemberViewController: UIViewController {
     
     @IBOutlet weak var groupMember: UITableView!
-    @IBOutlet weak var representativeSongButton: UIButton!
     
+    
+    @IBOutlet weak var songButton: UIButton!
+    
+    @IBAction func buttonAction(_ sender: Any) {
+        guard let groupHitSong = groupMemberViewModel?.groupHitSongReturn() else { return }
+        
+        let videoPlayerViewController = UIStoryboard(name: "VideoView", bundle: nil).instantiateViewController(withIdentifier: "Video") as! VideoViewController
+        videoPlayerViewController.showMusicVideoViewController(with: MusicVideoViewModel(youtubeId: groupHitSong))
+        videoPlayerViewController.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(videoPlayerViewController, animated: true)
+    }
+
     private var groupMemberViewModel: GroupMemberViewModelType?
     private var disposeBag = DisposeBag()
     
@@ -21,7 +33,6 @@ class GroupMemberViewController: UIViewController {
         viewConfiguration()
         configureNavigation()
         configureGroupMember()
-        configureRepresentativeSongButton()
         subscribe()
         fetchMembers()
         groupMember.dataSource = self
@@ -57,17 +68,14 @@ class GroupMemberViewController: UIViewController {
         groupMember.backgroundColor = .black
     }
     
-    private func configureRepresentativeSongButton() {
-        representativeSongButton.titleLabel?.text = "대표곡 듣기"
-    }
-    
     private func configureNavigation() {
         guard let groupMemberViewModel = groupMemberViewModel else { return }
         self.navigationItem.title = groupMemberViewModel.groupNameReturn()
-        self.navigationItem.backButtonTitle = " "
+        self.navigationItem.backButtonTitle = "   "
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = .systemBlue
     }
-    
+
     func showGroupMemberViewController(with viewModel: GroupMemberViewModelType) {
         self.groupMemberViewModel = viewModel
     }
