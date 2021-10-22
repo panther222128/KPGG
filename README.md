@@ -10,9 +10,13 @@
 
 <img src="https://user-images.githubusercontent.com/61342175/138507008-11f28509-5440-464b-998a-b84179bcf686.png" width = 250 align = center>
 
+---
+
 ### 메인 셀 선택 시
 
 <img src="https://user-images.githubusercontent.com/61342175/138510565-f87a9cff-18d0-477f-9a2e-22201a647b95.png)" width = 250 align = center>
+
+---
 
 ### 메인 셀 선택 및 특정 멤버 선택시 
 
