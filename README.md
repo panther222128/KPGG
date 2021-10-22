@@ -20,7 +20,7 @@
 
 <img src="https://user-images.githubusercontent.com/61342175/138486782-42cc397f-aa7c-4c43-a152-d987a021c209.png" width = 250 align = left>
 
-<img src="https://user-images.githubusercontent.com/61342175/138486792-0f188cf0-646f-416a-aaa1-72ee65e43051.png" width = 250 align = left>
+<img src="https://user-images.githubusercontent.com/61342175/138486792-0f188cf0-646f-416a-aaa1-72ee65e43051.png" width = 250 align = center>
 
 ---
 
