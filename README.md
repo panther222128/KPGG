@@ -16,7 +16,7 @@
 
 <img src="https://ibb.co/kJRDGVF)" width = 250 align = left>
 
-<img src="https://user-images.githubusercontent.com/61342175/138507065-04cb171b-0bf0-40a4-9db0-b6f26b7692c8.png" width = 250 align = right>
+<img src="https://user-images.githubusercontent.com/61342175/138507065-04cb171b-0bf0-40a4-9db0-b6f26b7692c8.png" width = 250 align = center>
 
 ---
 
