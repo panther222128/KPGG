@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class GroupMemberViewCell: UITableViewCell {
     
@@ -20,9 +21,9 @@ class GroupMemberViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configureCell(memberActivityName: String, imageData: Data) {
+    func configureCell(memberActivityName: String, imageUrl: URL) {
         self.backgroundColor = .clear
-        self.memberImage.image = UIImage(data: imageData)
+        self.memberImage.kf.setImage(with: imageUrl)
         self.memberName.text = memberActivityName
         self.memberName.textAlignment = .center
         self.memberName.textColor = .white
