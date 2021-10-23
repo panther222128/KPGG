@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var section: UICollectionView!
     
     private var mainViewModel: MainViewModelType?
-    private var source: UICollectionViewDiffableDataSource<Section, Group>!
+    private var dataSource: UICollectionViewDiffableDataSource<Section, Group>!
     private var disposeBag = DisposeBag()
     
     static let sectionHeaderElementKind = "SectionHeader"
@@ -142,7 +142,7 @@ class MainViewController: UIViewController {
             cell.backgroundConfiguration = background
         }
         
-        source = UICollectionViewDiffableDataSource<Section, Group>(collectionView: section) {
+        dataSource = UICollectionViewDiffableDataSource<Section, Group>(collectionView: section) {
             (collectionView, indexPath, group) -> UICollectionViewCell? in
             guard let section = Section(rawValue: indexPath.section) else { fatalError("Unknown section") }
             switch section {
@@ -153,54 +153,32 @@ class MainViewController: UIViewController {
             }
         }
         
-        source.supplementaryViewProvider = { (view, kind, index) in
+        dataSource.supplementaryViewProvider = { (view, kind, index) in
             return self.section.dequeueConfiguredReusableSupplementary(using: headerRegistration, for: index)
         }
         
     }
     
+    private func groupForSection(sectionName: String) -> NSDiffableDataSourceSectionSnapshot<Group> {
+        guard let selectedGroupList = self.mainViewModel?.group(sectionName: sectionName) else { return NSDiffableDataSourceSectionSnapshot<Group>() }
+        var snapShot = NSDiffableDataSourceSectionSnapshot<Group>()
+        snapShot.append(selectedGroupList)
+        return snapShot
+    }
+    
     private func applySectionSnaphots() {
-        if let selectedGroupList = self.mainViewModel?.group(sectionName: Section.zero.description) {
-            guard let selectedGroup = selectedGroupList.shuffled().first else { return }
-            var zeroSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
-            zeroSnapShot.append([selectedGroup])
-            source.apply(zeroSnapShot, to: .zero, animatingDifferences: false)
-        }
-        if let selectedGroupList = self.mainViewModel?.group(sectionName: Section.first.description) {
-            var firstSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
-            firstSnapShot.append(selectedGroupList)
-            source.apply(firstSnapShot, to: .first, animatingDifferences: false)
-        }
-        if let selectedGroupList = self.mainViewModel?.group(sectionName: Section.second.description) {
-            var secondSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
-            secondSnapShot.append(selectedGroupList)
-            source.apply(secondSnapShot, to: .second, animatingDifferences: false)
-        }
-        if let selectedGroupList = self.mainViewModel?.group(sectionName: Section.third.description) {
-            var thirdSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
-            thirdSnapShot.append(selectedGroupList)
-            source.apply(thirdSnapShot, to: .third, animatingDifferences: false)
-        }
-        if let selectedGroupList = self.mainViewModel?.group(sectionName: Section.fourth.description) {
-            var fourthSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
-            fourthSnapShot.append(selectedGroupList)
-            source.apply(fourthSnapShot, to: .fourth, animatingDifferences: false)
-        }
-        if let selectedGroupList = self.mainViewModel?.group(sectionName: Section.fifth.description) {
-            var fifthSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
-            fifthSnapShot.append(selectedGroupList)
-            source.apply(fifthSnapShot, to: .fifth, animatingDifferences: false)
-        }
-        if let selectedGroupList = self.mainViewModel?.group(sectionName: Section.sixth.description) {
-            var sixthSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
-            sixthSnapShot.append(selectedGroupList)
-            source.apply(sixthSnapShot, to: .sixth, animatingDifferences: false)
-        }
-        if let selectedGroupList = self.mainViewModel?.group(sectionName: Section.seventh.description) {
-            var seventhSnapShot = NSDiffableDataSourceSectionSnapshot<Group>()
-            seventhSnapShot.append(selectedGroupList)
-            source.apply(seventhSnapShot, to: .seventh, animatingDifferences: false)
-        }
+        guard let randomGroupList = self.mainViewModel?.group(sectionName: Section.zero.description) else { return }
+        guard let selectedGroup = randomGroupList.shuffled().first else { return }
+        var snapShot = NSDiffableDataSourceSectionSnapshot<Group>()
+        snapShot.append([selectedGroup])
+        dataSource.apply(snapShot, to: .zero, animatingDifferences: false)
+        dataSource.apply(groupForSection(sectionName: Section.first.description), to: .first, animatingDifferences: false)
+        dataSource.apply(groupForSection(sectionName: Section.second.description), to: .second, animatingDifferences: false)
+        dataSource.apply(groupForSection(sectionName: Section.third.description), to: .third, animatingDifferences: false)
+        dataSource.apply(groupForSection(sectionName: Section.fourth.description), to: .fourth, animatingDifferences: false)
+        dataSource.apply(groupForSection(sectionName: Section.fifth.description), to: .fifth, animatingDifferences: false)
+        dataSource.apply(groupForSection(sectionName: Section.sixth.description), to: .sixth, animatingDifferences: false)
+        dataSource.apply(groupForSection(sectionName: Section.seventh.description), to: .seventh, animatingDifferences: false)
     }
     
     private func configureNavigation() {
@@ -227,12 +205,13 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let groupName = self.source.itemIdentifier(for: indexPath)?.groupname else {
+        guard let groupName = self.dataSource.itemIdentifier(for: indexPath)?.groupname else {
             section.deselectItem(at: indexPath, animated: true)
             return
         }
-        guard let groupHitSong = self.source.itemIdentifier(for: indexPath)?.hitsong else {
+        guard let groupHitSong = self.dataSource.itemIdentifier(for: indexPath)?.hitsong else {
             section.deselectItem(at: indexPath, animated: true)
             return
         }

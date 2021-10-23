@@ -12,15 +12,6 @@ class GroupMemberViewController: UIViewController {
     @IBOutlet weak var groupMember: UITableView!
     @IBOutlet weak var songButton: UIButton!
     
-    @IBAction func buttonAction(_ sender: Any) {
-        guard let groupHitSong = groupMemberViewModel?.groupHitSongReturn() else { return }
-        
-        let videoPlayerViewController = UIStoryboard(name: "VideoView", bundle: nil).instantiateViewController(withIdentifier: "Video") as! VideoViewController
-        videoPlayerViewController.showMusicVideoViewController(with: MusicVideoViewModel(youtubeId: groupHitSong))
-        videoPlayerViewController.modalPresentationStyle = .fullScreen
-        self.navigationController?.pushViewController(videoPlayerViewController, animated: true)
-    }
-
     private var groupMemberViewModel: GroupMemberViewModelType?
     private var disposeBag = DisposeBag()
     
@@ -74,6 +65,14 @@ class GroupMemberViewController: UIViewController {
 
     func showGroupMemberViewController(with viewModel: GroupMemberViewModelType) {
         self.groupMemberViewModel = viewModel
+    }
+    
+    @IBAction func buttonAction(_ sender: Any) {
+        guard let groupHitSong = groupMemberViewModel?.groupHitSongReturn() else { return }
+        let videoPlayerViewController = UIStoryboard(name: "VideoView", bundle: nil).instantiateViewController(withIdentifier: "Video") as! VideoViewController
+        videoPlayerViewController.showMusicVideoViewController(with: MusicVideoViewModel(youtubeId: groupHitSong))
+        videoPlayerViewController.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(videoPlayerViewController, animated: true)
     }
     
 }

@@ -49,7 +49,9 @@ class VideoViewController: UIViewController {
 }
 
 extension VideoViewController: WKYTPlayerViewDelegate {
+    
     func playerViewDidBecomeReady(_ playerView: WKYTPlayerView) {
         playerView.playVideo()
     }
+    
 }
