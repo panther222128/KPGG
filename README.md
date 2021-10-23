@@ -14,7 +14,7 @@
 
 ## 메인 셀 선택 및 멤버 선택 시
 
-메인 셀에 해당하는 그룹을 보여주며, 해당 그룹의 멤버를 선택하면 멤버의 간단한 프로필을 볼 수 있습니다.
+메인 셀에 해당하는 그룹을 보여주며, 해당 그룹의 멤버를 선택하면 멤버의 간단한 프로필을 볼 수 있습니다. 이 셀에 나타나는 그룹은 네 개의 그룹 중 랜덤으로 한 그룹이 등장합니다.
 
 <img src="https://user-images.githubusercontent.com/61342175/138512146-77883e23-9409-4bf9-a398-80d90a578244.png" width = 250 align = left>
 
@@ -59,6 +59,14 @@
 <img src="https://user-images.githubusercontent.com/61342175/138508216-70f53b7f-659e-40da-bca8-a1f452fe0d2e.png" height = 250 align = center>
 
 ---
+
+## 사용한 것들
+
+- RxSwift
+- Alamofire
+- Kingfisher
+- UICollectionView DiffableDataSource
+- UICollectionView Compositional Layout
 
 ## 배경
 
@@ -270,3 +278,7 @@ AVFoundation을 활용해서 영상 재생을 하려고 했으나 유튜브 링�
 네비게이션 바, 상태 바 색상 등의 변경이있었습니다.
 
 메인 화면 중 가장 상단의 셀 수정 및 Kingfisher를 사용해볼 예정입니다.
+
+## 2021.10.23
+
+불필요한 코드를 지우고 변수명을 변경하는 등 리팩토링이 있었습니다. 시뮬레이터 및 아이패드에서 테스트해보면 스크롤이 매끄럽게 동작하지 않아 이미지 캐시를 활용하는 Kingfisher를 적용해서 해결했습니다.
