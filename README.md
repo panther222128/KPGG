@@ -77,14 +77,17 @@
 내용은 평소 좋아하는 걸그룹 오마이걸 멤버의 프로필을 볼 수 있는 앱입니다. 데이터가 많지 않은 만큼 포스트맨을 통해 JSON API를 생성하고, 테이블 뷰에서 걸그룹 오마이걸의 멤버의 리스트를 보여주도록 했습니다. 테이블 뷰의 셀을 탭하면 해당 멤버의 간단한 프로필을 볼 수 있습니다. 생성한 JSON은 아래 링크에서 확인할 수 있습니다. 링크에서 멤버 이름을 클릭하면 해당 멤버의 프로필을 볼 수 있습니다. 나무위키에서 참고했으며 참고한 나무위키 링크에서 저장한 JSON 데이터를 확인할 수 있습니다.
 
 오마이걸 멤버 프로필 JSON Mock API
+
 <https://544a9ef9-2c3c-441a-824b-97788c0761e8.mock.pstmn.io/omgtest/main/memberinfo>
 
 나무위키 오마이걸
+
 <https://namu.wiki/w/%EC%98%A4%EB%A7%88%EC%9D%B4%EA%B1%B8>
 
 조금 더 범위가 넓고 깊은 프로젝트를 만들어보고자 떠올린 것은 오마이걸이라는 걸그룹뿐만 아니라 다른 걸그룹도 소개할 수 있는 앱을 만들어보겠다는 생각이었습니다. 나무위키에서 걸그룹을 검색하면 아래 링크로 연결됩니다.
 
 나무위키 걸그룹 검색 결과
+
 <https://namu.wiki/w/%EA%B1%B8%EA%B7%B8%EB%A3%B9>
 
 분류된 내역은 데뷔 연도에 따라 나눠집니다. 정확히 설명하면 히트곡이 있는 걸그룹의 분류만을 포함합니다.
@@ -103,9 +106,11 @@
 '2016~2019년 걸그룹'에서 나무위키에서 소개하고 있지는 않지만 추가적으로 포함시킨 걸그룹은 '로켓펀치'라는 걸그룹과 '프로미스나인'이라는 걸그룹입니다. 두 그룹에 대해 알게 된 계기는 오마이걸이라는 그룹이 'Dun Dun Dance'라는 곡으로 활동하는 당시 '비니'라는 멤버가 안무 중 두 그룹의 활동 곡 안무를 보여줬기 때문입니다. 아래 링크에서 확인할 수 있습니다.
 
 [오마이걸 던던댄스] 걸그룹 안무 3개나 넣은 비니 파트 ('WE GO', 'Ring Ring', 'Roly Poly')
+
 <https://www.youtube.com/watch?v=Prvg8Nx-ius>
 
 위고 추는 오마이걸 비니, 던던댄스 추는 나경이 [프로미스나인/오마이걸]
+
 <https://www.youtube.com/watch?v=wMIU6Gnq7f4&t=109s>
 
 각 걸그룹별 대표곡 듣기 기능을 추가하려고 합니다. 나무위키 걸그룹 링크 중 히트곡 소개에서 다른 걸그룹은 가능하면 나무위키에서 소개하는 히트곡을 재생하도록 하려고 했습니다. 오마이걸의 히트곡은 두 곡으로 소개되고 있지만 나무위키에서 소개하고 있지는 않은 '비밀정원'이라는 곡을 대표곡으로 소개하려고 합니다. 프로미스나인과 로켓펀치는 나무위키에서 히트곡이 있는 걸그룹으로 소개하고 있지 않지만, 대표곡으로 각각 'WE GO'라는 곡과 'Ring Ring'이라는 곡을 대표곡으로 선택했습니다.
@@ -115,26 +120,31 @@
 코드스쿼드 수료 당시 함께 수료했었던 다른 분들에 비해 제 스스로 구현 역향이 부족하다고 느껴져 만들고 있는 프로젝트들입니다. 지금껏 구현하는 프로젝트는 함께 수료했었던 'Aiden'의 프로젝트를 참고했습니다. 감사합니다. 'Aiden'
 
 'Aiden'의 'VaccinationCenter' 앱
+
 <https://github.com/Sonjh1306/VaccinationCenter>
 
 함께 수료했었던 'Lollo'의 프로젝트도 참고했으며, 많은 도움을 얻을 수 있었습니다. 감사합니다. 'Lollo'
 
 'Lollo'의 Github 레포지토리
+
 <https://github.com/eeeesong>
 
 ## 2021.10.16
 
 JSON 데이터 생성 시 어떤 자료구조가 적합할지 고민하는 시간을 갖는 계기가 되었습니다. JSON은 키값 쌍과 배열로 형태를 갖추는데, 표현하고자 하는 데이터의 자료구조가 어떤 것이 적합할지 고민했습니다. 다시 바뀔 수도 있지만 고민한 결과 아래에 해당하는 자료구조를 갖춘 데이터를 생성하도록 했습니다. 사용하지 않을 수도 있지만 만들어 둔 것도 있습니다.
 
-연도별 전체
+- 연도별 전체
+
 <https://544a9ef9-2c3c-441a-824b-97788c0761e8.mock.pstmn.io/omgtest/main/group>
 
-연도별 걸그룹(first부터 seventh까지)
+- 연도별 걸그룹(first부터 seventh까지)
+
 <https://544a9ef9-2c3c-441a-824b-97788c0761e8.mock.pstmn.io/omgtest/main/group/first>
 ~
 <https://544a9ef9-2c3c-441a-824b-97788c0761e8.mock.pstmn.io/omgtest/main/group/seventh>
 
-연도에 해당하는 걸그룹과 멤버
+- 연도에 해당하는 걸그룹과 멤버
+
 <https://544a9ef9-2c3c-441a-824b-97788c0761e8.mock.pstmn.io/omgtest/main/group/2020>
 <https://544a9ef9-2c3c-441a-824b-97788c0761e8.mock.pstmn.io/omgtest/main/group/2016-2019>
 <https://544a9ef9-2c3c-441a-824b-97788c0761e8.mock.pstmn.io/omgtest/main/group/2014-2015>
@@ -143,7 +153,8 @@ JSON 데이터 생성 시 어떤 자료구조가 적합할지 고민하는 시�
 <https://544a9ef9-2c3c-441a-824b-97788c0761e8.mock.pstmn.io/omgtest/main/group/2009>
 <https://544a9ef9-2c3c-441a-824b-97788c0761e8.mock.pstmn.io/omgtest/main/group/2006-2008>
 
-연도별 각 걸그룹(/group/(영문 그룹 이름, ohmygirl 등))
+- 연도별 각 걸그룹(/group/(영문 그룹 이름, ohmygirl 등))
+
 예시: <https://544a9ef9-2c3c-441a-824b-97788c0761e8.mock.pstmn.io/omgtest/main/group/stayc>
 
 익숙하지 않다보니 고민하는 시간을 충분히 가져야 했고, 모든 JSON API 생성을 포함해서 총 10시간 가량 고민하고 생성했습니다. 총 38개 걸그룹이며, 그룹별 탈퇴 및 사망한 멤버 인원을 모두 포함합니다. 모든 멤버의 수는 250명입니다. 프로필 정보에서 혈액형 및 MBTI가 알려지지 않은 경우 '알려지지 않음.'으로 입력했습니다.
@@ -155,6 +166,7 @@ JSON 데이터 생성 시 어떤 자료구조가 적합할지 고민하는 시�
 하나의 행만을 갖는 컬렉션 뷰의 구현을 검색해본 결과 많은 자료가 나오지 않았습니다. 그래서 떠올렸던 것은 코드스쿼드 수료 중 알게 되었던 'DiffableDataSource'였습니다. 아래 자료를 살펴봤던 기억이 있어 다시 살펴보기로 했습니다.
 
 Implementing Modern Collection Views
+
 <https://developer.apple.com/documentation/uikit/views_and_controls/collection_views/implementing_modern_collection_views>
 
 자료를 확인하면 'EmojiExplorerViewController' 중 가장 위에 있는 섹션의 뷰가 좌우로 스크롤되는 뷰입니다. 스택 뷰에서 하나의 컬렉션 뷰를 추가하고 해당 컬렉션 뷰에 일곱 가지 연도별 걸그룹 분류를 구현하려고 했습니다. **다만 이미 알고 있었음에도 테스트 구현 후에나 깨닫게 된 것은 다음과 같습니다.** 컬렉션 뷰는 `UIScrollView`를 서브클래싱한 타입입니다.
@@ -184,6 +196,7 @@ collectionView.isScrollEnabled = false
 ```
 
 UIScrollView
+
 <https://developer.apple.com/documentation/uikit/uiscrollview>
 <https://velog.io/@panther222128/UIScrollView>
 
@@ -192,6 +205,7 @@ UIScrollView
 이후 스택 뷰를 제외하려고 했으나 레이아웃에서 어려움을 겪어 스크롤 뷰 내부에 컨테이너 뷰를 두고, 해당 컨테이너 뷰에 스택 뷰를 사용하기로 했습니다. 애플에서도 스택 뷰 사용을 권장하기도 하고, 마침 그 이유가 레이아웃 때문이기도 합니다.
 
 UIStackView
+
 <https://developer.apple.com/documentation/uikit/uistackview>
 <https://velog.io/@panther222128/UIStackView>
 
@@ -248,10 +262,12 @@ UIStackView
 
 새벽에 스크린의 디테일을 수정하려고 했으나 포스트맨 요청 수 제한 문제로 새로운 API가 필요했고, 파이썬 웹 프레임워크 플라스크를 시도해서 어느 정도 구축할 수 있었습니다. 그러나 https로 만들어야 하는 등 더 알아보려면 시간이 많이 걸릴 것 같아 더 간단하게 사용할 수 있는 Open API 서비스를 찾기 시작했습니다. Stoplight.io를 사용해서 다시 API를 구축했는데, 여기서 대부분의 시간을 소모했습니다.
 
-연도별 전체
+- 연도별 전체
+
 <https://stoplight.io/mocks/panther222128/kpgg/25039489/group/>
 
-연도별 각 걸그룹(/group/(영문 그룹 이름, ohmygirl 등))
+- 연도별 각 걸그룹(/group/(영문 그룹 이름, ohmygirl 등))
+
 예시1: <https://stoplight.io/mocks/panther222128/kpgg/25039489/group/STAYC>
 예시2: <https://stoplight.io/mocks/panther222128/kpgg/25039489/group/OHMYGIRL>
 
