@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import Kingfisher
 
 class MainViewController: UIViewController {
     
@@ -23,7 +24,6 @@ class MainViewController: UIViewController {
         self.showMainViewController(with: MainViewModel())
         fetchGroups(path: "")
         configureHierarchy()
-        setupDiffableDataSource()
         section.delegate = self
         subscribe()
         configureNavigation()
@@ -31,8 +31,8 @@ class MainViewController: UIViewController {
     
     private func subscribe()  {
         self.mainViewModel?.groupsSubject().subscribe(onNext:{ [weak self] _ in
+            self?.setupDiffableDataSource()
             self?.applySectionSnaphots()
-            self?.section.reloadData()
         }).disposed(by: disposeBag)
     }
     
@@ -112,14 +112,8 @@ class MainViewController: UIViewController {
         }
         
         let mainCellRegistration = UICollectionView.CellRegistration<MainCell, Group> { cell, indexPath, group in
-            let imageUrl = URL(string: group.groupimage)
-            var data = Data()
-            do {
-                data = try Data(contentsOf: imageUrl!)
-            } catch {
-                
-            }
-            cell.groupImage.image = UIImage(data: data)
+            guard let imageUrl = URL(string: group.groupimage) else { return }
+            cell.groupImage.kf.setImage(with: imageUrl)
             var background = UIBackgroundConfiguration.listPlainCell()
             background.cornerRadius = 0
             background.backgroundColor = .black
@@ -127,14 +121,8 @@ class MainViewController: UIViewController {
         }
         
         let cellRegistration = UICollectionView.CellRegistration<GroupCell, Group> { cell, indexPath, group in
-            let imageUrl = URL(string: group.groupimage)
-            var data = Data()
-            do {
-                data = try Data(contentsOf: imageUrl!)
-                cell.groupImage.image = UIImage(data: data)
-            } catch {
-                
-            }
+            guard let imageUrl = URL(string: group.groupimage) else { return }
+            cell.groupImage.kf.setImage(with: imageUrl)
             cell.groupName.text = group.groupname
             var background = UIBackgroundConfiguration.listPlainCell()
             background.cornerRadius = 8
