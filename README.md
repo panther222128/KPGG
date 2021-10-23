@@ -1,6 +1,6 @@
 # KPGG
 
-<img src="https://user-images.githubusercontent.com/61342175/138551652-e799bd20-7d73-4a43-8533-42ad58620479.gif" width = 250 align = center>
+<img src="https://user-images.githubusercontent.com/61342175/138551795-6a8586aa-2548-45bd-8389-132f66b2e0f6.gif" width = 250 align = center>
 
 ## 앱 설명
 
