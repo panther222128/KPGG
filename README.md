@@ -1,6 +1,8 @@
 # KPGG
 
-<img src="https://user-images.githubusercontent.com/61342175/138551795-6a8586aa-2548-45bd-8389-132f66b2e0f6.gif" width = 250 align = center>
+<img src="https://user-images.githubusercontent.com/61342175/138551979-f6d3d7cb-f1bd-479e-8872-1e9d90bb56c5.gif" width = 250 align = center>
+
+파일 용량 문제로 화질이 좋지 않을 수 있습니다. 멤버 프로필의 스크롤은 아이패드
 
 ## 앱 설명
 
