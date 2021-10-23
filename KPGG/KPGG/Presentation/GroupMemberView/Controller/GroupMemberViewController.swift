@@ -7,6 +7,8 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
+
 class GroupMemberViewController: UIViewController {
     
     @IBOutlet weak var groupMember: UITableView!
@@ -87,14 +89,10 @@ extension GroupMemberViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MemberCell", for: indexPath) as? GroupMemberViewCell else { return UITableViewCell() }
         let imageUrl = URL(string: groupMemberViewModel?.member()?[indexPath.row].mainimage ?? "")
-        var data = Data()
-        do {
-            data = try Data(contentsOf: imageUrl!)
-        } catch {
-            
-        }
         let memberActivityName = groupMemberViewModel?.member()?[indexPath.row].activityname ?? ""
-        cell.configureCell(memberActivityName: memberActivityName, imageData: data)
+        if let imageUrl = imageUrl {
+            cell.configureCell(memberActivityName: memberActivityName, imageUrl: imageUrl)
+        }
         return cell
     }
     
