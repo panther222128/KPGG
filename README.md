@@ -11,6 +11,7 @@
 - RxSwift
 - Alamofire
 - Kingfisher
+- YoutubePlayer_in_WKWebView
 - UICollectionView DiffableDataSource
 - UICollectionView Compositional Layout
 
