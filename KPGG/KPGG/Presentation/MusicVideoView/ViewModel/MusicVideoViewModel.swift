@@ -13,7 +13,7 @@ protocol MusicVideoViewModelType {
 
 class MusicVideoViewModel: MusicVideoViewModelType {
     
-    var youtubeId: String
+    private var youtubeId: String
     
     init(youtubeId: String) {
         self.youtubeId = youtubeId

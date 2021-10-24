@@ -19,7 +19,7 @@ protocol MemberDetailViewModelType {
 
 class MemberDetailViewModel: MemberDetailViewModelType {
     
-    var member: Member?
+    private var member: Member?
     
     init(member: Member) {
         self.member = member
