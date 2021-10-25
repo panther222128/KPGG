@@ -8,12 +8,19 @@
 
 첫 스크린의 가장 상위에 있는 셀은 네 개의 걸그룹 중 한 그룹이 랜덤으로 보여집니다. 셀 선택 시 그룹 멤버 리스트, 대표곡 듣기 모두 앞서 설명한 것과 똑같이 동작합니다.
 
+### 아래 기능이 추가되었습니다.
+
+<img src="https://user-images.githubusercontent.com/61342175/138678581-f4f1acb9-160e-4a7f-9a80-0e950fbd9c43.gif" width = 250 align = center>
+
+상태 바의 글자 색상을 흰색으로 변경하고, CoreData를 사용해 즐겨찾는 그룹 및 멤버를 탭 바에 나타나도록 했습니다. 다른 기능은 위 설명과 동일합니다.
+
 ## 사용한 것들
 
 - MVVM Design Pattern
 - RxSwift
 - Alamofire
 - Kingfisher
+- CoreData
 - YoutubePlayer_in_WKWebView
 - UICollectionView DiffableDataSource
 - UICollectionView Compositional Layout
