@@ -13,9 +13,11 @@ class GroupMemberViewController: UIViewController {
     
     @IBOutlet weak var groupMember: UITableView!
     @IBOutlet weak var songButton: UIButton!
+    @IBOutlet weak var favoritesGroupButton: UIButton!
     
     private var groupMemberViewModel: GroupMemberViewModelType?
     private var disposeBag = DisposeBag()
+    private var buttonHidden: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,17 @@ class GroupMemberViewController: UIViewController {
         fetchMembers()
         groupMember.dataSource = self
         groupMember.delegate = self
+        buttonHide()
+    }
+    
+    private func buttonHide() {
+        if buttonHidden == true {
+            favoritesGroupButton.isHidden = true
+            songButton.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+            songButton.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        } else {
+            favoritesGroupButton.isHidden = false
+        }
     }
     
     private func subscribe()  {
@@ -65,8 +78,9 @@ class GroupMemberViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = .systemBlue
     }
 
-    func showGroupMemberViewController(with viewModel: GroupMemberViewModelType) {
+    func showGroupMemberViewController(with viewModel: GroupMemberViewModelType, buttonHidden: Bool) {
         self.groupMemberViewModel = viewModel
+        self.buttonHidden = buttonHidden
     }
     
     @IBAction func playHitSong(_ sender: Any) {
@@ -108,7 +122,7 @@ extension GroupMemberViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let memberDetailViewContrller = self.storyboard?.instantiateViewController(withIdentifier: "MemberDetail") as? MemberDetailViewController else { return }
         guard let member = self.groupMemberViewModel?.member()?[indexPath.row] else { return }
-        memberDetailViewContrller.showMemberDetailViewController(with: MemberDetailViewModel(member: member))
+        memberDetailViewContrller.showMemberDetailViewController(with: MemberDetailViewModel(member: member), buttonHidden: false)
         self.navigationController?.pushViewController(memberDetailViewContrller, animated: true)
     }
     

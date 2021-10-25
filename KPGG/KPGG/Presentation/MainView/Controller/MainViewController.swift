@@ -10,9 +10,9 @@ import RxSwift
 import Kingfisher
 
 class MainViewController: UIViewController {
-    
+
     @IBOutlet weak var sectionView: SectionView!
-    
+
     private var mainViewModel: MainViewModelType?
     private var dataSource: UICollectionViewDiffableDataSource<Section, Group>!
     private var disposeBag = DisposeBag()
@@ -136,7 +136,6 @@ class MainViewController: UIViewController {
         self.navigationItem.backButtonTitle = "   "
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         self.navigationController?.setStatusBar(backgroundColor: .clear)
-
         if #available(iOS 11.0, *) {
             self.sectionView.contentInsetAdjustmentBehavior = .never
         } else {
@@ -171,7 +170,7 @@ extension MainViewController: UICollectionViewDelegate {
             return
         }
         guard let groupMemberViewController = self.storyboard?.instantiateViewController(withIdentifier: "GroupMember") as? GroupMemberViewController else { return }
-        groupMemberViewController.showGroupMemberViewController(with: GroupMemberViewModel(groupName: groupName, groupHitSong: groupHitSong, group: group))
+        groupMemberViewController.showGroupMemberViewController(with: GroupMemberViewModel(groupName: groupName, groupHitSong: groupHitSong, group: group), buttonHidden: false)
         self.navigationController?.pushViewController(groupMemberViewController, animated: true)
     }
     

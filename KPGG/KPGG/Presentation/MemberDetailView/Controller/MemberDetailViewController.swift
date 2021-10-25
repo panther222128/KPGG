@@ -24,8 +24,10 @@ class MemberDetailViewController: UIViewController {
     @IBOutlet weak var mbti: UILabel!
     @IBOutlet weak var bloodType: UILabel!
     @IBOutlet weak var isPreviousMember: UILabel!
-    
+
+    @IBOutlet weak var favoritesButton: UIButton!
     private var memberDetailViewModel: MemberDetailViewModelType?
+    private var buttonHidden: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,16 @@ class MemberDetailViewController: UIViewController {
         configureImage()
         configureNavigation()
         viewConfiguration()
+        buttonHide()
+    }
+    
+    private func buttonHide() {
+        guard let buttonHidden = buttonHidden else { return }
+        if buttonHidden == true {
+            favoritesButton.isHidden = true
+        } else {
+            favoritesButton.isHidden = false
+        }
     }
     
     private func configureElementTitle() {
@@ -95,8 +107,9 @@ class MemberDetailViewController: UIViewController {
         memberDetailViewModel.insertAtFavoritesMember(member: memberDetailViewModel.selectedMember())
     }
     
-    func showMemberDetailViewController(with viewModel: MemberDetailViewModelType) {
+    func showMemberDetailViewController(with viewModel: MemberDetailViewModelType, buttonHidden: Bool) {
         self.memberDetailViewModel = viewModel
+        self.buttonHidden = buttonHidden
     }
     
 }

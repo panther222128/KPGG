@@ -12,6 +12,7 @@ protocol GroupFavoritesViewModelType {
     func favorites() -> [GroupInfo]?
     func deleteGroup(index: Int)
     func count() -> Int
+    func selectedGroup(index: Int) -> Group?
 }
 
 class GroupFavoritesViewModel: GroupFavoritesViewModelType {
@@ -30,6 +31,12 @@ class GroupFavoritesViewModel: GroupFavoritesViewModelType {
     
     func favorites() -> [GroupInfo]? {
         return favoritesGroup
+    }
+    
+    func selectedGroup(index: Int) -> Group? {
+        let selectedGroup = favoritesGroup?[index]
+        let group = Group(groupname: selectedGroup?.groupname ?? "", grouplogo: selectedGroup?.grouplogo ?? "", groupimage: selectedGroup?.groupimage ?? "", hitsong: selectedGroup?.hitsong ?? "", haspreviousmember: selectedGroup?.haspreviousmember ?? false)
+        return group
     }
     
     func deleteGroup(index: Int) {

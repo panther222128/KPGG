@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class GroupFavoritesCell: UITableViewCell {
     
@@ -18,6 +19,13 @@ class GroupFavoritesCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    func configureCell(imageUrl: URL, groupName: String) {
+        self.backgroundColor = .clear
+        self.groupName.textColor = .white
+        self.groupImage.kf.setImage(with: imageUrl)
+        self.groupName.text = groupName
     }
 
 }

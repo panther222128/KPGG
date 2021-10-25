@@ -68,13 +68,13 @@ class FavoritesStorageManager {
         let context = self.persistentContainer.viewContext
         guard let entity = NSEntityDescription.entity(forEntityName: "MemberInfo", in: context) else { return }
         let memberManagedObject = NSManagedObject(entity: entity, insertInto: context)
-        memberManagedObject.setValue(member.activityname, forKey: "beanOrigin")
-        memberManagedObject.setValue(member.name, forKey: "beanFarm")
-        memberManagedObject.setValue(member.birth, forKey: "beanProcessing")
-        memberManagedObject.setValue(member.mbti, forKey: "grinderVariety")
-        memberManagedObject.setValue(member.bloodtype, forKey: "beanVariety")
-        memberManagedObject.setValue(member.mainimage, forKey: "extractionTime")
-        memberManagedObject.setValue(member.ispreviousmember, forKey: "grinderVariety")
+        memberManagedObject.setValue(member.activityname, forKey: "activityname")
+        memberManagedObject.setValue(member.name, forKey: "name")
+        memberManagedObject.setValue(member.birth, forKey: "birth")
+        memberManagedObject.setValue(member.mbti, forKey: "mbti")
+        memberManagedObject.setValue(member.bloodtype, forKey: "bloodtype")
+        memberManagedObject.setValue(member.mainimage, forKey: "mainimage")
+        memberManagedObject.setValue(member.ispreviousmember, forKey: "ispreviousmember")
         do {
             try context.save()
         } catch {

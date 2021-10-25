@@ -21,5 +21,6 @@ public class MemberInfo: NSManagedObject, Identifiable {
     @NSManaged public var mbti: String?
     @NSManaged public var bloodtype: String?
     @NSManaged public var mainimage: String?
+    @NSManaged public var ispreviousmember: Bool
 
 }

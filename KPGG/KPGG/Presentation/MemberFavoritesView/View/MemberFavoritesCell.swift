@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MemberFavoritesCell: UITableViewCell {
     
@@ -20,4 +21,11 @@ class MemberFavoritesCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
+    func configureCell(imageUrl: URL, memberName: String) {
+        self.backgroundColor = .clear
+        self.memberName.textColor = .white
+        self.memberImage.kf.setImage(with: imageUrl)
+        self.memberName.text = memberName
+    }
+    
 }

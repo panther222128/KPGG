@@ -12,6 +12,7 @@ protocol MemberFavoritesViewModelType {
     func favorites() -> [MemberInfo]?
     func deleteMember(index: Int)
     func count() -> Int
+    func selectedMember(index: Int) -> Member?
 }
 
 class MemberFavoritesViewModel: MemberFavoritesViewModelType {
@@ -30,6 +31,12 @@ class MemberFavoritesViewModel: MemberFavoritesViewModelType {
     
     func favorites() -> [MemberInfo]? {
         return favoritesMember
+    }
+    
+    func selectedMember(index: Int) -> Member? {
+        let selectedMember = favoritesMember?[index]
+        let member = Member(activityname: selectedMember?.activityname ?? "", name: selectedMember?.name ?? "", birth: selectedMember?.birth ?? "", mbti: selectedMember?.mbti ?? "", bloodtype: selectedMember?.bloodtype ?? "", mainimage: selectedMember?.mainimage ?? "", ispreviousmember: selectedMember?.ispreviousmember ?? false)
+        return member
     }
     
     func deleteMember(index: Int) {
