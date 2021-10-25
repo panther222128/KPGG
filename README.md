@@ -317,3 +317,107 @@ AVFoundation을 활용해서 영상 재생을 하려고 했으나 유튜브 링�
 ## 2021.10.23
 
 불필요한 코드를 지우고 변수명을 변경하는 등 리팩토링이 있었습니다. 시뮬레이터 및 아이패드에서 테스트해보면 스크롤이 매끄럽게 동작하지 않아 이미지 캐시를 활용하는 Kingfisher를 적용해서 해결했습니다.
+
+# 회고
+
+시작하게 된 계기는 코드스쿼드를 함께 수료했던 분들에 비해 구현 역량이 떨어진다고 생각했던 것과 포트폴리오에 담을 프로젝트를 만드려고 한 것입니다. 수료 당시 겁 먹고 '어차피 컴파일 안 될텐데' 하는 생각으로 키보드에서 손을 떼고 있었던 시기도 있었고, 검색으로 찾을 수 있는 코드만 베껴서 작성하면 그뿐인지 생각하는 시간이 많아 항상 구현이 느렸습니다. 이번 프로젝트는 완전히 속도만 내서 진행했습니다. 시간이 많이 소모된 부분 중 한 가지는 진행하는 동안 3일에서 4일은 API를 만드는 데 소모했습니다. 포스트맨 사용 중 리스폰스 제한에 걸려 Stoplight로 옮겨야 하는데, 적응하는 시간이 오래 걸렸습니다. 생각해볼 수 있는 몇 가지에 대해서 남겨보려고 합니다.
+
+### RxSwift
+
+사용했다고 하지만 정말 사용만 했을 뿐 이해가 많이 부족하기 때문에 현재 학습하고 있는 내용입니다. 기본적인 Observable, Observer, PublishSubject, BehaviorSubject와 같은 키워드를 학습했습니다. 오퍼레이터 등 많이 사용해보는 것이 중요하겠습니다. 현재 `subscribe`가 아래처럼 작성되어 있습니다.
+
+`bind`를 사용하지 않은 점은 아쉬운 점입니다. 중간에 아래 링크를 참고해서 만들어보기도 했습니다.
+
+<https://eunjin3786.tistory.com/29>
+
+### Kingfisher
+
+스크롤이 잘 동작하지 않았던 부분 해결에 큰 도움이 되었습니다. 이해도가 부족한 채로 사용했는데, 이미지 캐시를 사용한다고 알고만 있었습니다. 소스 코드를 더 살펴볼 계획인데, 중간에 Storage, DiskStorage, MemoryStorage, ImageCache와 같은 파일을 발견했고, 이 파일들과 더불어 다른 내용도 더 살펴보려고 합니다.
+
+### CoreData
+
+데이터 모델 객체를 관리하는 '프레임워크'로 데이터베이스가 아니라고 알고 있습니다. Persistence의 기능으로만 사용했습니다.
+
+### UICollectionView DiffableDataSource와 Compositional Layout
+
+애플이 제공하는 샘플 코드를 보면서 적용했으며, 다양한 레이아웃 형태에 대해서 살펴볼 예정입니다.
+
+### API 데이터 모델 설계 시 아쉬운 부분
+
+예상했다면 아래와 같은 코드가 발생하지 않았을 것 같습니다. 원래 넣으려는 계획이 없었다는 점에서 그대로 진행했습니다.
+
+```swift
+let headerRegistration = UICollectionView.SupplementaryRegistration <SectionHeader>(elementKind: MainViewController.sectionHeaderElementKind) { supplementaryView, string, indexPath in
+    if indexPath == [1, 0] {
+        supplementaryView.sectionTitle.text = "2020년 데뷔"
+    } else if indexPath == [2, 0] {
+        supplementaryView.sectionTitle.text = "2016~2019년 데뷔"
+    } else if indexPath == [3, 0] {
+        supplementaryView.sectionTitle.text = "2014~2015년 데뷔"
+    } else if indexPath == [4, 0] {
+        supplementaryView.sectionTitle.text = "2012~2013년 데뷔"
+    } else if indexPath == [5, 0] {
+        supplementaryView.sectionTitle.text = "2010~2011년 데뷔"
+    } else if indexPath == [6, 0] {
+        supplementaryView.sectionTitle.text = "2009년 데뷔"
+    } else if indexPath == [7, 0] {
+        supplementaryView.sectionTitle.text = "2006~2008년 데뷔"
+    }
+}
+```
+
+### 추상화된 모델의 활용 관점에서 아쉬운 부분
+
+테이블 뷰 셀은 아래처럼 되어 있습니다. 아래는 UI 요소 둘을 가지고 있는 셀에 어떤 데이터를 보여줄지 설정하는 코드입니다.
+
+```swift
+func configureCell(memberActivityName: String, imageUrl: URL) {
+    self.backgroundColor = .clear
+    self.memberImage.kf.setImage(with: imageUrl)
+    self.memberImage.contentMode = .scaleAspectFit
+    self.memberName.text = memberActivityName
+    self.memberName.textAlignment = .center
+    self.memberName.textColor = .white
+}
+```
+
+이 상태에서 데이터를 나타내려면 아래 코드를 통해 어떤 데이터를 나타낼지 보여주도록 합니다.
+
+```swift
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "MemberCell", for: indexPath) as? GroupMemberViewCell else { return UITableViewCell() }
+    let imageUrl = URL(string: groupMemberViewModel?.member()?[indexPath.row].mainimage ?? "")
+    let memberActivityName = groupMemberViewModel?.member()?[indexPath.row].activityname ?? ""
+    if let imageUrl = imageUrl {
+        cell.configureCell(memberActivityName: memberActivityName, imageUrl: imageUrl)
+    }
+    return cell
+}
+```
+
+아래처럼 인자를 하나로 줄이고 추상화된 모델을 활용하면 위 예시와 코드 줄 수는 큰 차이가 없습니다.
+
+```swift
+func configureCell(member: Member) {
+    self.backgroundColor = .clear
+    guard let url = URL(string: member.mainimage) else { return }
+    self.memberImage.kf.setImage(with: url)
+    self.memberImage.contentMode = .scaleAspectFit
+    self.memberName.text = member.activityname
+    self.memberName.textAlignment = .center
+    self.memberName.textColor = .white
+}
+```
+
+그런데 아래처럼 데이터를 보여주는 부분의 코드 줄 수가 줄어듭니다.
+
+```swift
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "MemberCell", for: indexPath) as? GroupMemberViewCell else { return UITableViewCell() }
+    guard let member = groupMemberViewModel?.member()?[indexPath.row] else { return UITableViewCell() }
+    cell.configureCell(member: member)
+    return cell
+}
+```
+
+아래처럼 개선하면 이후 UI 요소가 추가된다고 할 때 하나의 파일에서만 작업해도 요소 추가가 가능합니다.

@@ -29,7 +29,7 @@ class GroupMemberViewModel: GroupMemberViewModelType {
     private var groupHitSong: String
     private var group: Group
     
-    init(groupName: String, groupHitSong: String, group: Group) {
+    init(groupName: String, groupHitSong: String, group: Group ) {
         self.useCase = GroupMemberUseCase()
         self.members = BehaviorSubject<[String:[Member]]>(value: [:])
         self.groupName = groupName

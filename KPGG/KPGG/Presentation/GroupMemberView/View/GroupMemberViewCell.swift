@@ -24,9 +24,10 @@ class GroupMemberViewCell: UITableViewCell {
     func configureCell(memberActivityName: String, imageUrl: URL) {
         self.backgroundColor = .clear
         self.memberImage.kf.setImage(with: imageUrl)
+        self.memberImage.contentMode = .scaleAspectFit
         self.memberName.text = memberActivityName
         self.memberName.textAlignment = .center
         self.memberName.textColor = .white
     }
-
+    
 }

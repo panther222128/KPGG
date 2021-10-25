@@ -25,6 +25,7 @@ class MemberFavoritesCell: UITableViewCell {
         self.backgroundColor = .clear
         self.memberName.textColor = .white
         self.memberImage.kf.setImage(with: imageUrl)
+        self.memberImage.contentMode = .scaleAspectFit
         self.memberName.text = memberName
     }
     

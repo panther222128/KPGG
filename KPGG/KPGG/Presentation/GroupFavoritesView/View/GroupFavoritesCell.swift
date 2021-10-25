@@ -23,6 +23,7 @@ class GroupFavoritesCell: UITableViewCell {
     
     func configureCell(imageUrl: URL, groupName: String) {
         self.backgroundColor = .clear
+        self.groupImage.contentMode = .scaleAspectFit
         self.groupName.textColor = .white
         self.groupImage.kf.setImage(with: imageUrl)
         self.groupName.text = groupName
