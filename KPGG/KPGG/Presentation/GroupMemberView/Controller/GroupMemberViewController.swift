@@ -69,12 +69,17 @@ class GroupMemberViewController: UIViewController {
         self.groupMemberViewModel = viewModel
     }
     
-    @IBAction func buttonAction(_ sender: Any) {
+    @IBAction func playHitSong(_ sender: Any) {
         guard let groupHitSong = groupMemberViewModel?.groupHitSongReturn() else { return }
         let videoPlayerViewController = UIStoryboard(name: "VideoView", bundle: nil).instantiateViewController(withIdentifier: "Video") as! VideoViewController
         videoPlayerViewController.showMusicVideoViewController(with: MusicVideoViewModel(youtubeId: groupHitSong))
         videoPlayerViewController.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(videoPlayerViewController, animated: true)
+    }
+    
+    @IBAction func insertAtFavoritesGroup(_ sender: Any) {
+        guard let groupMemberViewModel = groupMemberViewModel else { return }
+        groupMemberViewModel.insertAtFavoritesGroup(group: groupMemberViewModel.selectedGroup())
     }
     
 }

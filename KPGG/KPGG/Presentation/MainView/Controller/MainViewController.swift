@@ -166,8 +166,12 @@ extension MainViewController: UICollectionViewDelegate {
             sectionView.deselectItem(at: indexPath, animated: true)
             return
         }
+        guard let group = self.dataSource.itemIdentifier(for: indexPath) else {
+            sectionView.deselectItem(at: indexPath, animated: true)
+            return
+        }
         guard let groupMemberViewController = self.storyboard?.instantiateViewController(withIdentifier: "GroupMember") as? GroupMemberViewController else { return }
-        groupMemberViewController.showGroupMemberViewController(with: GroupMemberViewModel(groupName: groupName, groupHitSong: groupHitSong))
+        groupMemberViewController.showGroupMemberViewController(with: GroupMemberViewModel(groupName: groupName, groupHitSong: groupHitSong, group: group))
         self.navigationController?.pushViewController(groupMemberViewController, animated: true)
     }
     

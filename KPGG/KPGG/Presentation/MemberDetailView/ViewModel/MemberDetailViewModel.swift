@@ -15,14 +15,18 @@ protocol MemberDetailViewModelType {
     func bloodType() -> String
     func mainImage() -> String
     func isPreviousMember() -> String
+    func insertAtFavoritesMember(member: Member)
+    func selectedMember() -> Member
 }
 
 class MemberDetailViewModel: MemberDetailViewModelType {
     
+    private var memberDetailUseCase: MemberDetailUseCaseType
     private var member: Member?
     
     init(member: Member) {
         self.member = member
+        self.memberDetailUseCase = MemberDetailUseCase()
     }
     
     func activityName() -> String {
@@ -76,6 +80,15 @@ class MemberDetailViewModel: MemberDetailViewModelType {
         } else {
             return "활동"
         }
+    }
+    
+    func selectedMember() -> Member {
+        guard let member = member else { return Member(activityname: "", name: "", birth: "", mbti: "", bloodtype: "", mainimage: "", ispreviousmember: false) }
+        return member
+    }
+    
+    func insertAtFavoritesMember(member: Member) {
+        memberDetailUseCase.insertMember(member: member)
     }
     
 }

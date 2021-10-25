@@ -90,6 +90,11 @@ class MemberDetailViewController: UIViewController {
         self.view.backgroundColor = .black
     }
     
+    @IBAction func insertAtFavoritesMember(_ sender: Any) {
+        guard let memberDetailViewModel = memberDetailViewModel else { return }
+        memberDetailViewModel.insertAtFavoritesMember(member: memberDetailViewModel.selectedMember())
+    }
+    
     func showMemberDetailViewController(with viewModel: MemberDetailViewModelType) {
         self.memberDetailViewModel = viewModel
     }

@@ -10,6 +10,7 @@
 
 ## 사용한 것들
 
+- MVVM Design Pattern
 - RxSwift
 - Alamofire
 - Kingfisher

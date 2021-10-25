@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="20G95" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="GroupInfo" representedClassName="GroupInfo" syncable="YES">
+        <attribute name="groupimage" optional="YES" attributeType="String"/>
+        <attribute name="grouplogo" optional="YES" attributeType="String"/>
+        <attribute name="groupname" optional="YES" attributeType="String"/>
+        <attribute name="haspreviousmember" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="hitsong" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="MemberInfo" representedClassName="MemberInfo" syncable="YES">
+        <attribute name="activityname" optional="YES" attributeType="String"/>
+        <attribute name="birth" optional="YES" attributeType="String"/>
+        <attribute name="bloodtype" optional="YES" attributeType="String"/>
+        <attribute name="ispreviousmember" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="mainimage" optional="YES" attributeType="String"/>
+        <attribute name="mbti" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="GroupInfo" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="MemberInfo" positionX="-54" positionY="-9" width="128" height="134"/>
+    </elements>
+</model>

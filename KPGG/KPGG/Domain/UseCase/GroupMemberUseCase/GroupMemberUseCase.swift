@@ -11,6 +11,7 @@ import RxCocoa
 
 protocol GroupMemberUseCaseType {
     func fetchMemberList(_ path: String) -> Observable<[String:[Member]]>
+    func insertGroup(group: Group)
 }
 
 class GroupMemberUseCase: GroupMemberUseCaseType {
@@ -34,6 +35,10 @@ class GroupMemberUseCase: GroupMemberUseCaseType {
             }
             return Disposables.create()
         }
+    }
+    
+    func insertGroup(group: Group) {
+        FavoritesStorageManager.shared.insertGroup(group: group)
     }
 
 }
