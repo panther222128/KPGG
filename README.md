@@ -10,7 +10,9 @@
 
 ### 아래 기능이 추가되었습니다.
 
-<img src="https://user-images.githubusercontent.com/61342175/138678581-f4f1acb9-160e-4a7f-9a80-0e950fbd9c43.gif" width = 250 align = center>
+<img src="https://user-images.githubusercontent.com/61342175/138678581-f4f1acb9-160e-4a7f-9a80-0e950fbd9c43.gif" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/138679325-90dad54c-192c-4e59-90f8-63b08f33c858.gif" width = 250 align = center>
 
 상태 바의 글자 색상을 흰색으로 변경하고, CoreData를 사용해 즐겨찾는 그룹 및 멤버를 탭 바에 나타나도록 했습니다. 다른 기능은 위 설명과 동일합니다.
 
