@@ -2,6 +2,8 @@
 
 ## 앱 설명
 
+시뮬레이터 이미지 모음은 이 글의 가장 아래에서 확인할 수 있습니다.
+
 <img src="https://user-images.githubusercontent.com/61342175/138552437-d530cf0f-ca32-4f73-9d4d-23c8b0d05a04.gif" width = 250 align = center>
 
 히트곡이 있는 케이팝 걸그룹을 볼 수 있는 앱입니다. 특정 그룹 선택 시 그룹 멤버들의 리스트를 볼 수 있고, 리스트를 볼 수 있는 스크린에서 '대표곡 듣기' 버튼을 탭하면 유튜브 뮤직비디오가 재생됩니다. 그룹 멤버 셀을 선택하면 멤버의 간단한 프로필을 볼 수 있습니다.
@@ -421,3 +423,33 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 ```
 
 아래처럼 개선하면 이후 UI 요소가 추가된다고 할 때 하나의 파일에서만 작업해도 요소 추가가 가능합니다.
+
+## 시뮬레이터 이미지
+
+<img src="https://user-images.githubusercontent.com/61342175/139029750-7f79c638-04f0-412b-a95d-97b48e3a3847.png" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/139029753-257d25f9-4ba5-49ef-bf86-083a3a00f2e9.png" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/139029766-25fc7f78-ae5e-4d35-835e-e4bed5ddda9a.png" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/139029774-bbc0048d-25cd-45d8-b6d0-4b708317811c.png" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/139029791-d660d3df-3372-415f-9d89-f9c5a4aa3779.png" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/139029818-099e8ba3-0b5f-464a-ad01-08c2eac35b44.png" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/139029875-aca85393-7ab0-46e2-9fb1-546d5882eca7.png" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/139029883-e6d52b5e-70ea-496b-a169-146b5b9d8eda.png" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/139029915-0101a492-d4d9-4f94-941b-0148c8d94750.png" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/139029936-bd8658bd-35ad-4529-8f71-ee3cfd613c5c.png" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/139029948-558635c4-b687-4ba3-aba1-f982027c96b1.png" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/139029963-817272d1-b979-475b-b0ea-f1ec051d4329.png" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/139029977-fcea638c-c8fb-48cd-875a-f299f75c7e8c.png" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/139029993-e913d1b4-4248-4c1f-be1d-30e0c98f095e.png" width = 250 align = left>
