@@ -21,11 +21,12 @@ class GroupMemberViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configureCell(memberActivityName: String, imageUrl: URL) {
+    func configureCell(member: Member) {
         self.backgroundColor = .clear
-        self.memberImage.kf.setImage(with: imageUrl)
+        guard let url = URL(string: member.mainimage) else { return }
+        self.memberImage.kf.setImage(with: url)
         self.memberImage.contentMode = .scaleAspectFit
-        self.memberName.text = memberActivityName
+        self.memberName.text = member.activityname
         self.memberName.textAlignment = .center
         self.memberName.textColor = .white
     }
