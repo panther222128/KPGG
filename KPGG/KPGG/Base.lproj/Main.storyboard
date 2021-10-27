@@ -174,7 +174,7 @@
                             <constraint firstItem="Kfg-Rq-B9h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="k72-1p-QGR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="그룹" id="lUi-nz-DQg"/>
+                    <tabBarItem key="tabBarItem" title="그룹" image="square.fill" catalog="system" id="lUi-nz-DQg"/>
                     <navigationItem key="navigationItem" id="NTD-EX-NWS"/>
                     <connections>
                         <outlet property="sectionView" destination="Kfg-Rq-B9h" id="VyL-fq-vhb"/>
@@ -469,7 +469,7 @@
         <scene sceneID="wwe-Jx-8a3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ieK-Vx-OQx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="즐겨찾는 그룹" id="Dqb-IL-iwY"/>
+                    <tabBarItem key="tabBarItem" title="즐겨찾는 그룹" image="heart.fill" catalog="system" id="Dqb-IL-iwY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9tz-PU-VE0">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -488,7 +488,7 @@
         <scene sceneID="rxt-qz-r72">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jkw-Fj-uNQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="즐겨찾는 멤버" id="kgA-kF-Zfx"/>
+                    <tabBarItem key="tabBarItem" title="즐겨찾는 멤버" image="heart.fill" catalog="system" id="kgA-kF-Zfx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PCO-Z7-PbB">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -505,6 +505,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="square.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

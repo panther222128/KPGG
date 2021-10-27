@@ -11,12 +11,11 @@ import YoutubePlayer_in_WKWebView
 class VideoViewController: UIViewController {
 
     private var musicVideoViewModel: MusicVideoViewModelType?
+    private var videoView: WKYTPlayerView!
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscapeRight
     }
-    
-    var videoView: WKYTPlayerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
