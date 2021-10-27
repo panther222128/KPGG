@@ -427,29 +427,17 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 ## 시뮬레이터 이미지
 
 <img src="https://user-images.githubusercontent.com/61342175/139029750-7f79c638-04f0-412b-a95d-97b48e3a3847.png" width = 250 align = left>
-
 <img src="https://user-images.githubusercontent.com/61342175/139029753-257d25f9-4ba5-49ef-bf86-083a3a00f2e9.png" width = 250 align = left>
-
 <img src="https://user-images.githubusercontent.com/61342175/139029766-25fc7f78-ae5e-4d35-835e-e4bed5ddda9a.png" width = 250 align = left>
-
 <img src="https://user-images.githubusercontent.com/61342175/139029774-bbc0048d-25cd-45d8-b6d0-4b708317811c.png" width = 250 align = left>
-
 <img src="https://user-images.githubusercontent.com/61342175/139029791-d660d3df-3372-415f-9d89-f9c5a4aa3779.png" width = 250 align = left>
-
 <img src="https://user-images.githubusercontent.com/61342175/139029818-099e8ba3-0b5f-464a-ad01-08c2eac35b44.png" width = 250 align = left>
-
 <img src="https://user-images.githubusercontent.com/61342175/139029875-aca85393-7ab0-46e2-9fb1-546d5882eca7.png" width = 250 align = left>
-
 <img src="https://user-images.githubusercontent.com/61342175/139029883-e6d52b5e-70ea-496b-a169-146b5b9d8eda.png" width = 250 align = left>
-
 <img src="https://user-images.githubusercontent.com/61342175/139029915-0101a492-d4d9-4f94-941b-0148c8d94750.png" width = 250 align = left>
-
 <img src="https://user-images.githubusercontent.com/61342175/139029936-bd8658bd-35ad-4529-8f71-ee3cfd613c5c.png" width = 250 align = left>
-
 <img src="https://user-images.githubusercontent.com/61342175/139029948-558635c4-b687-4ba3-aba1-f982027c96b1.png" width = 250 align = left>
-
 <img src="https://user-images.githubusercontent.com/61342175/139029963-817272d1-b979-475b-b0ea-f1ec051d4329.png" width = 250 align = left>
-
 <img src="https://user-images.githubusercontent.com/61342175/139029977-fcea638c-c8fb-48cd-875a-f299f75c7e8c.png" width = 250 align = left>
-
 <img src="https://user-images.githubusercontent.com/61342175/139029993-e913d1b4-4248-4c1f-be1d-30e0c98f095e.png" width = 250 align = left>
+<img src="https://user-images.githubusercontent.com/61342175/139031058-4ee73bf0-c2e9-41fc-b648-877a75a57222.png" width = 250 align = left>
