@@ -85,7 +85,7 @@ class GroupMemberViewController: UIViewController {
     
     @IBAction func playHitSong(_ sender: Any) {
         guard let groupHitSong = groupMemberViewModel?.groupHitSongReturn() else { return }
-        let videoPlayerViewController = UIStoryboard(name: "VideoView", bundle: nil).instantiateViewController(withIdentifier: "Video") as! VideoViewController
+        guard let videoPlayerViewController = UIStoryboard(name: "VideoView", bundle: nil).instantiateViewController(withIdentifier: "Video") as? VideoViewController else { return }
         videoPlayerViewController.showMusicVideoViewController(with: MusicVideoViewModel(youtubeId: groupHitSong))
         videoPlayerViewController.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(videoPlayerViewController, animated: true)
@@ -107,11 +107,8 @@ extension GroupMemberViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MemberCell", for: indexPath) as? GroupMemberViewCell else { return UITableViewCell() }
-        let imageUrl = URL(string: groupMemberViewModel?.member()?[indexPath.row].mainimage ?? "")
-        let memberActivityName = groupMemberViewModel?.member()?[indexPath.row].activityname ?? ""
-        if let imageUrl = imageUrl {
-            cell.configureCell(memberActivityName: memberActivityName, imageUrl: imageUrl)
-        }
+        guard let member = groupMemberViewModel?.member()?[indexPath.row] else { return UITableViewCell() }
+        cell.configureCell(member: member)
         return cell
     }
     
