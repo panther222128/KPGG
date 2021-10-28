@@ -14,7 +14,7 @@ protocol GroupMemberUseCaseType {
     func insertGroup(group: Group)
 }
 
-class GroupMemberUseCase: GroupMemberUseCaseType {
+final class GroupMemberUseCase: GroupMemberUseCaseType {
     
     var networkService: NetworkService
     

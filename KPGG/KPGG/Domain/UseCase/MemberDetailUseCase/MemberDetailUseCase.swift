@@ -11,7 +11,7 @@ protocol MemberDetailUseCaseType {
     func insertMember(member: Member)
 }
 
-class MemberDetailUseCase: MemberDetailUseCaseType {
+final class MemberDetailUseCase: MemberDetailUseCaseType {
     
     func insertMember(member: Member) {
         FavoritesStorageManager.shared.insertMember(member: member)

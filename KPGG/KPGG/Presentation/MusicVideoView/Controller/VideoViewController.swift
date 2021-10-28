@@ -8,7 +8,7 @@
 import UIKit
 import YoutubePlayer_in_WKWebView
 
-class VideoViewController: UIViewController {
+final class VideoViewController: UIViewController {
 
     private var musicVideoViewModel: MusicVideoViewModelType?
     private var videoView: WKYTPlayerView!

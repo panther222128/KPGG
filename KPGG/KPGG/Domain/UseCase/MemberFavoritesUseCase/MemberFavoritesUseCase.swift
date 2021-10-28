@@ -13,7 +13,7 @@ protocol MemberFavoritesUseCaseType {
     func deleteMember(index: Int)
 }
 
-class MemberFavoritesUseCase: MemberFavoritesUseCaseType {
+final class MemberFavoritesUseCase: MemberFavoritesUseCaseType {
 
     func fetchFavoritesMember() -> [MemberInfo] {
         let request: NSFetchRequest<MemberInfo> = MemberInfo.fetchRequest()

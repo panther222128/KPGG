@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import Kingfisher
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
 
     @IBOutlet weak var sectionView: SectionView!
 

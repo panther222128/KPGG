@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class NetworkService {
+final class NetworkService {
     
     private var endPoint: Endpoint
     

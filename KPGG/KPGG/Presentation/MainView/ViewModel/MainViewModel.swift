@@ -17,7 +17,7 @@ protocol MainViewModelType {
     func groupsSubject() -> BehaviorSubject<[String:[Group]]>
 }
 
-class MainViewModel: MainViewModelType {
+final class MainViewModel: MainViewModelType {
     
     private let useCase: MainUseCaseType
     private var groups: BehaviorSubject<[String:[Group]]>

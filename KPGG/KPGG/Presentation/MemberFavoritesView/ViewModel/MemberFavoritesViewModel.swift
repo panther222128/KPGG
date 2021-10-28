@@ -15,7 +15,7 @@ protocol MemberFavoritesViewModelType {
     func selectedMember(index: Int) -> Member?
 }
 
-class MemberFavoritesViewModel: MemberFavoritesViewModelType {
+final class MemberFavoritesViewModel: MemberFavoritesViewModelType {
     
     private var memberFavoritesUseCase: MemberFavoritesUseCaseType?
     private var favoritesMember: [MemberInfo]?

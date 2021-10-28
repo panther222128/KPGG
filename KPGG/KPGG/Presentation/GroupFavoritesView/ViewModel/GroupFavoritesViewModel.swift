@@ -15,7 +15,7 @@ protocol GroupFavoritesViewModelType {
     func selectedGroup(index: Int) -> Group?
 }
 
-class GroupFavoritesViewModel: GroupFavoritesViewModelType {
+final class GroupFavoritesViewModel: GroupFavoritesViewModelType {
     
     private var groupFavoritesUseCase: GroupFavoritesUseCaseType?
     private var favoritesGroup: [GroupInfo]?

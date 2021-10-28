@@ -13,7 +13,7 @@ protocol GroupFavoritesUseCaseType {
     func deleteGroup(index: Int)
 }
 
-class GroupFavoritesUseCase: GroupFavoritesUseCaseType {
+final class GroupFavoritesUseCase: GroupFavoritesUseCaseType {
 
     func fetchFavoritesGroup() -> [GroupInfo] {
         let request: NSFetchRequest<GroupInfo> = GroupInfo.fetchRequest()

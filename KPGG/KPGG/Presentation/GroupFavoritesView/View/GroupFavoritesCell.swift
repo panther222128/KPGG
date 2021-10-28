@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class GroupFavoritesCell: UITableViewCell {
+final class GroupFavoritesCell: UITableViewCell {
     
     @IBOutlet weak var groupImage: UIImageView!
     @IBOutlet weak var groupName: UILabel!

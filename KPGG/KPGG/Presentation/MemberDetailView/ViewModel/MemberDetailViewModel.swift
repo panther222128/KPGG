@@ -19,7 +19,7 @@ protocol MemberDetailViewModelType {
     func selectedMember() -> Member
 }
 
-class MemberDetailViewModel: MemberDetailViewModelType {
+final class MemberDetailViewModel: MemberDetailViewModelType {
     
     private var memberDetailUseCase: MemberDetailUseCaseType
     private var member: Member?

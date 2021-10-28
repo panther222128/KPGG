@@ -11,7 +11,7 @@ protocol MusicVideoViewModelType {
     func youtubeIdReturn() -> String
 }
 
-class MusicVideoViewModel: MusicVideoViewModelType {
+final class MusicVideoViewModel: MusicVideoViewModelType {
     
     private var youtubeId: String
     

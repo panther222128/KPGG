@@ -13,7 +13,7 @@ protocol MainUseCaseType {
     func fetchGroupList(_ path: String) -> Observable<[String:[Group]]>
 }
 
-class MainUseCase: MainUseCaseType {
+final class MainUseCase: MainUseCaseType {
     
     var networkService: NetworkService
     

@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 @objc(GroupInfo)
-public class GroupInfo: NSManagedObject, Identifiable {
+public final class GroupInfo: NSManagedObject, Identifiable {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<GroupInfo> {
         return NSFetchRequest<GroupInfo>(entityName: "GroupInfo")

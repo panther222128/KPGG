@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class MemberFavoritesViewController: UIViewController {
+final class MemberFavoritesViewController: UIViewController {
     
     @IBOutlet weak var memberFavoritesView: UITableView!
     

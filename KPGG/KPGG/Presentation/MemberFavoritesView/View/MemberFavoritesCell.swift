@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class MemberFavoritesCell: UITableViewCell {
+final class MemberFavoritesCell: UITableViewCell {
     
     @IBOutlet weak var memberImage: UIImageView!
     @IBOutlet weak var memberName: UILabel!

@@ -21,7 +21,7 @@ protocol GroupMemberViewModelType {
     func insertAtFavoritesGroup(group: Group)
 }
 
-class GroupMemberViewModel: GroupMemberViewModelType {
+final class GroupMemberViewModel: GroupMemberViewModelType {
     
     private let useCase: GroupMemberUseCaseType
     private var members: BehaviorSubject<[String:[Member]]>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MemberDetailViewController: UIViewController {
+final class MemberDetailViewController: UIViewController {
     
     @IBOutlet weak var memberMainImage: UIImageView!
     

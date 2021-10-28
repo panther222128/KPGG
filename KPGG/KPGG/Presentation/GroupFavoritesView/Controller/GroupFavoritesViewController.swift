@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GroupFavoritesViewController: UIViewController {
+final class GroupFavoritesViewController: UIViewController {
     
     @IBOutlet weak var groupFavoritesView: UITableView!
     

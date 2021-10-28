@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class GroupMemberViewCell: UITableViewCell {
+final class GroupMemberViewCell: UITableViewCell {
     
     @IBOutlet weak var memberImage: UIImageView!
     @IBOutlet weak var memberName: UILabel!

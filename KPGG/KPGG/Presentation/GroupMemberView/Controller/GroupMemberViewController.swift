@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class GroupMemberViewController: UIViewController {
+final class GroupMemberViewController: UIViewController {
     
     @IBOutlet weak var groupMember: UITableView!
     @IBOutlet weak var songButton: UIButton!
