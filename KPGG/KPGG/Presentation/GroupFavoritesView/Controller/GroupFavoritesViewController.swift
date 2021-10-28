@@ -19,6 +19,7 @@ final class GroupFavoritesViewController: UIViewController {
         fetchGroupFavorites()
         groupFavoritesView.dataSource = self
         groupFavoritesView.delegate = self
+        groupFavoritesView.prefetchDataSource = self
         configureGroupFavoritesView()
         configureNavigation()
         groupFavoritesView.reloadData()
@@ -97,6 +98,20 @@ extension GroupFavoritesViewController: UITableViewDelegate {
         }
         delete.backgroundColor = .systemPink
         return UISwipeActionsConfiguration(actions:[delete])
+    }
+    
+}
+
+extension GroupFavoritesViewController: UITableViewDataSourcePrefetching {
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            guard let groupFavoritesViewModel = groupFavoritesViewModel else { return }
+            guard let cell = groupFavoritesView.dequeueReusableCell(withIdentifier: "GroupFavoritesCell", for: indexPath) as? GroupFavoritesCell else { return }
+            guard let groupname = groupFavoritesViewModel.favorites()?[indexPath.row].groupname else { return }
+            guard let imageUrl = URL(string: groupFavoritesViewModel.favorites()?[indexPath.row].groupimage ?? "") else { return }
+            cell.configureCell(imageUrl: imageUrl, groupName: groupname)
+        }
     }
     
 }

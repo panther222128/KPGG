@@ -24,6 +24,7 @@ final class MemberFavoritesViewController: UIViewController {
         memberFavoritesView.reloadData()
         fetchMemberFavorites()
         memberFavoritesView.dataSource = self
+        memberFavoritesView.prefetchDataSource = self
         memberFavoritesView.delegate = self
         configureMemberFavoritesView()
         configureNavigation()
@@ -102,6 +103,20 @@ extension MemberFavoritesViewController: UITableViewDelegate {
         }
         delete.backgroundColor = .systemPink
         return UISwipeActionsConfiguration(actions:[delete])
+    }
+    
+}
+
+extension MemberFavoritesViewController: UITableViewDataSourcePrefetching {
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            guard let memberFavoritesViewModel = memberFavoritesViewModel else { return }
+            guard let cell = memberFavoritesView.dequeueReusableCell(withIdentifier: "MemberFavoritesCell", for: indexPath) as? MemberFavoritesCell else { return }
+            guard let memberName = memberFavoritesViewModel.favorites()?[indexPath.row].activityname else { return }
+            guard let imageUrl = URL(string: memberFavoritesViewModel.favorites()?[indexPath.row].mainimage ?? "") else { return }
+            cell.configureCell(imageUrl: imageUrl, memberName: memberName)
+        }
     }
     
 }

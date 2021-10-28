@@ -28,6 +28,7 @@ final class GroupMemberViewController: UIViewController {
         fetchMembers()
         groupMember.dataSource = self
         groupMember.delegate = self
+        groupMember.prefetchDataSource = self
         buttonHide()
     }
     
@@ -121,6 +122,18 @@ extension GroupMemberViewController: UITableViewDelegate {
         guard let member = self.groupMemberViewModel?.member()?[indexPath.row] else { return }
         memberDetailViewContrller.showMemberDetailViewController(with: MemberDetailViewModel(member: member), buttonHidden: false)
         self.navigationController?.pushViewController(memberDetailViewContrller, animated: true)
+    }
+    
+}
+
+extension GroupMemberViewController: UITableViewDataSourcePrefetching {
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "MemberCell", for: indexPath) as? GroupMemberViewCell else { return  }
+            guard let member = groupMemberViewModel?.member()?[indexPath.row] else { return }
+            cell.configureCell(member: member)
+        }
     }
     
 }
