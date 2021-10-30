@@ -20,9 +20,10 @@
 		A08363C5271C64010061CB67 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08363C4271C64010061CB67 /* Group.swift */; };
 		A0925E9B2721C90B0010C9D0 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0925E9A2721C90B0010C9D0 /* SectionHeader.swift */; };
 		A099030D2722A08600574A3B /* MusicVideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099030C2722A08600574A3B /* MusicVideoViewModel.swift */; };
+		A0A9ECC6272D528F000EFEE7 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A9ECC5272D528F000EFEE7 /* UIApplication.swift */; };
 		A0AC1AF22722BD6400EA5F27 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AC1AF12722BD6400EA5F27 /* VideoViewController.swift */; };
 		A0AC1AF42722C1DA00EA5F27 /* VideoView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0AC1AF32722C1DA00EA5F27 /* VideoView.storyboard */; };
-		A0AC1AF82722D22100EA5F27 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AC1AF72722D22100EA5F27 /* Extension.swift */; };
+		A0AC1AF82722D22100EA5F27 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AC1AF72722D22100EA5F27 /* UINavigationController.swift */; };
 		A0AC429B2723F2D000E9BE98 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A0AC429A2723F2D000E9BE98 /* Kingfisher */; };
 		A0AC429F2724309F00E9BE98 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AC429E2724309F00E9BE98 /* SectionView.swift */; };
 		A0ADB54D271DF31B00996110 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0ADB54C271DF31B00996110 /* MainCell.swift */; };
@@ -70,9 +71,10 @@
 		A08363C4271C64010061CB67 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		A0925E9A2721C90B0010C9D0 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		A099030C2722A08600574A3B /* MusicVideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicVideoViewModel.swift; sourceTree = "<group>"; };
+		A0A9ECC5272D528F000EFEE7 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		A0AC1AF12722BD6400EA5F27 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		A0AC1AF32722C1DA00EA5F27 /* VideoView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VideoView.storyboard; sourceTree = "<group>"; };
-		A0AC1AF72722D22100EA5F27 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		A0AC1AF72722D22100EA5F27 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		A0AC429E2724309F00E9BE98 /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
 		A0ADB54C271DF31B00996110 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		A0AF8A94271E8AB6009CEF82 /* Member.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		A008ADD1271B3F8D00972B3F /* GG */ = {
 			isa = PBXGroup;
 			children = (
+				A0A9ECC4272D5233000EFEE7 /* NetworkService */,
 				A0F9C97F2725B448004089F6 /* DataManager */,
 				A0AC1AF62722D20D00EA5F27 /* Extension */,
 				A0AF8A96271EB1D0009CEF82 /* Domain */,
@@ -178,9 +181,9 @@
 		A008ADE7271B400200972B3F /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				A0F9C9A42725CD05004089F6 /* MemberDetailUseCase */,
 				A0AF8A9F271EB3E4009CEF82 /* MainViewUseCase */,
 				A0B991E8271FED68005ECDD1 /* GroupMemberUseCase */,
+				A0F9C9A42725CD05004089F6 /* MemberDetailUseCase */,
 				A0F9C99A2725BB02004089F6 /* GroupFavoritesUseCase */,
 				A0F9C99D2725BC74004089F6 /* MemberFavoritesUseCase */,
 			);
@@ -278,10 +281,19 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A0A9ECC4272D5233000EFEE7 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				A0AF8A97271EB1D9009CEF82 /* NetworkService */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
 		A0AC1AF62722D20D00EA5F27 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				A0AC1AF72722D22100EA5F27 /* Extension.swift */,
+				A0AC1AF72722D22100EA5F27 /* UINavigationController.swift */,
+				A0A9ECC5272D528F000EFEE7 /* UIApplication.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -459,7 +471,6 @@
 			isa = PBXGroup;
 			children = (
 				A0F9C9802725B458004089F6 /* PersistentStorage */,
-				A0AF8A97271EB1D9009CEF82 /* NetworkService */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -650,6 +661,7 @@
 				A0AC429F2724309F00E9BE98 /* SectionView.swift in Sources */,
 				A0AC1AF22722BD6400EA5F27 /* VideoViewController.swift in Sources */,
 				A0F9C9952725B64E004089F6 /* GroupInfo+CoreDataClass.swift in Sources */,
+				A0A9ECC6272D528F000EFEE7 /* UIApplication.swift in Sources */,
 				A004CEC6271D539300AAF13F /* SectionEnum.swift in Sources */,
 				A0AF8AA2271EE08D009CEF82 /* MainUseCase.swift in Sources */,
 				A0F9C9A12725BD12004089F6 /* GroupFavoritesViewModel.swift in Sources */,
@@ -658,7 +670,7 @@
 				A008ADD5271B3F8D00972B3F /* SceneDelegate.swift in Sources */,
 				A0AF8A99271EB204009CEF82 /* Endpoint.swift in Sources */,
 				A099030D2722A08600574A3B /* MusicVideoViewModel.swift in Sources */,
-				A0AC1AF82722D22100EA5F27 /* Extension.swift in Sources */,
+				A0AC1AF82722D22100EA5F27 /* UINavigationController.swift in Sources */,
 				A0F9C97C2725B38F004089F6 /* MemberFavoritesCell.swift in Sources */,
 				A0AF8A9B271EB20C009CEF82 /* NetworkService.swift in Sources */,
 				A0AF8A95271E8AB6009CEF82 /* Member.swift in Sources */,

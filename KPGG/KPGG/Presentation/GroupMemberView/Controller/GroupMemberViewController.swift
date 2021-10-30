@@ -12,19 +12,19 @@ import RxCocoa
 final class GroupMemberViewController: UIViewController {
     
     @IBOutlet weak var groupMember: UITableView!
-    @IBOutlet weak var songButton: UIButton!
-    @IBOutlet weak var favoritesGroupButton: UIButton!
+    @IBOutlet weak var playSong: UIButton!
+    @IBOutlet weak var insertAtFavorites: UIButton!
     
     private var groupMemberViewModel: GroupMemberViewModelType?
     private var disposeBag = DisposeBag()
-    private var buttonHidden: Bool?
+    private var isInsertAtFavoritesHidden: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewConfiguration()
         configureNavigation()
         configureGroupMember()
-        subscribe()
+        subscribeFromGroupMemberViewModel()
         fetchMembers()
         groupMember.dataSource = self
         groupMember.delegate = self
@@ -33,16 +33,16 @@ final class GroupMemberViewController: UIViewController {
     }
 
     private func buttonHide() {
-        if buttonHidden == true {
-            favoritesGroupButton.isHidden = true
-            songButton.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-            songButton.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        if isInsertAtFavoritesHidden == true {
+            insertAtFavorites.isHidden = true
+            playSong.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+            playSong.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         } else {
-            favoritesGroupButton.isHidden = false
+            insertAtFavorites.isHidden = false
         }
     }
     
-    private func subscribe()  {
+    private func subscribeFromGroupMemberViewModel()  {
         self.groupMemberViewModel?.membersSubject().subscribe(onNext:{ [weak self] _ in
             self?.groupMember.reloadData()
         }).disposed(by: disposeBag)
@@ -81,10 +81,10 @@ final class GroupMemberViewController: UIViewController {
 
     func showGroupMemberViewController(with viewModel: GroupMemberViewModelType, buttonHidden: Bool) {
         self.groupMemberViewModel = viewModel
-        self.buttonHidden = buttonHidden
+        self.isInsertAtFavoritesHidden = buttonHidden
     }
     
-    @IBAction func playHitSong(_ sender: Any) {
+    @IBAction func playHitSongAction(_ sender: Any) {
         guard let groupHitSong = groupMemberViewModel?.groupHitSongReturn() else { return }
         guard let videoPlayerViewController = UIStoryboard(name: "VideoView", bundle: nil).instantiateViewController(withIdentifier: "Video") as? VideoViewController else { return }
         videoPlayerViewController.showMusicVideoViewController(with: MusicVideoViewModel(youtubeId: groupHitSong))
@@ -92,9 +92,9 @@ final class GroupMemberViewController: UIViewController {
         self.navigationController?.pushViewController(videoPlayerViewController, animated: true)
     }
     
-    @IBAction func insertAtFavoritesGroup(_ sender: Any) {
+    @IBAction func insertAtFavoritesGroupAction(_ sender: Any) {
         guard let groupMemberViewModel = groupMemberViewModel else { return }
-        groupMemberViewModel.insertAtFavoritesGroup(group: groupMemberViewModel.selectedGroup())
+        groupMemberViewModel.insertAtFavoritesGroup(groupMemberViewModel.selectedGroup())
     }
     
 }
@@ -109,7 +109,7 @@ extension GroupMemberViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MemberCell", for: indexPath) as? GroupMemberViewCell else { return UITableViewCell() }
         guard let member = groupMemberViewModel?.member()?[indexPath.row] else { return UITableViewCell() }
-        cell.configureCell(member: member)
+        cell.configureCell(member)
         return cell
     }
     
@@ -120,7 +120,7 @@ extension GroupMemberViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let memberDetailViewContrller = self.storyboard?.instantiateViewController(withIdentifier: "MemberDetail") as? MemberDetailViewController else { return }
         guard let member = self.groupMemberViewModel?.member()?[indexPath.row] else { return }
-        memberDetailViewContrller.showMemberDetailViewController(with: MemberDetailViewModel(member: member), buttonHidden: false)
+        memberDetailViewContrller.showMemberDetailViewController(with: MemberDetailViewModel(with: member), buttonHidden: false)
         self.navigationController?.pushViewController(memberDetailViewContrller, animated: true)
     }
     
@@ -132,7 +132,7 @@ extension GroupMemberViewController: UITableViewDataSourcePrefetching {
         for indexPath in indexPaths {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "MemberCell", for: indexPath) as? GroupMemberViewCell else { return  }
             guard let member = groupMemberViewModel?.member()?[indexPath.row] else { return }
-            cell.configureCell(member: member)
+            cell.configureCell(member)
         }
     }
     

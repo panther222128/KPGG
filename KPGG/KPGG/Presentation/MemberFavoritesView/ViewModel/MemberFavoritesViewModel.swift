@@ -10,9 +10,9 @@ import Foundation
 protocol MemberFavoritesViewModelType {
     func fetch()
     func favorites() -> [MemberInfo]?
-    func deleteMember(index: Int)
+    func deleteFavoriteMember(at index: Int)
     func count() -> Int
-    func selectedMember(index: Int) -> Member?
+    func selectedFavoriteMember(at index: Int) -> Member?
 }
 
 final class MemberFavoritesViewModel: MemberFavoritesViewModelType {
@@ -33,13 +33,13 @@ final class MemberFavoritesViewModel: MemberFavoritesViewModelType {
         return favoritesMember
     }
     
-    func selectedMember(index: Int) -> Member? {
+    func selectedFavoriteMember(at index: Int) -> Member? {
         let selectedMember = favoritesMember?[index]
         let member = Member(activityname: selectedMember?.activityname ?? "", name: selectedMember?.name ?? "", birth: selectedMember?.birth ?? "", mbti: selectedMember?.mbti ?? "", bloodtype: selectedMember?.bloodtype ?? "", mainimage: selectedMember?.mainimage ?? "", ispreviousmember: selectedMember?.ispreviousmember ?? false)
         return member
     }
     
-    func deleteMember(index: Int) {
+    func deleteFavoriteMember(at index: Int) {
         guard let memberFavoritesUseCase = memberFavoritesUseCase else { return }
         memberFavoritesUseCase.deleteMember(index: index)
     }

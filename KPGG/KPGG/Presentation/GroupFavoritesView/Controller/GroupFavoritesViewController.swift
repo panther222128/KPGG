@@ -83,15 +83,15 @@ extension GroupFavoritesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let groupMemberViewController = self.storyboard?.instantiateViewController(withIdentifier: "GroupMember") as? GroupMemberViewController else { return }
-        guard let group = self.groupFavoritesViewModel?.selectedGroup(index: indexPath.row) else { return }
-        groupMemberViewController.showGroupMemberViewController(with: GroupMemberViewModel(groupName: group.groupname, groupHitSong: group.hitsong, group: group), buttonHidden: true)
+        guard let group = self.groupFavoritesViewModel?.selectedFavoriteGroup(at: indexPath.row) else { return }
+        groupMemberViewController.showGroupMemberViewController(with: GroupMemberViewModel(with: group.groupname, with: group.hitsong, with: group), buttonHidden: true)
         self.navigationController?.pushViewController(groupMemberViewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         guard let groupFavoritesViewModel = groupFavoritesViewModel else { return UISwipeActionsConfiguration() }
         let delete = UIContextualAction(style: .normal, title: "삭제") { (UIContextualAction, UIView, success: @escaping (Bool) -> Void) in
-            groupFavoritesViewModel.deleteGroup(index: indexPath.row)
+            groupFavoritesViewModel.deleteFavoriteGroup(at: indexPath.row)
             self.fetchGroupFavorites()
             self.groupFavoritesView.reloadData()
             success(true)

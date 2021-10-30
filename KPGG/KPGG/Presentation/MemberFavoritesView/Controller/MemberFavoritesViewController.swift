@@ -88,15 +88,15 @@ extension MemberFavoritesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let memberDetailViewContrller = self.storyboard?.instantiateViewController(withIdentifier: "MemberDetail") as? MemberDetailViewController else { return }
-        guard let member = self.memberFavoritesViewModel?.selectedMember(index: indexPath.row) else { return }
-        memberDetailViewContrller.showMemberDetailViewController(with: MemberDetailViewModel(member: member), buttonHidden: true)
+        guard let member = self.memberFavoritesViewModel?.selectedFavoriteMember(at: indexPath.row) else { return }
+        memberDetailViewContrller.showMemberDetailViewController(with: MemberDetailViewModel(with: member), buttonHidden: true)
         self.navigationController?.pushViewController(memberDetailViewContrller, animated: true)
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         guard let memberFavoritesViewModel = memberFavoritesViewModel else { return UISwipeActionsConfiguration() }
         let delete = UIContextualAction(style: .normal, title: "삭제") { (UIContextualAction, UIView, success: @escaping (Bool) -> Void) in
-            memberFavoritesViewModel.deleteMember(index: indexPath.row)
+            memberFavoritesViewModel.deleteFavoriteMember(at: indexPath.row)
             self.fetchMemberFavorites()
             self.memberFavoritesView.reloadData()
             success(true)

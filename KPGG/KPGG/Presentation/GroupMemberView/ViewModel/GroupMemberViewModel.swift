@@ -18,7 +18,7 @@ protocol GroupMemberViewModelType {
     func groupNameReturn() -> String
     func groupHitSongReturn() -> String
     func selectedGroup() -> Group
-    func insertAtFavoritesGroup(group: Group)
+    func insertAtFavoritesGroup(_ group: Group)
 }
 
 final class GroupMemberViewModel: GroupMemberViewModelType {
@@ -29,7 +29,7 @@ final class GroupMemberViewModel: GroupMemberViewModelType {
     private var groupHitSong: String
     private var group: Group
     
-    init(groupName: String, groupHitSong: String, group: Group ) {
+    init(with groupName: String, with groupHitSong: String, with group: Group) {
         self.useCase = GroupMemberUseCase()
         self.members = BehaviorSubject<[String:[Member]]>(value: [:])
         self.groupName = groupName
@@ -77,8 +77,8 @@ final class GroupMemberViewModel: GroupMemberViewModelType {
         return self.group
     }
     
-    func insertAtFavoritesGroup(group: Group) {
-        useCase.insertGroup(group: group)
+    func insertAtFavoritesGroup(_ group: Group) {
+        useCase.insertGroup(group)
     }
     
 }

@@ -21,7 +21,7 @@ final class GroupMemberViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configureCell(member: Member) {
+    func configureCell(_ member: Member) {
         self.backgroundColor = .clear
         guard let url = URL(string: member.mainimage) else { return }
         self.memberImage.kf.setImage(with: url)

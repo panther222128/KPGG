@@ -10,9 +10,9 @@ import Foundation
 protocol GroupFavoritesViewModelType {
     func fetch()
     func favorites() -> [GroupInfo]?
-    func deleteGroup(index: Int)
+    func deleteFavoriteGroup(at index: Int)
     func count() -> Int
-    func selectedGroup(index: Int) -> Group?
+    func selectedFavoriteGroup(at index: Int) -> Group?
 }
 
 final class GroupFavoritesViewModel: GroupFavoritesViewModelType {
@@ -33,13 +33,13 @@ final class GroupFavoritesViewModel: GroupFavoritesViewModelType {
         return favoritesGroup
     }
     
-    func selectedGroup(index: Int) -> Group? {
+    func selectedFavoriteGroup(at index: Int) -> Group? {
         let selectedGroup = favoritesGroup?[index]
         let group = Group(groupname: selectedGroup?.groupname ?? "", grouplogo: selectedGroup?.grouplogo ?? "", groupimage: selectedGroup?.groupimage ?? "", hitsong: selectedGroup?.hitsong ?? "", haspreviousmember: selectedGroup?.haspreviousmember ?? false)
         return group
     }
     
-    func deleteGroup(index: Int) {
+    func deleteFavoriteGroup(at index: Int) {
         guard let groupFavoritesUseCase = groupFavoritesUseCase else { return }
         groupFavoritesUseCase.deleteGroup(index: index)
     }

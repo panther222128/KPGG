@@ -25,11 +25,11 @@ final class MainViewController: UIViewController {
         fetchGroups(path: "")
         configure()
         sectionView.delegate = self
-        subscribe()
+        subscribeFromMainViewModel()
         configureNavigation()
     }
 
-    private func subscribe()  {
+    private func subscribeFromMainViewModel()  {
         self.mainViewModel?.groupsSubject().subscribe(onNext:{ [weak self] _ in
             self?.setupDiffableDataSource()
             self?.applySectionSnaphots()
@@ -170,7 +170,7 @@ extension MainViewController: UICollectionViewDelegate {
             return
         }
         guard let groupMemberViewController = self.storyboard?.instantiateViewController(withIdentifier: "GroupMember") as? GroupMemberViewController else { return }
-        groupMemberViewController.showGroupMemberViewController(with: GroupMemberViewModel(groupName: groupName, groupHitSong: groupHitSong, group: group), buttonHidden: false)
+        groupMemberViewController.showGroupMemberViewController(with: GroupMemberViewModel(with: groupName, with: groupHitSong, with: group), buttonHidden: false)
         self.navigationController?.pushViewController(groupMemberViewController, animated: true)
     }
     

@@ -24,7 +24,7 @@ final class MemberDetailViewModel: MemberDetailViewModelType {
     private var memberDetailUseCase: MemberDetailUseCaseType
     private var member: Member?
     
-    init(member: Member) {
+    init(with member: Member) {
         self.member = member
         self.memberDetailUseCase = MemberDetailUseCase()
     }
