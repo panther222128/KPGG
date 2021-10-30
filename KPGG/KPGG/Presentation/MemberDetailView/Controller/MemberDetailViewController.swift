@@ -38,7 +38,7 @@ final class MemberDetailViewController: UIViewController {
         viewConfiguration()
         buttonHide()
     }
-    
+
     private func buttonHide() {
         guard let buttonHidden = buttonHidden else { return }
         if buttonHidden == true {

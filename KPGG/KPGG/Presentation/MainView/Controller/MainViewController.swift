@@ -28,7 +28,7 @@ final class MainViewController: UIViewController {
         subscribe()
         configureNavigation()
     }
-    
+
     private func subscribe()  {
         self.mainViewModel?.groupsSubject().subscribe(onNext:{ [weak self] _ in
             self?.setupDiffableDataSource()

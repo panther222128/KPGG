@@ -31,7 +31,7 @@ final class GroupMemberViewController: UIViewController {
         groupMember.prefetchDataSource = self
         buttonHide()
     }
-    
+
     private func buttonHide() {
         if buttonHidden == true {
             favoritesGroupButton.isHidden = true
