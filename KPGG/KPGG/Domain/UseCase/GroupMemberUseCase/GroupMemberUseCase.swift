@@ -7,7 +7,6 @@
 
 import Foundation
 import RxSwift
-import RxCocoa
 
 protocol GroupMemberUseCaseType {
     func fetchMemberList(_ path: String) -> Observable<[String:[Member]]>
@@ -36,9 +35,10 @@ final class GroupMemberUseCase: GroupMemberUseCaseType {
             return Disposables.create()
         }
     }
-    
+
     func insertGroup(_ group: Group) {
         FavoritesStorageManager.shared.insertGroup(group: group)
     }
 
 }
+

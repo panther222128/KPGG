@@ -11,10 +11,6 @@ struct GroupResponse: Decodable {
     let group: [String:[Group]]
 }
 
-struct GroupClassificationResponse: Decodable {
-    let classification: [Group]
-}
-
 struct Group: Decodable, Hashable {
     let groupname: String
     let grouplogo: String

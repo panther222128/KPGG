@@ -6,9 +6,7 @@
 //
 
 import Foundation
-import RxCocoa
 import RxSwift
-import Alamofire
 
 protocol MainViewModelType {
     func fetch(path: String) -> Observable<[String:[Group]]>

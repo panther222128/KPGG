@@ -56,21 +56,12 @@ final class MainViewController: UIViewController {
     }
     
     private func setupDiffableDataSource() {
+        let sectionTitles = ["2020년 데뷔", "2016~2019년 데뷔", "2014~2015년 데뷔", "2012~2013년 데뷔", "2010~2011년 데뷔", "2009년 데뷔", "2006~2008년 데뷔"]
         let headerRegistration = UICollectionView.SupplementaryRegistration <SectionHeader>(elementKind: MainViewController.sectionHeaderElementKind) { supplementaryView, string, indexPath in
-            if indexPath == [1, 0] {
-                supplementaryView.sectionTitle.text = "2020년 데뷔"
-            } else if indexPath == [2, 0] {
-                supplementaryView.sectionTitle.text = "2016~2019년 데뷔"
-            } else if indexPath == [3, 0] {
-                supplementaryView.sectionTitle.text = "2014~2015년 데뷔"
-            } else if indexPath == [4, 0] {
-                supplementaryView.sectionTitle.text = "2012~2013년 데뷔"
-            } else if indexPath == [5, 0] {
-                supplementaryView.sectionTitle.text = "2010~2011년 데뷔"
-            } else if indexPath == [6, 0] {
-                supplementaryView.sectionTitle.text = "2009년 데뷔"
-            } else if indexPath == [7, 0] {
-                supplementaryView.sectionTitle.text = "2006~2008년 데뷔"
+            for i in 0..<sectionTitles.count {
+                if indexPath == [i + 1, 0] {
+                    supplementaryView.sectionTitle.text = sectionTitles[i]
+                }
             }
         }
         

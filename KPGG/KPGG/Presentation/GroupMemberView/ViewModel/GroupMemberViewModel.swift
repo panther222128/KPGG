@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import RxCocoa
 import RxSwift
 
 protocol GroupMemberViewModelType {
@@ -22,7 +21,7 @@ protocol GroupMemberViewModelType {
 }
 
 final class GroupMemberViewModel: GroupMemberViewModelType {
-    
+
     private let useCase: GroupMemberUseCaseType
     private var members: BehaviorSubject<[String:[Member]]>
     private var groupName: String
@@ -36,7 +35,7 @@ final class GroupMemberViewModel: GroupMemberViewModelType {
         self.groupHitSong = groupHitSong
         self.group = group
     }
-    
+
     func fetch() -> Observable<[String:[Member]]> {
         return useCase.fetchMemberList(groupName)
     }
@@ -82,3 +81,4 @@ final class GroupMemberViewModel: GroupMemberViewModelType {
     }
     
 }
+
