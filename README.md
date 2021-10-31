@@ -328,6 +328,46 @@ AVFoundation을 활용해서 영상 재생을 하려고 했으나 유튜브 링�
 
 10월 23일 이후 계획에 없었던 기능(즐겨찾기)을 10월 25일에 추가했고, 그후 한동안 다른 부분을 우선 학습하고 있었습니다. 이 프로젝트에 새로운 것을 적용하는 것은 틈틈히 할 계획입니다.
 
+## 2021.10.31
+
+RxCocoa를 적용해보지 못해서 아쉽다고 생각했는데, 아래처럼 적용해봤습니다. 그룹의 멤버를 볼 수 있는 스크린에서 'GroupMemberUseCase'를 아래처럼 변경했습니다.
+
+```swift
+func fetchMembers(_ path: String, groupName: String) -> Observable<[Member]> {
+    return Observable.create { (observer) -> Disposable in
+        self.networkService.sendRequest(path: path, type: MemberResponse.self) { (error, memberList) in
+            if let error = error {
+                observer.onError(error)
+            }
+            if let memberList = memberList?.groupname[groupName] {
+                observer.onNext(memberList)
+            }
+            observer.onCompleted()
+        }
+        return Disposables.create()
+    }
+}
+```
+
+'GroupMemberViewModel'은 아래 메소드를 추가했습니다.
+
+```swift
+func fetchMembers() -> Observable<[Member]> {
+    return useCase.fetchMembers(groupName, groupName: groupName)
+}
+```
+
+'GroupMemberViewController'에서 아래 메소드를 추가하고 'viewDidLoad'에 넣은 후 실행하면 정상적으로 동작합니다.
+
+```swift
+private func fetchMemberList() {
+    self.groupMemberViewModel?.fetchMembers()
+        .bind(to: groupMember.rx.items(cellIdentifier: "MemberCell", cellType: GroupMemberViewCell.self)) { (index: Int, element: Member, cell: GroupMemberViewCell) in
+            cell.configureCell(element)
+        }.disposed(by: disposeBag)
+}
+```
+
 # 회고
 
 시작하게 된 계기는 코드스쿼드를 함께 수료했던 분들에 비해 구현 역량이 떨어진다고 생각했던 것과 포트폴리오에 담을 프로젝트를 만드려고 한 것입니다. 수료 당시 겁 먹고 '어차피 컴파일 안 될텐데' 하는 생각으로 키보드에서 손을 떼고 있었던 시기도 있었고, 검색으로 찾을 수 있는 코드만 베껴서 작성하면 그뿐인지 생각하는 시간이 많아 항상 구현이 느렸습니다. 이번 프로젝트는 완전히 속도만 내서 진행했습니다. 시간이 많이 소모된 부분 중 한 가지는 진행하는 동안 3일에서 4일은 API를 만드는 데 소모했습니다. 포스트맨 사용 중 리스폰스 제한에 걸려 Stoplight로 옮겨야 하는데, 적응하는 시간이 오래 걸렸습니다. 생각해볼 수 있는 몇 가지에 대해서 남겨보려고 합니다.
@@ -336,9 +376,11 @@ AVFoundation을 활용해서 영상 재생을 하려고 했으나 유튜브 링�
 
 사용했다고 하지만 정말 사용만 했을 뿐 이해가 많이 부족하기 때문에 현재 학습하고 있는 내용입니다. 기본적인 Observable, Observer, PublishSubject, BehaviorSubject와 같은 키워드를 학습했습니다. 오퍼레이터 등 많이 사용해보는 것이 중요하겠습니다. 현재 `subscribe`가 아래처럼 작성되어 있습니다.
 
-`bind`를 사용하지 않은 점은 아쉬운 점입니다. 중간에 아래 링크를 참고해서 만들어보기도 했습니다.
+~~`RxCocoa`를 사용하지 않은 점은 아쉬운 점입니다. 중간에 아래 링크를 참고해서 만들어보기도 했습니다.~~
 
 <https://eunjin3786.tistory.com/29>
+
+이 프로젝트에도 적용해봤습니다. 위에서 10월 31일에 작성한 내용에 해당합니다.
 
 ### Kingfisher
 
@@ -431,6 +473,10 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 ```
 
 아래처럼 개선하면 이후 UI 요소가 추가된다고 할 때 하나의 파일에서만 작업해도 요소 추가가 가능합니다.
+
+### 성능
+
+이 프로젝트와 관계없이 HLS, Firebase, SwiftUI 등을 학습하고 있었는데, 성능 최적화 역시 관심을 갖게 되어 Dynamic Dispatch, 접근 제어와 관련한 내용을 학습하고 적용해보고 있습니다.
 
 ## 시뮬레이터 이미지
 
