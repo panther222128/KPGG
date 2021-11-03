@@ -28,11 +28,11 @@ final class GroupMemberViewController: UIViewController {
         groupMember.dataSource = self
         groupMember.delegate = self
         groupMember.prefetchDataSource = self
-        buttonHide()
+        groupFavoritesButtonHide()
     }
-
-    private func buttonHide() {
-        if isInsertAtFavoritesHidden == true {
+    
+    private func groupFavoritesButtonHide() {
+        if self.groupMemberViewModel?.isGroupFavoritesContains() == true {
             insertAtFavorites.isHidden = true
             playSong.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
             playSong.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -78,9 +78,8 @@ final class GroupMemberViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = .systemBlue
     }
 
-    func showGroupMemberViewController(with viewModel: GroupMemberViewModelType, buttonHidden: Bool) {
+    func showGroupMemberViewController(with viewModel: GroupMemberViewModelType) {
         self.groupMemberViewModel = viewModel
-        self.isInsertAtFavoritesHidden = buttonHidden
     }
     
     @IBAction func playHitSongAction(_ sender: Any) {
@@ -94,6 +93,9 @@ final class GroupMemberViewController: UIViewController {
     @IBAction func insertAtFavoritesGroupAction(_ sender: Any) {
         guard let groupMemberViewModel = groupMemberViewModel else { return }
         groupMemberViewModel.insertAtFavoritesGroup(groupMemberViewModel.selectedGroup())
+        insertAtFavorites.isHidden = true
+        playSong.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        playSong.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
     }
     
 }
@@ -119,7 +121,7 @@ extension GroupMemberViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let memberDetailViewContrller = self.storyboard?.instantiateViewController(withIdentifier: "MemberDetail") as? MemberDetailViewController else { return }
         guard let member = self.groupMemberViewModel?.member()?[indexPath.row] else { return }
-        memberDetailViewContrller.showMemberDetailViewController(with: MemberDetailViewModel(with: member), buttonHidden: false)
+        memberDetailViewContrller.showMemberDetailViewController(with: MemberDetailViewModel(with: member))
         self.navigationController?.pushViewController(memberDetailViewContrller, animated: true)
     }
     
@@ -134,5 +136,5 @@ extension GroupMemberViewController: UITableViewDataSourcePrefetching {
             cell.configureCell(member)
         }
     }
-    
+
 }

@@ -84,7 +84,7 @@ extension GroupFavoritesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let groupMemberViewController = self.storyboard?.instantiateViewController(withIdentifier: "GroupMember") as? GroupMemberViewController else { return }
         guard let group = self.groupFavoritesViewModel?.selectedFavoriteGroup(at: indexPath.row) else { return }
-        groupMemberViewController.showGroupMemberViewController(with: GroupMemberViewModel(with: group.groupname, with: group.hitsong, with: group), buttonHidden: true)
+        groupMemberViewController.showGroupMemberViewController(with: GroupMemberViewModel(with: group.groupname, with: group.hitsong, with: group))
         self.navigationController?.pushViewController(groupMemberViewController, animated: true)
     }
     

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 protocol MemberDetailViewModelType {
     func activityName() -> String
@@ -17,6 +18,7 @@ protocol MemberDetailViewModelType {
     func isPreviousMember() -> String
     func insertAtFavoritesMember(member: Member)
     func selectedMember() -> Member
+    func isMemberFavoritesContains() -> Bool
 }
 
 final class MemberDetailViewModel: MemberDetailViewModelType {
@@ -89,6 +91,18 @@ final class MemberDetailViewModel: MemberDetailViewModelType {
     
     func insertAtFavoritesMember(member: Member) {
         memberDetailUseCase.insertMember(member: member)
+    }
+    
+    func isMemberFavoritesContains() -> Bool {
+        let request: NSFetchRequest<MemberInfo> = MemberInfo.fetchRequest()
+        guard let activityname = member?.activityname else { return false }
+        request.predicate = NSPredicate(format: "activityname == %@", activityname)
+        let fetchResult = FavoritesStorageManager.shared.fetch(request: request)
+        if fetchResult.count >= 1 {
+            return true
+        } else {
+            return false
+        }
     }
     
 }

@@ -17,8 +17,8 @@ final class NetworkService {
     }
     
     func sendRequest<T: Decodable>(path: String, type: T.Type, completion: @escaping ((Error?, T?) -> Void)) {
-        let url = endPoint.url(with: path)
-        AF.request(url!, method: .get)
+        guard let url = endPoint.url(with: path) else { return }
+        AF.request(url, method: .get)
             .validate(statusCode: 200..<600)
             .responseDecodable(of: type) { response in
                 if let error = response.error {

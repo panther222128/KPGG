@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import CoreData
 
 protocol GroupMemberViewModelType {
     func fetch() -> Observable<[String:[Member]]>
@@ -18,6 +19,7 @@ protocol GroupMemberViewModelType {
     func groupHitSongReturn() -> String
     func selectedGroup() -> Group
     func insertAtFavoritesGroup(_ group: Group)
+    func isGroupFavoritesContains() -> Bool
 }
 
 final class GroupMemberViewModel: GroupMemberViewModelType {
@@ -26,7 +28,8 @@ final class GroupMemberViewModel: GroupMemberViewModelType {
     private var members: BehaviorSubject<[String:[Member]]>
     private var groupName: String
     private var groupHitSong: String
-    private var group: Group
+    private var group: Group?
+    private var favorites: [GroupInfo]?
     
     init(with groupName: String, with groupHitSong: String, with group: Group) {
         self.useCase = GroupMemberUseCase()
@@ -73,11 +76,24 @@ final class GroupMemberViewModel: GroupMemberViewModelType {
     }
     
     func selectedGroup() -> Group {
-        return self.group
+        guard let group = group else { return Group(groupname: "", grouplogo: "", groupimage: "", hitsong: "", haspreviousmember: false) }
+        return group
     }
     
     func insertAtFavoritesGroup(_ group: Group) {
         useCase.insertGroup(group)
+    }
+    
+    func isGroupFavoritesContains() -> Bool {
+        let request: NSFetchRequest<GroupInfo> = GroupInfo.fetchRequest()
+        guard let groupname = group?.groupname else { return false }
+        request.predicate = NSPredicate(format: "groupname == %@", groupname)
+        let fetchResult = FavoritesStorageManager.shared.fetch(request: request)
+        if fetchResult.count >= 1 {
+            return true
+        } else {
+            return false
+        }
     }
     
 }

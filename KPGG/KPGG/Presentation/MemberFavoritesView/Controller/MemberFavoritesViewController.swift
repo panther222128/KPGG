@@ -89,7 +89,7 @@ extension MemberFavoritesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let memberDetailViewContrller = self.storyboard?.instantiateViewController(withIdentifier: "MemberDetail") as? MemberDetailViewController else { return }
         guard let member = self.memberFavoritesViewModel?.selectedFavoriteMember(at: indexPath.row) else { return }
-        memberDetailViewContrller.showMemberDetailViewController(with: MemberDetailViewModel(with: member), buttonHidden: true)
+        memberDetailViewContrller.showMemberDetailViewController(with: MemberDetailViewModel(with: member))
         self.navigationController?.pushViewController(memberDetailViewContrller, animated: true)
     }
     

@@ -79,7 +79,7 @@
 		A0ADB54C271DF31B00996110 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		A0AF8A94271E8AB6009CEF82 /* Member.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		A0AF8A98271EB204009CEF82 /* Endpoint.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		A0AF8A9A271EB20C009CEF82 /* NetworkService.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		A0AF8A9A271EB20C009CEF82 /* NetworkService.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A0AF8AA1271EE08D009CEF82 /* MainUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUseCase.swift; sourceTree = "<group>"; };
 		A0B991E4271FEB85005ECDD1 /* GroupMemberViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberViewCell.swift; sourceTree = "<group>"; };
 		A0B991E6271FECAD005ECDD1 /* GroupMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberViewController.swift; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 		A008ADC6271B3F8D00972B3F = {
 			isa = PBXGroup;
 			children = (
-				A008ADD1271B3F8D00972B3F /* GG */,
+				A008ADD1271B3F8D00972B3F /* KPGG */,
 				A008ADD0271B3F8D00972B3F /* Products */,
 				C48AFF025A9A802769F3FF01 /* Pods */,
 				2E9070339037CBF90C765AB9 /* Frameworks */,
@@ -146,7 +146,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A008ADD1271B3F8D00972B3F /* GG */ = {
+		A008ADD1271B3F8D00972B3F /* KPGG */ = {
 			isa = PBXGroup;
 			children = (
 				A0A9ECC4272D5233000EFEE7 /* NetworkService */,
@@ -161,7 +161,6 @@
 				A008ADDD271B3F8E00972B3F /* LaunchScreen.storyboard */,
 				A008ADE0271B3F8E00972B3F /* Info.plist */,
 			);
-			name = GG;
 			path = KPGG;
 			sourceTree = "<group>";
 		};

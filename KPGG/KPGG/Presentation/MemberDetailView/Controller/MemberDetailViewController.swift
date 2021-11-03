@@ -26,9 +26,9 @@ final class MemberDetailViewController: UIViewController {
     @IBOutlet weak var isPreviousMember: UILabel!
 
     @IBOutlet weak var favoritesButton: UIButton!
-    private var memberDetailViewModel: MemberDetailViewModelType?
-    private var buttonHidden: Bool?
     
+    private var memberDetailViewModel: MemberDetailViewModelType?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureElementTitle()
@@ -36,12 +36,11 @@ final class MemberDetailViewController: UIViewController {
         configureImage()
         configureNavigation()
         viewConfiguration()
-        buttonHide()
+        memberFavoritesButtonHide()
     }
 
-    private func buttonHide() {
-        guard let buttonHidden = buttonHidden else { return }
-        if buttonHidden == true {
+    private func memberFavoritesButtonHide() {
+        if self.memberDetailViewModel?.isMemberFavoritesContains() == true {
             favoritesButton.isHidden = true
         } else {
             favoritesButton.isHidden = false
@@ -105,11 +104,12 @@ final class MemberDetailViewController: UIViewController {
     @IBAction func insertAtFavoritesMember(_ sender: Any) {
         guard let memberDetailViewModel = memberDetailViewModel else { return }
         memberDetailViewModel.insertAtFavoritesMember(member: memberDetailViewModel.selectedMember())
+        favoritesButton.isHidden = true
     }
     
-    func showMemberDetailViewController(with viewModel: MemberDetailViewModelType, buttonHidden: Bool) {
+    func showMemberDetailViewController(with viewModel: MemberDetailViewModelType) {
         self.memberDetailViewModel = viewModel
-        self.buttonHidden = buttonHidden
+        
     }
     
 }
