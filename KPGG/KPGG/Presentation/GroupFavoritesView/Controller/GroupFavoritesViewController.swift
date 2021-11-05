@@ -52,6 +52,7 @@ final class GroupFavoritesViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.backgroundColor = .black
         self.navigationItem.backBarButtonItem?.tintColor = .blue
     }
     

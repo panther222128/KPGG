@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Group Favorites View Controller-->
+        <!--즐겨찾는 그룹-->
         <scene sceneID="otq-jF-LJE">
             <objects>
                 <viewController id="1pA-Jq-dcy" customClass="GroupFavoritesViewController" customModule="KPGG" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="InE-k2-SeU">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="GroupFavoritesCell" rowHeight="450" id="Xly-vD-SKa" customClass="GroupFavoritesCell" customModule="KPGG" customModuleProvider="target">
@@ -64,9 +64,10 @@
                             <constraint firstItem="InE-k2-SeU" firstAttribute="leading" secondItem="idL-UQ-d5O" secondAttribute="leading" id="Dcx-qa-ttL"/>
                             <constraint firstItem="idL-UQ-d5O" firstAttribute="trailing" secondItem="InE-k2-SeU" secondAttribute="trailing" id="Iw9-8Y-5ca"/>
                             <constraint firstItem="idL-UQ-d5O" firstAttribute="bottom" secondItem="InE-k2-SeU" secondAttribute="bottom" id="JyC-f5-fvW"/>
-                            <constraint firstItem="idL-UQ-d5O" firstAttribute="top" secondItem="InE-k2-SeU" secondAttribute="top" constant="88" id="Rnn-Ni-Sgz"/>
+                            <constraint firstItem="idL-UQ-d5O" firstAttribute="top" secondItem="InE-k2-SeU" secondAttribute="top" id="Rnn-Ni-Sgz"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="즐겨찾는 그룹" image="heart.fill" catalog="system" id="ypP-lZ-1kq"/>
                     <navigationItem key="navigationItem" id="4at-mG-GIr"/>
                     <connections>
                         <outlet property="groupFavoritesView" destination="InE-k2-SeU" id="clU-K2-rOF"/>
@@ -76,7 +77,7 @@
             </objects>
             <point key="canvasLocation" x="4576.811594202899" y="813.61607142857144"/>
         </scene>
-        <!--Member Favorites View Controller-->
+        <!--즐겨찾는 멤버-->
         <scene sceneID="KM4-fP-tPv">
             <objects>
                 <viewController id="uBW-tN-z9d" customClass="MemberFavoritesViewController" customModule="KPGG" customModuleProvider="target" sceneMemberID="viewController">
@@ -85,7 +86,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fny-ix-5UF">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemberFavoritesCell" rowHeight="450" id="dYT-r2-Syb" customClass="MemberFavoritesCell" customModule="KPGG" customModuleProvider="target">
@@ -130,12 +131,13 @@
                         <viewLayoutGuide key="safeArea" id="TxZ-lM-URb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="TxZ-lM-URb" firstAttribute="top" secondItem="fny-ix-5UF" secondAttribute="top" constant="88" id="E5U-gu-RWR"/>
+                            <constraint firstItem="TxZ-lM-URb" firstAttribute="top" secondItem="fny-ix-5UF" secondAttribute="top" id="E5U-gu-RWR"/>
                             <constraint firstItem="TxZ-lM-URb" firstAttribute="trailing" secondItem="fny-ix-5UF" secondAttribute="trailing" id="K0Y-Gg-ULy"/>
                             <constraint firstItem="TxZ-lM-URb" firstAttribute="bottom" secondItem="fny-ix-5UF" secondAttribute="bottom" id="ZZO-Ub-WfI"/>
                             <constraint firstItem="fny-ix-5UF" firstAttribute="leading" secondItem="TxZ-lM-URb" secondAttribute="leading" id="deW-ex-P15"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="즐겨찾는 멤버" image="heart.fill" catalog="system" id="7lu-FC-B8k"/>
                     <navigationItem key="navigationItem" id="1Mt-1C-wVk"/>
                     <connections>
                         <outlet property="memberFavoritesView" destination="fny-ix-5UF" id="qyW-Bs-NPq"/>
@@ -193,7 +195,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dkt-vQ-qDx">
-                                <rect key="frame" x="0.0" y="44" width="414" height="765"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="809"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemberCell" rowHeight="450" id="LDi-16-wDe" customClass="GroupMemberViewCell" customModule="KPGG" customModuleProvider="target">
@@ -259,7 +261,7 @@
                             <constraint firstItem="umx-bM-0Ys" firstAttribute="centerX" secondItem="dkt-vQ-qDx" secondAttribute="centerX" constant="93.25" id="CIu-pR-GaI"/>
                             <constraint firstItem="dkt-vQ-qDx" firstAttribute="width" secondItem="cnT-d9-fLK" secondAttribute="width" id="GFP-wo-bxF"/>
                             <constraint firstItem="tXp-vn-Seb" firstAttribute="centerX" secondItem="9yA-cB-OcY" secondAttribute="centerX" constant="-93.25" id="GgU-Qo-nX4"/>
-                            <constraint firstItem="dkt-vQ-qDx" firstAttribute="top" secondItem="9yA-cB-OcY" secondAttribute="top" id="Ha1-NA-6wq"/>
+                            <constraint firstItem="dkt-vQ-qDx" firstAttribute="top" secondItem="9yA-cB-OcY" secondAttribute="top" constant="-44" id="Ha1-NA-6wq"/>
                             <constraint firstItem="9yA-cB-OcY" firstAttribute="bottom" secondItem="tXp-vn-Seb" secondAttribute="bottom" constant="14" id="MXp-OA-Lng"/>
                             <constraint firstItem="dkt-vQ-qDx" firstAttribute="leading" secondItem="9yA-cB-OcY" secondAttribute="leading" id="R9C-5a-w96"/>
                             <constraint firstItem="9yA-cB-OcY" firstAttribute="bottom" secondItem="umx-bM-0Ys" secondAttribute="bottom" constant="14" id="lVb-NK-j8c"/>
@@ -286,7 +288,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgz-EE-g8n">
-                                <rect key="frame" x="0.0" y="44" width="414" height="765"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="809"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="gAE-5J-bDb">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="816"/>
@@ -380,7 +382,7 @@
                                     <constraint firstItem="gAE-5J-bDb" firstAttribute="width" secondItem="pgz-EE-g8n" secondAttribute="width" id="Rgo-Vv-az5"/>
                                     <constraint firstAttribute="trailing" secondItem="gAE-5J-bDb" secondAttribute="trailing" id="UIM-xQ-9tx"/>
                                     <constraint firstItem="gAE-5J-bDb" firstAttribute="leading" secondItem="pgz-EE-g8n" secondAttribute="leading" id="bbd-pf-Ueh"/>
-                                    <constraint firstAttribute="bottom" secondItem="gAE-5J-bDb" secondAttribute="bottom" constant="2" id="wy8-fu-tT7"/>
+                                    <constraint firstAttribute="bottom" secondItem="gAE-5J-bDb" secondAttribute="bottom" constant="-7" id="wy8-fu-tT7"/>
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rta-2b-59j">
@@ -399,7 +401,7 @@
                             <constraint firstItem="rta-2b-59j" firstAttribute="top" secondItem="pgz-EE-g8n" secondAttribute="bottom" constant="8" symbolic="YES" id="FXY-yG-5hX"/>
                             <constraint firstItem="pgz-EE-g8n" firstAttribute="width" secondItem="ulk-X3-z9d" secondAttribute="width" id="Fyc-7r-mZU"/>
                             <constraint firstItem="qGE-zI-tUX" firstAttribute="trailing" secondItem="pgz-EE-g8n" secondAttribute="trailing" id="IDK-YE-GWb"/>
-                            <constraint firstItem="pgz-EE-g8n" firstAttribute="top" secondItem="qGE-zI-tUX" secondAttribute="top" id="N5C-qO-BHI"/>
+                            <constraint firstItem="pgz-EE-g8n" firstAttribute="top" secondItem="qGE-zI-tUX" secondAttribute="top" constant="-44" id="N5C-qO-BHI"/>
                             <constraint firstItem="qGE-zI-tUX" firstAttribute="bottom" secondItem="rta-2b-59j" secondAttribute="bottom" constant="14" id="Yd1-V4-2fn"/>
                             <constraint firstItem="pgz-EE-g8n" firstAttribute="leading" secondItem="qGE-zI-tUX" secondAttribute="leading" id="hEU-SF-41m"/>
                         </constraints>
@@ -457,8 +459,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="x8E-xG-WYP"/>
-                        <segue destination="ieK-Vx-OQx" kind="relationship" relationship="viewControllers" id="nVt-34-3iX"/>
-                        <segue destination="Jkw-Fj-uNQ" kind="relationship" relationship="viewControllers" id="ELO-dM-ULR"/>
+                        <segue destination="1pA-Jq-dcy" kind="relationship" relationship="viewControllers" id="A2O-zX-Z9i"/>
+                        <segue destination="uBW-tN-z9d" kind="relationship" relationship="viewControllers" id="4ZK-Rm-JxK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKU-N8-VX5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -504,6 +506,10 @@
             <point key="canvasLocation" x="5295.652173913044" y="813.61607142857144"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="4ZK-Rm-JxK"/>
+        <segue reference="A2O-zX-Z9i"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="square.fill" catalog="system" width="128" height="114"/>
