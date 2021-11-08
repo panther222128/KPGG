@@ -4,19 +4,15 @@
 
 시뮬레이터 이미지 모음은 이 글의 가장 아래에서 확인할 수 있습니다.
 
-<img src="https://user-images.githubusercontent.com/61342175/138552437-d530cf0f-ca32-4f73-9d4d-23c8b0d05a04.gif" width = 250 align = center>
+<img src="https://user-images.githubusercontent.com/61342175/140697835-e6f27c6f-80f6-49a6-8a10-242a0c35164d.gif" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/140697742-b23dab57-928f-463d-9cf5-cf4d908aac89.gif" width = 250 align = left>
+
+<img src="https://user-images.githubusercontent.com/61342175/140697749-50c37baa-6651-4874-842c-ed68f566980e.gif" width = 250 align = center>
 
 히트곡이 있는 케이팝 걸그룹을 볼 수 있는 앱입니다. 특정 그룹 선택 시 그룹 멤버들의 리스트를 볼 수 있고, 리스트를 볼 수 있는 스크린에서 '대표곡 듣기' 버튼을 탭하면 유튜브 뮤직비디오가 재생됩니다. 그룹 멤버 셀을 선택하면 멤버의 간단한 프로필을 볼 수 있습니다.
 
 첫 스크린의 가장 상위에 있는 셀은 네 개의 걸그룹 중 한 그룹이 랜덤으로 보여집니다. 셀 선택 시 그룹 멤버 리스트, 대표곡 듣기 모두 앞서 설명한 것과 똑같이 동작합니다.
-
-### 아래 기능이 추가되었습니다.
-
-<img src="https://user-images.githubusercontent.com/61342175/138678581-f4f1acb9-160e-4a7f-9a80-0e950fbd9c43.gif" width = 250 align = left>
-
-<img src="https://user-images.githubusercontent.com/61342175/138679325-90dad54c-192c-4e59-90f8-63b08f33c858.gif" width = 250 align = center>
-
-상태 바의 글자 색상을 흰색으로 변경하고, CoreData를 사용해 즐겨찾는 그룹 및 멤버를 탭 바에 나타나도록 했습니다. 다른 기능은 위 설명과 동일합니다.
 
 ## 사용한 것들
 
