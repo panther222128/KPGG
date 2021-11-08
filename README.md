@@ -4,11 +4,11 @@
 
 시뮬레이터 이미지 모음은 이 글의 가장 아래에서 확인할 수 있습니다.
 
-<img src="https://user-images.githubusercontent.com/61342175/140697835-e6f27c6f-80f6-49a6-8a10-242a0c35164d.gif" width = 250 align = left>
+<img src="https://user-images.githubusercontent.com/61342175/140746273-f680980c-f49e-4c41-bc1d-7e2302e65090.gif" width = 250 align = left>
 
-<img src="https://user-images.githubusercontent.com/61342175/140697742-b23dab57-928f-463d-9cf5-cf4d908aac89.gif" width = 250 align = left>
+<img src="https://user-images.githubusercontent.com/61342175/140746338-81038022-640b-4da3-8f94-c7b366c7fa88.gif" width = 250 align = left>
 
-<img src="https://user-images.githubusercontent.com/61342175/140697749-50c37baa-6651-4874-842c-ed68f566980e.gif" width = 250 align = center>
+<img src="https://user-images.githubusercontent.com/61342175/140746348-d8e7b0d8-e447-49a1-84e6-bdfbfda2322e.gif" width = 250 align = left>
 
 <img src="https://user-images.githubusercontent.com/61342175/140742188-f888f8b8-9d71-452f-9f09-0b5a0a5b75d9.gif" width = 250 align = center>
 
