@@ -10,6 +10,8 @@
 
 <img src="https://user-images.githubusercontent.com/61342175/140697749-50c37baa-6651-4874-842c-ed68f566980e.gif" width = 250 align = center>
 
+<img src="https://user-images.githubusercontent.com/61342175/140742188-f888f8b8-9d71-452f-9f09-0b5a0a5b75d9.gif" width = 250 align = center>
+
 히트곡이 있는 케이팝 걸그룹을 볼 수 있는 앱입니다. 특정 그룹 선택 시 그룹 멤버들의 리스트를 볼 수 있고, 리스트를 볼 수 있는 스크린에서 '대표곡 듣기' 버튼을 탭하면 유튜브 뮤직비디오가 재생됩니다. 그룹 멤버 셀을 선택하면 멤버의 간단한 프로필을 볼 수 있습니다.
 
 첫 스크린의 가장 상위에 있는 셀은 네 개의 걸그룹 중 한 그룹이 랜덤으로 보여집니다. 셀 선택 시 그룹 멤버 리스트, 대표곡 듣기 모두 앞서 설명한 것과 똑같이 동작합니다.
