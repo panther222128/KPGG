@@ -17,6 +17,7 @@ final class GroupMemberViewController: UIViewController {
     private var groupMemberViewModel: GroupMemberViewModelType?
     private var disposeBag = DisposeBag()
     private var isInsertAtFavoritesHidden: Bool?
+    private var groupFavoritesCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,16 @@ final class GroupMemberViewController: UIViewController {
         groupMember.delegate = self
         groupMember.prefetchDataSource = self
         groupFavoritesButtonHide()
+        setGroupFavoritesCount()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setGroupFavoritesCount()
+    }
+    
+    private func setGroupFavoritesCount() {
+        guard let groupMemberViewModel = groupMemberViewModel else { return }
+        groupFavoritesCount = groupMemberViewModel.groupFavoritesCount()
     }
     
     private func groupFavoritesButtonHide() {
@@ -96,6 +107,21 @@ final class GroupMemberViewController: UIViewController {
         insertAtFavorites.isHidden = true
         playSong.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         playSong.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        if self.groupFavoritesCount + 1 == groupMemberViewModel.groupFavoritesCount() {
+            let addSuccessAlert = UIAlertController(title: "추가하기", message: "정상적으로 추가되었습니다.", preferredStyle: UIAlertController.Style.alert)
+            let addSuccessAlertAction = UIAlertAction(title: "OK", style: .default) { action in
+                self.navigationController?.popViewController(animated: true)
+            }
+            addSuccessAlert.addAction(addSuccessAlertAction)
+            present(addSuccessAlert, animated: true, completion: nil)
+        } else {
+            let addSuccessAlert = UIAlertController(title: "추가하기", message: "그룹이 추가되지 않았습니다.", preferredStyle: UIAlertController.Style.alert)
+            let addSuccessAlertAction = UIAlertAction(title: "뒤로가기", style: .destructive) { action in
+                self.navigationController?.popViewController(animated: true)
+            }
+            addSuccessAlert.addAction(addSuccessAlertAction)
+            present(addSuccessAlert, animated: true, completion: nil)
+        }
     }
     
 }

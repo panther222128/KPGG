@@ -13,6 +13,7 @@ final class MemberFavoritesViewController: UIViewController {
     @IBOutlet weak var memberFavoritesView: UITableView!
     
     private var memberFavoritesViewModel: MemberFavoritesViewModelType?
+    private var memberFavoritesCount = 0
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -32,7 +33,13 @@ final class MemberFavoritesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         fetchMemberFavorites()
+        setGroupFavoritesCount()
         memberFavoritesView.reloadData()
+    }
+    
+    private func setGroupFavoritesCount() {
+        guard let memberFavoritesViewModel = memberFavoritesViewModel else { return }
+        self.memberFavoritesCount = memberFavoritesViewModel.count()
     }
     
     private func fetchMemberFavorites() {
@@ -100,6 +107,20 @@ extension MemberFavoritesViewController: UITableViewDelegate {
             memberFavoritesViewModel.deleteFavoriteMember(at: indexPath.row)
             self.fetchMemberFavorites()
             self.memberFavoritesView.reloadData()
+            if self.memberFavoritesCount - 1 == memberFavoritesViewModel.count() {
+                let addSuccessAlert = UIAlertController(title: "삭제하기", message: "정상적으로 삭제되었습니다.", preferredStyle: UIAlertController.Style.alert)
+                let addSuccessAlertAction = UIAlertAction(title: "OK", style: .default) { action in
+                    self.navigationController?.popViewController(animated: true)
+                }
+                addSuccessAlert.addAction(addSuccessAlertAction)
+                self.memberFavoritesCount -= 1
+                self.present(addSuccessAlert, animated: true, completion: nil)
+            } else {
+                let addSuccessAlert = UIAlertController(title: "삭제하기", message: "멤버가 삭제되지 않았습니다.", preferredStyle: UIAlertController.Style.alert)
+                let addSuccessAlertAction = UIAlertAction(title: "뒤로가기", style: .destructive)
+                addSuccessAlert.addAction(addSuccessAlertAction)
+                self.present(addSuccessAlert, animated: true, completion: nil)
+            }
             success(true)
         }
         delete.backgroundColor = .systemPink

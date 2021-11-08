@@ -19,6 +19,7 @@ protocol MemberDetailViewModelType {
     func insertAtFavoritesMember(member: Member)
     func selectedMember() -> Member
     func isMemberFavoritesContains() -> Bool
+    func memberFavoritesCount() -> Int
 }
 
 final class MemberDetailViewModel: MemberDetailViewModelType {
@@ -103,6 +104,12 @@ final class MemberDetailViewModel: MemberDetailViewModelType {
         } else {
             return false
         }
+    }
+    
+    func memberFavoritesCount() -> Int {
+        let request: NSFetchRequest<MemberInfo> = MemberInfo.fetchRequest()
+        let fetchResult = FavoritesStorageManager.shared.fetch(request: request)
+        return fetchResult.count
     }
     
 }

@@ -20,6 +20,7 @@ protocol GroupMemberViewModelType {
     func selectedGroup() -> Group
     func insertAtFavoritesGroup(_ group: Group)
     func isGroupFavoritesContains() -> Bool
+    func groupFavoritesCount() -> Int
 }
 
 final class GroupMemberViewModel: GroupMemberViewModelType {
@@ -94,6 +95,12 @@ final class GroupMemberViewModel: GroupMemberViewModelType {
         } else {
             return false
         }
+    }
+    
+    func groupFavoritesCount() -> Int {
+        let request: NSFetchRequest<GroupInfo> = GroupInfo.fetchRequest()
+        let fetchResult = FavoritesStorageManager.shared.fetch(request: request)
+        return fetchResult.count
     }
     
 }

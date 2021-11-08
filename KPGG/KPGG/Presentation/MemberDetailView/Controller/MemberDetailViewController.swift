@@ -28,6 +28,7 @@ final class MemberDetailViewController: UIViewController {
     @IBOutlet weak var favoritesButton: UIButton!
     
     private var memberDetailViewModel: MemberDetailViewModelType?
+    private var memberFavoritesCount = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,16 @@ final class MemberDetailViewController: UIViewController {
         configureNavigation()
         viewConfiguration()
         memberFavoritesButtonHide()
+        setMemberFavoritesCount()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setMemberFavoritesCount()
+    }
+    
+    private func setMemberFavoritesCount() {
+        guard let memberDetailViewModel = memberDetailViewModel else { return }
+        memberFavoritesCount = memberDetailViewModel.memberFavoritesCount()
     }
 
     private func memberFavoritesButtonHide() {
@@ -105,6 +116,21 @@ final class MemberDetailViewController: UIViewController {
         guard let memberDetailViewModel = memberDetailViewModel else { return }
         memberDetailViewModel.insertAtFavoritesMember(member: memberDetailViewModel.selectedMember())
         favoritesButton.isHidden = true
+        if self.memberFavoritesCount + 1 == memberDetailViewModel.memberFavoritesCount() {
+            let addSuccessAlert = UIAlertController(title: "추가하기", message: "정상적으로 추가되었습니다.", preferredStyle: UIAlertController.Style.alert)
+            let addSuccessAlertAction = UIAlertAction(title: "OK", style: .default) { action in
+                self.navigationController?.popViewController(animated: true)
+            }
+            addSuccessAlert.addAction(addSuccessAlertAction)
+            present(addSuccessAlert, animated: true, completion: nil)
+        } else {
+            let addSuccessAlert = UIAlertController(title: "추가하기", message: "멤버가 추가되지 않았습니다.", preferredStyle: UIAlertController.Style.alert)
+            let addSuccessAlertAction = UIAlertAction(title: "뒤로가기", style: .destructive) { action in
+                self.navigationController?.popViewController(animated: true)
+            }
+            addSuccessAlert.addAction(addSuccessAlertAction)
+            present(addSuccessAlert, animated: true, completion: nil)
+        }
     }
     
     func showMemberDetailViewController(with viewModel: MemberDetailViewModelType) {
