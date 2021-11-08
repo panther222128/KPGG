@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XWa-3x-PVn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hHm-pr-X3M">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--즐겨찾는 그룹-->
+        <!--Group Favorites View Controller-->
         <scene sceneID="otq-jF-LJE">
             <objects>
                 <viewController id="1pA-Jq-dcy" customClass="GroupFavoritesViewController" customModule="KPGG" customModuleProvider="target" sceneMemberID="viewController">
@@ -67,7 +67,6 @@
                             <constraint firstItem="idL-UQ-d5O" firstAttribute="top" secondItem="InE-k2-SeU" secondAttribute="top" id="Rnn-Ni-Sgz"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="즐겨찾는 그룹" image="heart.fill" catalog="system" id="ypP-lZ-1kq"/>
                     <navigationItem key="navigationItem" id="4at-mG-GIr"/>
                     <connections>
                         <outlet property="groupFavoritesView" destination="InE-k2-SeU" id="clU-K2-rOF"/>
@@ -75,9 +74,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0xF-IW-Reh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4576.811594202899" y="813.61607142857144"/>
+            <point key="canvasLocation" x="5486.9565217391309" y="813.61607142857144"/>
         </scene>
-        <!--즐겨찾는 멤버-->
+        <!--Member Favorites View Controller-->
         <scene sceneID="KM4-fP-tPv">
             <objects>
                 <viewController id="uBW-tN-z9d" customClass="MemberFavoritesViewController" customModule="KPGG" customModuleProvider="target" sceneMemberID="viewController">
@@ -137,7 +136,6 @@
                             <constraint firstItem="fny-ix-5UF" firstAttribute="leading" secondItem="TxZ-lM-URb" secondAttribute="leading" id="deW-ex-P15"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="즐겨찾는 멤버" image="heart.fill" catalog="system" id="7lu-FC-B8k"/>
                     <navigationItem key="navigationItem" id="1Mt-1C-wVk"/>
                     <connections>
                         <outlet property="memberFavoritesView" destination="fny-ix-5UF" id="qyW-Bs-NPq"/>
@@ -145,9 +143,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vmc-SU-K4p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6205.7971014492759" y="813.61607142857144"/>
+            <point key="canvasLocation" x="5486.9565217391309" y="1488.6160714285713"/>
         </scene>
-        <!--그룹-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="MainView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainViewController" customModule="KPGG" customModuleProvider="target" sceneMemberID="viewController">
@@ -176,7 +174,6 @@
                             <constraint firstItem="Kfg-Rq-B9h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="k72-1p-QGR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="그룹" image="square.fill" catalog="system" id="lUi-nz-DQg"/>
                     <navigationItem key="navigationItem" id="NTD-EX-NWS"/>
                     <connections>
                         <outlet property="sectionView" destination="Kfg-Rq-B9h" id="VyL-fq-vhb"/>
@@ -184,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4578.2608695652179" y="83.705357142857139"/>
+            <point key="canvasLocation" x="5488.4057971014499" y="83.705357142857139"/>
         </scene>
         <!--Group Member View Controller-->
         <scene sceneID="w3r-4V-ScZ">
@@ -277,7 +274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sMc-Xo-YnV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5281.1594202898559" y="83.705357142857139"/>
+            <point key="canvasLocation" x="6191.304347826087" y="83.705357142857139"/>
         </scene>
         <!--Member Detail View Controller-->
         <scene sceneID="RbM-y2-yOJ">
@@ -425,25 +422,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HnE-Up-7N6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5962.3188405797109" y="83.705357142857139"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="85N-CT-6Fk">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XWa-3x-PVn" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8ju-AJ-KPA">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="hHm-pr-X3M" kind="relationship" relationship="rootViewController" id="qIX-6i-Xky"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rV2-fg-ID4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2771" y="84"/>
+            <point key="canvasLocation" x="6872.4637681159429" y="83.705357142857139"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="oje-in-ra3">
@@ -458,61 +437,77 @@
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="x8E-xG-WYP"/>
-                        <segue destination="1pA-Jq-dcy" kind="relationship" relationship="viewControllers" id="A2O-zX-Z9i"/>
-                        <segue destination="uBW-tN-z9d" kind="relationship" relationship="viewControllers" id="4ZK-Rm-JxK"/>
+                        <segue destination="1Ip-HI-lkx" kind="relationship" relationship="viewControllers" id="x8E-xG-WYP"/>
+                        <segue destination="6B7-lf-tKg" kind="relationship" relationship="viewControllers" id="JZd-Sv-O2J"/>
+                        <segue destination="IFx-Tz-uBH" kind="relationship" relationship="viewControllers" id="TlV-sy-ENG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKU-N8-VX5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3668.115942028986" y="83.705357142857139"/>
+            <point key="canvasLocation" x="3741" y="84"/>
         </scene>
-        <!--즐겨찾는 그룹-->
-        <scene sceneID="wwe-Jx-8a3">
+        <!--그룹-->
+        <scene sceneID="5Hh-t3-ZOh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ieK-Vx-OQx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="즐겨찾는 그룹" image="heart.fill" catalog="system" id="Dqb-IL-iwY"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Ip-HI-lkx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="그룹" image="square.fill" catalog="system" id="lUi-nz-DQg"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9tz-PU-VE0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DVm-bM-vwo">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="1pA-Jq-dcy" kind="relationship" relationship="rootViewController" id="Ghn-cI-Qxd"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gw0-Kr-XG6"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OcB-tS-Po7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uNi-yF-slS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3666.666666666667" y="813.61607142857144"/>
+            <point key="canvasLocation" x="4578.2608695652179" y="83.705357142857139"/>
         </scene>
         <!--즐겨찾는 멤버-->
-        <scene sceneID="rxt-qz-r72">
+        <scene sceneID="xMO-xD-S3J">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jkw-Fj-uNQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="즐겨찾는 멤버" image="heart.fill" catalog="system" id="kgA-kF-Zfx"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IFx-Tz-uBH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="즐겨찾는 멤버" image="heart.fill" catalog="system" id="7lu-FC-B8k"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PCO-Z7-PbB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UwR-aS-i28">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="uBW-tN-z9d" kind="relationship" relationship="rootViewController" id="Stn-QR-0Ge"/>
+                        <segue destination="uBW-tN-z9d" kind="relationship" relationship="rootViewController" id="vgw-c0-zdu"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="urd-fU-PmX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q5k-UD-3fE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5295.652173913044" y="813.61607142857144"/>
+            <point key="canvasLocation" x="4578" y="1489"/>
+        </scene>
+        <!--즐겨찾는 그룹-->
+        <scene sceneID="YB5-5K-U42">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6B7-lf-tKg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="즐겨찾는 그룹" image="suit.heart.fill" catalog="system" id="KPw-bb-gRm"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BZd-dW-EHe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1pA-Jq-dcy" kind="relationship" relationship="rootViewController" id="Am4-yf-bQT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vsp-L2-8Jg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4576.811594202899" y="813.61607142857144"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="4ZK-Rm-JxK"/>
-        <segue reference="A2O-zX-Z9i"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="square.fill" catalog="system" width="128" height="114"/>
+        <image name="suit.heart.fill" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
